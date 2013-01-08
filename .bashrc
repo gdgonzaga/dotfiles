@@ -8,22 +8,23 @@ PROMPT_COMMAND='RET=$?; if [[ $RET -eq 0 ]]; then export PS1="${RET_SUCC} ${_PS1
 
 export GPG_TTY=$(tty)
 
-# gpg-agent
-[ -z "$(pidof gpg-agent)" ] && \
-    gpg-agent --daemon \
-                  --write-env-file "${HOME}/.gpg-agent-info"
+## gpg-agent
+#[ -z "$(pidof gpg-agent)" ] && \
+    #gpg-agent --daemon  --enable-ssh-support \
+                  #--write-env-file "${HOME}/.gpg-agent-info"
 
- if [ -f "${HOME}/.gpg-agent-info" ]; 
- then
-   . "${HOME}/.gpg-agent-info"
-   export GPG_AGENT_INFO
-   export SSH_AUTH_SOCK
- fi
+ #if [ -f "${HOME}/.gpg-agent-info" ]; 
+ #then
+   #. "${HOME}/.gpg-agent-info"
+   #export GPG_AGENT_INFO
+   #export SSH_AUTH_SOCK
+ #fi
 
 # tmux
 [ -n "$TMUX" ] && export TERM=screen-256color
 
 # aliases
+alias kc='eval $(keychain --eval --agents ssh,gpg --timeout 30 -Q --quiet id_rsa)'
 alias pacman='sudo pacman'
 alias emacs='emacs -nw'
 alias ls='ls --color=auto'

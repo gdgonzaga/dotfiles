@@ -7,7 +7,7 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 
 #( tmux-status-helpers.sh > /dev/null &> /dev/null )&
 
-eval $(ssh-agent)
+#eval $(ssh-agent)
 
 . $HOME/.bashrc
 

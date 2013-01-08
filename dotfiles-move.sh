@@ -5,13 +5,13 @@
 DOTFILES_DIR="$HOME/dotfiles"
 
 # Exit if user asks for help
-# TODO: Learn how to parse arguments correctly
+# TODO: Learn how to parse arguments properly
 [[ $1 == "-h" || $1 == "--help" ]] &&
     echo -e "Usage: dotfiles-move.sh <file1> <file2> ..." &&
     exit
 
 # Exit with an error if there are no arguments
-[[ -z "$1" ]] &&
+[ -z "$1" ] &&
     echo -e "Usage: dotfiles-move.sh <file1> <file2> ..." &&
     exit 1
 
@@ -19,6 +19,8 @@ echo -e "Using dotfile directory: $DOTFILES_DIR\n"
 
 for i in $@; do
     # Remove trailing slashes
+    # FIXME: Currently removes all "/".
+    #        This should only remove the last "/"
     i=$(echo "$i" | tr -d "/")
 
     NEW_LOCATION="$DOTFILES_DIR/$i"

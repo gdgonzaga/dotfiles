@@ -73,7 +73,8 @@ macro pager \co <pipe-entry>'urlscan'<enter> 'Follow links with urlscan'
 # mutt-kz bindings
 set sidebar_width = 20 
 set sidebar_visible = yes
-color sidebar_new yellow default
+set sidebar_delim = " "
+color sidebar_new color33 default
 bind index,pager \Ck sidebar-prev
 bind index,pager \Cj sidebar-next
 bind index,pager \cl sidebar-open
@@ -84,7 +85,6 @@ macro index,pager b ":set sidebar_visible=yes<Return>"
 
 # Archive mail
 macro index,pager A "<modify-labels-then-hide>+archive\n<sync-mailbox>"
-
 #
 # Color definitions
 #
@@ -97,7 +97,7 @@ color quoted color24 default
 color signature color126 default
 color indicator brightwhite color235 
 color error red default
-color status color185 color052
+color status color185 color24
 color tree color48 default	# the thread tree in the index menu
 color tilde color245 default
 color message color100 default
@@ -120,20 +120,20 @@ color body blue default "(ftp|http)://\w[^ ]+[^.]" # point out URLs
 color body color128 default '[-.+\w]+@[-.\w]+[^.]' # e-mail addresses
 color underline brightgreen default
 
-# color-coding by sender/recipient
-color index color177 default '~f @yahoogroups' 
-color index color020 default '~f hkjww57d@facebookmail' 
+## color-coding by sender/recipient
+#color index color177 default '~f @yahoogroups' 
+#color index color020 default '~f hkjww57d@facebookmail' 
 
-color index color088 default '~f @odesk' 
-color index color088 default '~f @wallingis' 
-color index color088 default '~f @essays.ph' 
-color index color088 default '~f @elance.com' 
-color index color088 default '~f @guru.com' 
-color index color009 default '~f @gadgetsgo.com' 
+#color index color088 default '~f @odesk' 
+#color index color088 default '~f @wallingis' 
+#color index color088 default '~f @essays.ph' 
+#color index color088 default '~f @elance.com' 
+#color index color088 default '~f @guru.com' 
+#color index color009 default '~f @gadgetsgo.com' 
 
-color index color012 default '~f @mitx.mit.edu' 
-color index color012 default '~f @coursera.org' 
-color index color012 default '~f @knowlabs.com' 
+#color index color012 default '~f @mitx.mit.edu' 
+#color index color012 default '~f @coursera.org' 
+#color index color012 default '~f @knowlabs.com' 
 
 # attributes when using a mono terminal
 #mono header underline ^(From|Subject):
@@ -141,7 +141,7 @@ mono quoted bold
 ## mutt-kz specific
 set virtual_spoolfile = yes
 
-set nm_default_uri = "notmuch:///home/gdgon/Mail"
+set nm_default_uri = "notmuch:///home/gerry/Mail"
 
 virtual-mailboxes \
   "INBOX" "notmuch://?query=tag:inbox NOT tag:archive" \
