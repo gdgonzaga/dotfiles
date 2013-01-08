@@ -1,0 +1,49 @@
+# xchainkeys configuration file
+#
+
+# chain options
+timeout 5000
+
+# feedback options
+
+feedback on       # enable feedback
+delay 1000        # display current key combination
+hold 1000         # display error messages for 1 second
+position center   # center feedback window
+
+font fixed        # use the font "fixed" for the popup window
+foreground black  # black text and border
+background white  # white background
+
+# keybindings
+
+C-t :enter
+C-t C-t :escape
+C-t C-g :abort
+C-t C-r :reload
+
+# execute commands
+C-t e C-g :abort
+C-t e b :exec vp.sh
+C-t e m :exec smplayer
+
+# misc
+C-t semicolon s :exec toggle-speakers.sh > /dev/null 2>&1
+C-t semicolon t :exec toggle-touchpad.sh > /dev/null 2>&1
+
+# audio
+C-t m C-g :abort
+C-t m space :exec mpc toggle | grep '\[' | cut -c1-10
+C-t m o :exec mpc stop > /dev/null && echo "[stop]"
+C-t m e :exec mpc volume +10 | grep volume | cut -c1-11
+C-t m d :exec mpc volume -10 | grep volume | cut -c1-11
+C-t m u :exec mpc update --wait > /dev/null && echo "mpd database updated"
+C-t m c :exec mpc clear > /dev/null && echo "playlist cleared"
+#C-t m r :exec mpc crop > /dev/null && echo "mpd cropped"
+C-t m l :exec mpc -f "%artist%  - [%title%]|[%file%]" prev | head -1
+C-t m m :exec mpc next -f "%artist% - [%title%]|[%file%]" | head -1
+C-t m S-d :exec mpc del 0 ; mpc | head -1
+
+C-t m q :exec dmpd-select.sh | head -1
+C-t m v :exec amixer sset Front mute | tail -1
+C-t m S-v :exec amixer sset Front unmute | tail -1

@@ -1,0 +1,14 @@
+extra_newline no
+update_interval 1.0
+uppercase no
+use_spacer right
+short_units no
+out_to_console yes
+out_to_x no
+
+#BOLD: ${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}
+#NORM: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}
+
+TEXT
+#${if_existing file ~/tmp/mail-mail}${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}M:${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${cat ~/tmp/mail-mail}$endif
+${if_existing /home/gerry/tmp/mail-mail}${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}MAIL:${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${exec cat ~/tmp/mail-mail} $endif${if_existing /home/gerry/tmp/mail-rss}${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}RSS:${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${exec cat ~/tmp/mail-rss} $endif${if_existing /home/gerry/tmp/mail-ross}${color #ff44aa}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}ROSS:${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${exec cat ~/tmp/mail-ross} $endif${if_existing /home/gerry/tmp/mail-bt}${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}BT:${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${exec cat ~/tmp/mail-bt} $endif:: ${color #eafc44}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}${time %a, %b %d %T} ${color #ffffff}${exec cat ~/tmp/speaker-status}${exec cat ~/tmp/touchpad-status} $battery_short ${color #ffffff}${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}$battery_time${color #666666} ${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}${color #44aaff}CPU: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}$cpu% $freq ${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}RAM:${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb} $mem ${color #44aaff} ${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}SWAP: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}$swap ${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}PROCS: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}$processes ${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}/: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${fs_used /} ${fs_used_perc /}%${color #44aaff} ${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}WLAN0: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${downspeed wlan0} ${upspeed wlan0}${color #44aaff}${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}ETH0: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}${color #bbbbbb}${downspeed eth0} ${upspeed eth0}
