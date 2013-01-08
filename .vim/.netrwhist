@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/gdgon/.offlineimap'
+let g:netrw_dirhist_2='/usr/share/doc/HyperSpec/Body'
+let g:netrw_dirhist_3='/home/gdgon/.stumpwm'
+let g:netrw_dirhist_4='/home/gdgon/.offlineimap'
+let g:netrw_dirhist_5='/home/gdgon/.stumpwm'
+let g:netrw_dirhist_6='/home/gdgon/.offlineimap'
+let g:netrw_dirhist_7='/opt/df_linux/data/init'
+let g:netrw_dirhist_8='/home/gdgon/.stumpwm'

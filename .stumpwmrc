@@ -1,0 +1,140 @@
+(in-package :stumpwm)
+
+(run-shell-command "/home/gerry/bin/stumpwm-init.sh")
+
+;;; Load additional modules
+(set-contrib-dir "/home/gerry/.stumpwm")
+(load-module "cpu")
+(load-module "mem")
+(load-module "disk")
+(load-module "net")
+;(load-module "window-tags")
+;(load-module "aumix")
+(load-module "mpd")
+;(load-module "wifi")
+
+(set-font "-*-dina-medium-r-normal-*-*-*-*-*-*-*-*-*")
+
+;; Override mode line current window highlighting
+(defun fmt-highlight (s)
+  (format nil (substitute #\8 #\9 s) s))
+
+;;;; Set colors
+(setf *colors* (list "Pink" "LightBlue" "PaleGoldenRod" "LightGreen" "Wheat" "BurlyWood" "WhiteSmoke" "White" "DeepSkyBlue" "Gray"))
+(update-color-map (current-screen))
+
+(setq *disk-usage-paths* '("/" "/media/store"))
+(setq *disk-modeline-fmt* "^3*%a")
+
+;;; Modeline
+(setf *mpd-status-fmt* "^4*[%S] ^4*%v")
+(setq *mpd-modeline-fmt* "^4*[%S] %a - %t ^5*%e/%l %s:^4*%v")
+(setf *mode-line-timeout* 1
+      *window-format* "^6*%n^9*.%c "
+      *mode-line-background-color* "black"
+      *group-format* "^9*%t^**"
+      *screen-mode-line-format* (list
+                                  "%g "         ; Groups
+                                  "^6*[ %W^6*]" ; Windows
+                                  "^7*   "
+                                  "^5*%m"       ; mpd
+                                  "^7*   "
+                                  "^0*%c %f"      ; cpu
+                                  '(:eval (run-shell-command *cpu-temp-command* t))
+                                  "^7*   "
+                                  "^1*%M"       ; mem
+                                  "^7*   "
+                                  "%D"          ; disk
+                                  "^7*   "
+                                  "^2*%l"       ; net
+                                  "^7*   "
+                                  '(:eval (run-shell-command "tail -1 ~/tmp/stumpwm-mail | tr -d '\\n'" t)) ; Mail
+                                  ;"^7*   "
+                                  ;"^1*%I"       ; wifi
+                                  '(:eval (run-shell-command "date +'%a, %b %d %T' | tr -d '\\n'" t)))) ; Date
+
+;; Turn on/off the mode line for the current screen only
+(if (not (head-mode-line (current-head)))
+     (toggle-mode-line (current-screen) (current-head)))
+
+;;;; Message window
+(set-fg-color "PaleGoldenRod")
+(set-bg-color "Brown")
+(set-border-color "BurlyWood")
+(set-msg-border-width 3)
+(setf *message-window-gravity* :center
+      *timeout-wait*           3
+      *input-window-gravity*   :center)
+
+;;;; Window appearance
+(set-focus-color "Gray")
+(set-unfocus-color "Black")
+(setq *maxsize-border-width* 3
+      *normal-border-width* 3
+      *window-border-style* :tight)
+
+;;;; Placement rules
+(define-frame-preference "Default"
+  (1 nil nil :create t :class "Firefox")
+  (1 nil nil :create t :class "feh")
+  (1 nil nil :create t :class "Tabbed")
+  (1 nil nil :create t :class "Vmware")
+  (0 nil nil :create t :class "URxvt")
+  (2 nil nil :create t :class "MPlayer")
+  (2 nil nil :create t :class "Smplayer"))
+
+;;;; Left main
+;(define-frame-preference "Default"
+  ;(0 nil nil :create t :class "Firefox")
+  ;(0 nil nil :create t :class "feh")
+  ;(0 nil nil :create t :class "Tabbed")
+  ;(0 nil nil :create t :class "Vmware")
+  ;(2 nil nil :create t :class "URxvt")
+  ;(1 nil nil :create t :class "MPlayer")
+  ;(1 nil nil :create t :class "Smplayer")
+
+;;;; Desktop selection key bindings
+(defvar *desktop-selection-map* nil)
+(fill-keymap *desktop-selection-map*
+             (kbd "d") "restore-from-file .ggd"
+             (kbd "s") "run-shell-command amixer set Speaker toggle"
+             (kbd "r") "restore-from-file .rg"
+             (kbd "v") "restore-from-file .vvd")
+
+;;;; Key bindings
+;; Window Management
+(define-key *top-map* (kbd "s-H") "move-window left")
+(define-key *top-map* (kbd "s-J") "move-window down")
+(define-key *top-map* (kbd "s-K") "move-window up")
+(define-key *top-map* (kbd "s-L") "move-window right")
+(define-key *top-map* (kbd "s-h") "move-focus left")
+(define-key *top-map* (kbd "s-j") "move-focus down")
+(define-key *top-map* (kbd "s-k") "move-focus up")
+(define-key *top-map* (kbd "s-l") "move-focus right")
+(define-key *top-map* (kbd "s-n") "next-in-frame")
+(define-key *top-map* (kbd "s-N") "prev-in-frame")
+(define-key *root-map* (kbd "f") "fullscreen")
+(define-key *root-map* (kbd "C-t") "other-in-frame")
+
+;; Groups map
+(define-key *groups-map* (kbd "g") "gother")
+
+;; Run commands
+(define-key *top-map* (kbd "s-e") "run-shell-command dmenu_run")
+(define-key *top-map* (kbd "s-w") "run-shell-command win7.sh")
+(define-key *root-map* (kbd "c") "run-shell-command urxvt -e screen -x")
+(define-key *root-map* (kbd "b") "run-shell-command vp.sh")
+(define-key *root-map* (kbd "m") '*mpd-map*)
+(define-key *root-map* (kbd ",") '*desktop-selection-map*)
+
+;;;; Misc
+(setq *mouse-focus-policy* :click)
+(setq *mpd-volume-step* 10)
+
+;;;; Restore desktop
+(restore-from-file #p"/home/gerry/.rg")
+
+;;; Connect to mpd
+(mpd-connect)
+
+; vim: set ft=lisp:

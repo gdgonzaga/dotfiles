@@ -1,0 +1,71 @@
+2013-01-07 10:16:42	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 10:16:42	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 10:16:42		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 10:17:21	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 10:17:21	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 10:17:21		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 10:18:17	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 10:18:17	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 10:18:17		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 10:19:03	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 10:19:03	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 10:19:03		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 10:19:35	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 10:19:35	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 10:19:35		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 10:20:40	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 10:20:40	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 10:20:40		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 10:20:49	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 10:20:49	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 10:20:49		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 10:21:02		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 16:45:52	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 16:45:52	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 16:45:52		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:37:03		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 19:38:07	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 19:38:07	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 19:38:07		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:38:12		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 19:38:47	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 19:38:47	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 19:38:47		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:38:51		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 19:39:56	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 19:39:56	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 19:39:56		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:40:00	=!=	Error: unknown command "coin" (type /help for help)
+2013-01-07 19:40:04	=!=	irc: command "join" must be executed on irc buffer (server or channel)
+2013-01-07 19:40:09		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 19:40:34	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 19:40:34	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 19:40:34		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:40:38		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 19:40:53	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 19:40:53	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 19:40:53		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:40:57		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 19:41:16	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 19:41:16	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 19:41:16		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:41:20		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 19:41:41	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 19:41:41	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 19:41:41		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 19:41:48		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 20:24:37	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 20:24:37	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 20:24:37		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 20:25:24	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 20:25:24	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 20:25:24		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 20:27:27	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 20:27:27	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 20:27:27		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 20:27:32		irc: server localhost created (temporary server, NOT SAVED!)
+2013-01-07 20:28:54	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.2: cannot open shared object file: No such file or directory
+2013-01-07 20:28:54	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2013-01-07 20:28:54		Plugins loaded: alias, aspell, charset, fifo, irc, logger, perl, python, relay, rmodifier, ruby, script, tcl, xfer
+2013-01-07 20:29:03	=!=	You can not write text in this buffer
+2013-01-07 20:29:08		irc: server localhost created (temporary server, NOT SAVED!)
