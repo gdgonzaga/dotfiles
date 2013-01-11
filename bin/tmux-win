@@ -1,0 +1,13 @@
+#!/bin/bash
+
+WIN=$1
+[ -n $2 ] && CMD="$2" || CMD="bash" # Set default command to bash
+
+function is_win  {
+    [[ -n $(tmux list-windows | grep $WIN: | cut -d: -f1) ]] && return 0 || return 1
+}
+
+function new_win { tmux neww -n "" -t $WIN $CMD; }
+function switch_win { tmux select-window -t $WIN; }
+
+[ is_win $WIN] && switch_win || new_win

@@ -79,6 +79,7 @@ hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87 cterm=bold g
 
 "" Syntax highlighting {{{2
 hi Comment      ctermfg=244 guifg=#808080
+"hi Comment      ctermfg=173  guifg=#808080
 hi Constant     ctermfg=229 guifg=#ffffaf
 hi Identifier   ctermfg=182 guifg=#dfafdf                           cterm=none
 hi Ignore       ctermfg=238 guifg=#444444

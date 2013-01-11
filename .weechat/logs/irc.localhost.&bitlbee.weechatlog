@@ -133,3 +133,58 @@
 2013-01-07 20:29:08	--	Mode &bitlbee [+Ct]
 2013-01-07 20:29:14	@gerry	identify a
 2013-01-07 20:29:14	@root	The nick is (probably) not registered
+2013-01-08 23:51:48	-->	gerry (gerry@localhost.localdomain) has joined &bitlbee
+2013-01-08 23:51:48	--	Mode &bitlbee [+Ct] by localhost.localdomain
+2013-01-08 23:51:48	--	Nicks &bitlbee: [@gerry @root]
+2013-01-08 23:51:48	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2013-01-08 23:51:48	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2013-01-08 23:51:48	--	Topic set by root (root@localhost.localdomain) on Tue, 08 Jan 2013 23:51:48
+2013-01-08 23:51:48	@root	Welcome to the BitlBee gateway!
+2013-01-08 23:51:48	@root	 
+2013-01-08 23:51:48	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2013-01-08 23:51:48	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2013-01-08 23:51:48	--	Mode &bitlbee [+Ct]
+2013-01-08 23:58:07	-->	gerry (gerry@localhost.localdomain) has joined &bitlbee
+2013-01-08 23:58:07	--	Mode &bitlbee [+Ct] by localhost.localdomain
+2013-01-08 23:58:07	--	Nicks &bitlbee: [@gerry @root]
+2013-01-08 23:58:07	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2013-01-08 23:58:07	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2013-01-08 23:58:07	--	Topic set by root (root@localhost.localdomain) on Tue, 08 Jan 2013 23:58:07
+2013-01-08 23:58:07	@root	Welcome to the BitlBee gateway!
+2013-01-08 23:58:07	@root	 
+2013-01-08 23:58:07	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2013-01-08 23:58:07	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2013-01-08 23:58:07	--	Mode &bitlbee [+Ct]
+2013-01-09 00:51:48	-->	gerry (gerry@localhost.localdomain) has joined &bitlbee
+2013-01-09 00:51:48	--	Mode &bitlbee [+Ct] by localhost.localdomain
+2013-01-09 00:51:48	--	Nicks &bitlbee: [@gerry @root]
+2013-01-09 00:51:48	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2013-01-09 00:51:48	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2013-01-09 00:51:48	--	Topic set by root (root@localhost.localdomain) on Wed, 09 Jan 2013 00:51:48
+2013-01-09 00:51:48	@root	Welcome to the BitlBee gateway!
+2013-01-09 00:51:48	@root	 
+2013-01-09 00:51:48	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2013-01-09 00:51:48	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2013-01-09 00:51:48	--	Mode &bitlbee [+Ct]
+2013-01-09 00:52:04	-->	gerry (gerry@localhost.localdomain) has joined &bitlbee
+2013-01-09 00:52:04	--	Mode &bitlbee [+Ct] by localhost.localdomain
+2013-01-09 00:52:04	--	Nicks &bitlbee: [@gerry @root]
+2013-01-09 00:52:04	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2013-01-09 00:52:04	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2013-01-09 00:52:04	--	Topic set by root (root@localhost.localdomain) on Wed, 09 Jan 2013 00:52:04
+2013-01-09 00:52:04	@root	Welcome to the BitlBee gateway!
+2013-01-09 00:52:04	@root	 
+2013-01-09 00:52:04	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2013-01-09 00:52:04	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2013-01-09 00:52:04	--	Mode &bitlbee [+Ct]
+2013-01-09 00:52:23	-->	gerry (gerry@localhost.localdomain) has joined &bitlbee
+2013-01-09 00:52:23	--	Mode &bitlbee [+Ct] by localhost.localdomain
+2013-01-09 00:52:23	--	Nicks &bitlbee: [@gerry @root]
+2013-01-09 00:52:23	--	Channel &bitlbee: 2 nicks (2 ops, 0 halfops, 0 voices, 0 normals)
+2013-01-09 00:52:23	--	Topic for &bitlbee is "Welcome to the control channel. Type help for help information."
+2013-01-09 00:52:23	--	Topic set by root (root@localhost.localdomain) on Wed, 09 Jan 2013 00:52:23
+2013-01-09 00:52:23	@root	Welcome to the BitlBee gateway!
+2013-01-09 00:52:23	@root	 
+2013-01-09 00:52:23	@root	If you've never used BitlBee before, please do read the help information using the help command. Lots of FAQs are answered there.
+2013-01-09 00:52:23	@root	If you already have an account on this server, just use the identify command to identify yourself.
+2013-01-09 00:52:23	--	Mode &bitlbee [+Ct]

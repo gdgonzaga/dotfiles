@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+foreach $i (0..255) 
+{	printf("\e[38;5;$i"."m%03d\e[0m ",$i); 
+}

@@ -1,0 +1,512 @@
+2013-01-08 23:55:33	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-08 23:56:13	=!=	irc: address "irc.freenode.net" not found
+2013-01-08 23:56:13	=!=	irc: error: Name or service not known
+2013-01-08 23:56:13	--	irc: reconnecting to server in 10 seconds
+2013-01-08 23:56:23	--	irc: reconnecting to server...
+2013-01-08 23:56:23	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-08 23:56:24	--	irc: connected to irc.freenode.net/6667 (64.32.24.176)
+2013-01-08 23:56:24	--	morgan.freenode.net (morgan.freenode.net): *** Looking up your hostname...
+2013-01-08 23:56:24	--	morgan.freenode.net (morgan.freenode.net): *** Checking Ident
+2013-01-08 23:56:24	--	morgan.freenode.net (morgan.freenode.net): *** No Ident response
+2013-01-08 23:56:24	--	morgan.freenode.net (morgan.freenode.net): *** Couldn't look up your hostname
+2013-01-08 23:56:24	--	Welcome to the freenode Internet Relay Chat Network gdgon
+2013-01-08 23:56:24	--	Your host is morgan.freenode.net[64.32.24.176/6667], running version ircd-seven-1.1.3
+2013-01-08 23:56:24	--	This server was created Mon Jul 2 2012 at 17:49:30 EDT
+2013-01-08 23:56:24	--	morgan.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2013-01-08 23:56:24	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-01-08 23:56:24	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-01-08 23:56:24	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-01-08 23:56:24	--	There are 220 users and 82497 invisible on 33 servers
+2013-01-08 23:56:24	--	35 :IRC Operators online
+2013-01-08 23:56:24	--	14 :unknown connection(s)
+2013-01-08 23:56:24	--	40676 :channels formed
+2013-01-08 23:56:24	--	I have 4367 clients and 1 servers
+2013-01-08 23:56:24	--	4367 5474 :Current local users 4367, max 5474
+2013-01-08 23:56:24	--	82717 83377 :Current global users 82717, max 83377
+2013-01-08 23:56:24	--	Highest connection count: 5475 (5474 clients) (85800 connections received)
+2013-01-08 23:56:24	--	- morgan.freenode.net Message of the Day -
+2013-01-08 23:56:24	--	- Welcome to morgan.freenode.net in Chicago, IL, USA! Thank
+2013-01-08 23:56:24	--	- you to psyprus for sponsoring this server!
+2013-01-08 23:56:24	--	-
+2013-01-08 23:56:24	--	- MORGAN, RICHARD K. (1965-) is an English science fiction
+2013-01-08 23:56:24	--	- author. Morgan's books are generally set in a dystopian world.
+2013-01-08 23:56:24	--	- His breakout novel Altered Carbon won the Philip K. Dick Award,
+2013-01-08 23:56:24	--	- and he has written many successful and amazing works to follow.
+2013-01-08 23:56:24	--	- His more recent writings feature heavily on the theme of
+2013-01-08 23:56:24	--	- autonomy in science fiction and escapism in fantasy.
+2013-01-08 23:56:24	--	-
+2013-01-08 23:56:24	--	-
+2013-01-08 23:56:24	--	- You're using freenode, a service of Peer-Directed Projects
+2013-01-08 23:56:24	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2013-01-08 23:56:24	--	-
+2013-01-08 23:56:24	--	- By connecting to freenode you indicate that you have read
+2013-01-08 23:56:24	--	- and agree to adhere to our policies and procedures as per
+2013-01-08 23:56:24	--	- the website (http://freenode.net). We would like to remind
+2013-01-08 23:56:24	--	- you that unauthorized public logging of channels on the
+2013-01-08 23:56:24	--	- network is prohibited. Public channel logging should only
+2013-01-08 23:56:24	--	- take place where the channel owner(s) has requested this
+2013-01-08 23:56:24	--	- and users of the channel are all made aware (if you are
+2013-01-08 23:56:24	--	- publically logging your channel, you may wish to keep a
+2013-01-08 23:56:24	--	- notice in topic and perhaps as a on-join message).
+2013-01-08 23:56:24	--	-
+2013-01-08 23:56:24	--	- freenode runs an open proxy scanner. Your use of the network
+2013-01-08 23:56:24	--	- indicates your acceptance of this policy. For details on
+2013-01-08 23:56:24	--	- freenode network policy, please take a look at our policy
+2013-01-08 23:56:24	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2013-01-08 23:56:24	--	- the network!
+2013-01-08 23:56:24	--	-
+2013-01-08 23:56:24	--	- Don't forget to check out these other Peer-Directed Projects:
+2013-01-08 23:56:25	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2013-01-08 23:56:25	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2013-01-08 23:56:25	--	- success with Picnics for Geeks across the globe, more info at
+2013-01-08 23:56:25	--	- [http://geeknic.org]
+2013-01-08 23:56:25	--	-
+2013-01-08 23:56:25	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2013-01-08 23:56:25	--	- a not for profit organisation registered in England and Wales.
+2013-01-08 23:56:25	--	-
+2013-01-08 23:56:25	--	- Thank you for using freenode!
+2013-01-08 23:56:25	--	-
+2013-01-08 23:56:25	--	- ***************************************************************
+2013-01-08 23:56:25	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-01-08 23:56:25	--	- ***************************************************************
+2013-01-08 23:56:25	--	End of /MOTD command.
+2013-01-08 23:56:25	--	User mode [+i] by gdgon
+2013-01-09 00:47:17	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-09 00:47:34	--	irc: connected to irc.freenode.net/6667 (216.155.130.130)
+2013-01-09 00:47:34	--	verne.freenode.net (verne.freenode.net): *** Looking up your hostname...
+2013-01-09 00:47:35	--	verne.freenode.net (verne.freenode.net): *** Checking Ident
+2013-01-09 00:47:35	--	verne.freenode.net (verne.freenode.net): *** Couldn't look up your hostname
+2013-01-09 00:47:37	--	verne.freenode.net (verne.freenode.net): *** No Ident response
+2013-01-09 00:47:37	--	irc: nickname "gerry" is already in use, trying nickname "gerry1"
+2013-01-09 00:47:43	--	Welcome to the freenode Internet Relay Chat Network gerry1
+2013-01-09 00:47:45	--	Your host is verne.freenode.net[216.155.130.130/6667], running version ircd-seven-1.1.3
+2013-01-09 00:47:45	--	This server was created Sun Dec 11 2011 at 17:15:56 EST
+2013-01-09 00:47:45	--	verne.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2013-01-09 00:47:45	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-01-09 00:47:45	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-01-09 00:47:45	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-01-09 00:47:45	--	There are 220 users and 82671 invisible on 33 servers
+2013-01-09 00:47:45	--	35 :IRC Operators online
+2013-01-09 00:47:45	--	18 :unknown connection(s)
+2013-01-09 00:47:45	--	40699 :channels formed
+2013-01-09 00:47:45	--	I have 5002 clients and 1 servers
+2013-01-09 00:47:45	--	5002 5725 :Current local users 5002, max 5725
+2013-01-09 00:47:45	--	82891 85546 :Current global users 82891, max 85546
+2013-01-09 00:47:46	--	Highest connection count: 5726 (5725 clients) (622078 connections received)
+2013-01-09 00:47:46	--	- verne.freenode.net Message of the Day -
+2013-01-09 00:47:46	--	- Welcome to verne.freenode.net in Newark, NJ, US.
+2013-01-09 00:47:46	--	- Thanks to Choopa 'www.choopa.com' for providing this server!
+2013-01-09 00:47:46	--	-
+2013-01-09 00:47:46	--	- VERNE, Jules (1828-1905). Born in Nantes, France, Verne was
+2013-01-09 00:47:46	--	- a pioneering french author known for novels such as Twenty
+2013-01-09 00:47:46	--	- Thousand Leagues Under the Sea, A Journey to the Center of the
+2013-01-09 00:47:46	--	- Earth, and Around the World in Eighty Days. Often lauded as the
+2013-01-09 00:47:46	--	- Father of science fiction, Verne wrote about concepts such as
+2013-01-09 00:47:46	--	- space travel, skyscrapers, and worldwide communications
+2013-01-09 00:47:46	--	- networks long before these ideas became popularised or realised.
+2013-01-09 00:47:46	--	-
+2013-01-09 00:47:46	--	- You're using freenode, a service of Peer-Directed Projects
+2013-01-09 00:47:46	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2013-01-09 00:47:46	--	-
+2013-01-09 00:47:46	--	- By connecting to freenode you indicate that you have read
+2013-01-09 00:47:48	--	- and agree to adhere to our policies and procedures as per
+2013-01-09 00:47:48	--	- the website (http://freenode.net). We would like to remind
+2013-01-09 00:47:48	--	- you that unauthorized public logging of channels on the
+2013-01-09 00:47:48	--	- network is prohibited. Public channel logging should only
+2013-01-09 00:47:48	--	- take place where the channel owner(s) has requested this
+2013-01-09 00:47:48	--	- and users of the channel are all made aware (if you are
+2013-01-09 00:47:48	--	- publically logging your channel, you may wish to keep a
+2013-01-09 00:47:48	--	- notice in topic and perhaps as a on-join message).
+2013-01-09 00:47:48	--	-
+2013-01-09 00:47:48	--	- freenode runs an open proxy scanner. Your use of the network
+2013-01-09 00:47:48	--	- indicates your acceptance of this policy. For details on
+2013-01-09 00:47:48	--	- freenode network policy, please take a look at our policy
+2013-01-09 00:47:48	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2013-01-09 00:47:48	--	- the network!
+2013-01-09 00:47:48	--	-
+2013-01-09 00:47:48	--	- Don't forget to check out these other Peer-Directed Projects:
+2013-01-09 00:47:48	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2013-01-09 00:47:48	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2013-01-09 00:47:49	--	- success with Picnics for Geeks across the globe, more info at
+2013-01-09 00:47:49	--	- [http://geeknic.org]
+2013-01-09 00:47:49	--	-
+2013-01-09 00:47:49	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2013-01-09 00:47:49	--	- a not for profit organisation registered in England and Wales.
+2013-01-09 00:47:49	--	-
+2013-01-09 00:47:49	--	- Thank you for using freenode!
+2013-01-09 00:47:49	--	-
+2013-01-09 00:47:49	--	- ***************************************************************
+2013-01-09 00:47:49	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-01-09 00:47:49	--	- ***************************************************************
+2013-01-09 00:47:49	--	End of /MOTD command.
+2013-01-09 00:47:49	--	User mode [+i] by gerry1
+2013-01-09 00:53:35	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-09 00:53:43	--	irc: connected to irc.freenode.net/6667 (64.32.24.176)
+2013-01-09 00:53:44	--	morgan.freenode.net (morgan.freenode.net): *** Looking up your hostname...
+2013-01-09 00:53:45	--	morgan.freenode.net (morgan.freenode.net): *** Checking Ident
+2013-01-09 00:53:45	--	morgan.freenode.net (morgan.freenode.net): *** Couldn't look up your hostname
+2013-01-09 00:53:45	--	morgan.freenode.net (morgan.freenode.net): *** No Ident response
+2013-01-09 00:53:46	--	irc: nickname "gerry" is already in use, trying nickname "gerry1"
+2013-01-09 00:53:48	--	Welcome to the freenode Internet Relay Chat Network gerry1
+2013-01-09 00:53:48	--	Your host is morgan.freenode.net[64.32.24.176/6667], running version ircd-seven-1.1.3
+2013-01-09 00:53:48	--	This server was created Mon Jul 2 2012 at 17:49:30 EDT
+2013-01-09 00:53:48	--	morgan.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2013-01-09 00:53:48	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-01-09 00:53:48	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-01-09 00:53:48	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-01-09 00:53:48	--	There are 221 users and 82633 invisible on 33 servers
+2013-01-09 00:53:48	--	35 :IRC Operators online
+2013-01-09 00:53:48	--	24 :unknown connection(s)
+2013-01-09 00:53:48	--	40705 :channels formed
+2013-01-09 00:53:48	--	I have 4484 clients and 1 servers
+2013-01-09 00:53:48	--	4484 5474 :Current local users 4484, max 5474
+2013-01-09 00:53:48	--	82854 83377 :Current global users 82854, max 83377
+2013-01-09 00:53:48	--	Highest connection count: 5475 (5474 clients) (87416 connections received)
+2013-01-09 00:53:48	--	- morgan.freenode.net Message of the Day -
+2013-01-09 00:53:48	--	- Welcome to morgan.freenode.net in Chicago, IL, USA! Thank
+2013-01-09 00:53:48	--	- you to psyprus for sponsoring this server!
+2013-01-09 00:53:48	--	-
+2013-01-09 00:53:48	--	- MORGAN, RICHARD K. (1965-) is an English science fiction
+2013-01-09 00:53:48	--	- author. Morgan's books are generally set in a dystopian world.
+2013-01-09 00:53:48	--	- His breakout novel Altered Carbon won the Philip K. Dick Award,
+2013-01-09 00:53:48	--	- and he has written many successful and amazing works to follow.
+2013-01-09 00:53:48	--	- His more recent writings feature heavily on the theme of
+2013-01-09 00:53:48	--	- autonomy in science fiction and escapism in fantasy.
+2013-01-09 00:53:48	--	-
+2013-01-09 00:53:48	--	-
+2013-01-09 00:53:48	--	- You're using freenode, a service of Peer-Directed Projects
+2013-01-09 00:53:48	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2013-01-09 00:53:48	--	-
+2013-01-09 00:53:48	--	- By connecting to freenode you indicate that you have read
+2013-01-09 00:53:48	--	- and agree to adhere to our policies and procedures as per
+2013-01-09 00:53:49	--	- the website (http://freenode.net). We would like to remind
+2013-01-09 00:53:49	--	- you that unauthorized public logging of channels on the
+2013-01-09 00:53:49	--	- network is prohibited. Public channel logging should only
+2013-01-09 00:53:49	--	- take place where the channel owner(s) has requested this
+2013-01-09 00:53:49	--	- and users of the channel are all made aware (if you are
+2013-01-09 00:53:49	--	- publically logging your channel, you may wish to keep a
+2013-01-09 00:53:49	--	- notice in topic and perhaps as a on-join message).
+2013-01-09 00:53:49	--	-
+2013-01-09 00:53:49	--	- freenode runs an open proxy scanner. Your use of the network
+2013-01-09 00:53:49	--	- indicates your acceptance of this policy. For details on
+2013-01-09 00:53:49	--	- freenode network policy, please take a look at our policy
+2013-01-09 00:53:49	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2013-01-09 00:53:49	--	- the network!
+2013-01-09 00:53:49	--	-
+2013-01-09 00:53:49	--	- Don't forget to check out these other Peer-Directed Projects:
+2013-01-09 00:53:49	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2013-01-09 00:53:49	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2013-01-09 00:53:49	--	- success with Picnics for Geeks across the globe, more info at
+2013-01-09 00:53:49	--	- [http://geeknic.org]
+2013-01-09 00:53:49	--	-
+2013-01-09 00:53:49	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2013-01-09 00:53:49	--	- a not for profit organisation registered in England and Wales.
+2013-01-09 00:53:49	--	-
+2013-01-09 00:53:49	--	- Thank you for using freenode!
+2013-01-09 00:53:49	--	-
+2013-01-09 00:53:49	--	- ***************************************************************
+2013-01-09 00:53:49	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-01-09 00:53:49	--	- ***************************************************************
+2013-01-09 00:53:49	--	End of /MOTD command.
+2013-01-09 00:53:49	--	User mode [+i] by gerry1
+2013-01-09 01:22:02	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-09 01:22:20	--	irc: connected to irc.freenode.net/6667 (64.32.24.176)
+2013-01-09 01:22:21	--	morgan.freenode.net (morgan.freenode.net): *** Looking up your hostname...
+2013-01-09 01:22:21	--	morgan.freenode.net (morgan.freenode.net): *** Checking Ident
+2013-01-09 01:22:21	--	morgan.freenode.net (morgan.freenode.net): *** Couldn't look up your hostname
+2013-01-09 01:22:22	--	morgan.freenode.net (morgan.freenode.net): *** No Ident response
+2013-01-09 01:22:23	--	irc: nickname "gerry" is already in use, trying nickname "gerry1"
+2013-01-09 01:22:28	--	Welcome to the freenode Internet Relay Chat Network gerry1
+2013-01-09 01:22:28	--	Your host is morgan.freenode.net[64.32.24.176/6667], running version ircd-seven-1.1.3
+2013-01-09 01:22:28	--	This server was created Mon Jul 2 2012 at 17:49:30 EDT
+2013-01-09 01:22:28	--	morgan.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2013-01-09 01:22:28	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-01-09 01:22:28	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-01-09 01:22:28	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-01-09 01:22:28	--	There are 222 users and 82425 invisible on 33 servers
+2013-01-09 01:22:28	--	35 :IRC Operators online
+2013-01-09 01:22:28	--	15 :unknown connection(s)
+2013-01-09 01:22:28	--	40669 :channels formed
+2013-01-09 01:22:28	--	I have 4519 clients and 1 servers
+2013-01-09 01:22:28	--	4519 5474 :Current local users 4519, max 5474
+2013-01-09 01:22:28	--	82647 83377 :Current global users 82647, max 83377
+2013-01-09 01:22:28	--	Highest connection count: 5475 (5474 clients) (88249 connections received)
+2013-01-09 01:22:28	--	- morgan.freenode.net Message of the Day -
+2013-01-09 01:22:28	--	- Welcome to morgan.freenode.net in Chicago, IL, USA! Thank
+2013-01-09 01:22:28	--	- you to psyprus for sponsoring this server!
+2013-01-09 01:22:28	--	-
+2013-01-09 01:22:28	--	- MORGAN, RICHARD K. (1965-) is an English science fiction
+2013-01-09 01:22:28	--	- author. Morgan's books are generally set in a dystopian world.
+2013-01-09 01:22:28	--	- His breakout novel Altered Carbon won the Philip K. Dick Award,
+2013-01-09 01:22:28	--	- and he has written many successful and amazing works to follow.
+2013-01-09 01:22:28	--	- His more recent writings feature heavily on the theme of
+2013-01-09 01:22:28	--	- autonomy in science fiction and escapism in fantasy.
+2013-01-09 01:22:28	--	-
+2013-01-09 01:22:28	--	-
+2013-01-09 01:22:28	--	- You're using freenode, a service of Peer-Directed Projects
+2013-01-09 01:22:28	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2013-01-09 01:22:28	--	-
+2013-01-09 01:22:28	--	- By connecting to freenode you indicate that you have read
+2013-01-09 01:22:28	--	- and agree to adhere to our policies and procedures as per
+2013-01-09 01:22:29	--	- the website (http://freenode.net). We would like to remind
+2013-01-09 01:22:29	--	- you that unauthorized public logging of channels on the
+2013-01-09 01:22:29	--	- network is prohibited. Public channel logging should only
+2013-01-09 01:22:29	--	- take place where the channel owner(s) has requested this
+2013-01-09 01:22:29	--	- and users of the channel are all made aware (if you are
+2013-01-09 01:22:29	--	- publically logging your channel, you may wish to keep a
+2013-01-09 01:22:29	--	- notice in topic and perhaps as a on-join message).
+2013-01-09 01:22:29	--	-
+2013-01-09 01:22:29	--	- freenode runs an open proxy scanner. Your use of the network
+2013-01-09 01:22:29	--	- indicates your acceptance of this policy. For details on
+2013-01-09 01:22:29	--	- freenode network policy, please take a look at our policy
+2013-01-09 01:22:29	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2013-01-09 01:22:29	--	- the network!
+2013-01-09 01:22:29	--	-
+2013-01-09 01:22:29	--	- Don't forget to check out these other Peer-Directed Projects:
+2013-01-09 01:22:29	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2013-01-09 01:22:29	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2013-01-09 01:22:29	--	- success with Picnics for Geeks across the globe, more info at
+2013-01-09 01:22:29	--	- [http://geeknic.org]
+2013-01-09 01:22:29	--	-
+2013-01-09 01:22:29	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2013-01-09 01:22:29	--	- a not for profit organisation registered in England and Wales.
+2013-01-09 01:22:29	--	-
+2013-01-09 01:22:29	--	- Thank you for using freenode!
+2013-01-09 01:22:29	--	-
+2013-01-09 01:22:29	--	- ***************************************************************
+2013-01-09 01:22:29	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-01-09 01:22:29	--	- ***************************************************************
+2013-01-09 01:22:29	--	End of /MOTD command.
+2013-01-09 01:22:29	--	User mode [+i] by gerry1
+2013-01-09 01:22:35	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2013-01-09 01:22:55	--	MSG(nickserv): identify **************************
+2013-01-09 01:23:07	--	NickServ (NickServ@services.): You are now identified for gdgon.
+2013-01-09 03:31:03	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-09 03:31:11	--	irc: connected to irc.freenode.net/6667 (213.179.58.83)
+2013-01-09 03:31:12	--	gibson.freenode.net (gibson.freenode.net): *** Looking up your hostname...
+2013-01-09 03:31:13	--	gibson.freenode.net (gibson.freenode.net): *** Checking Ident
+2013-01-09 03:31:13	--	gibson.freenode.net (gibson.freenode.net): *** Couldn't look up your hostname
+2013-01-09 03:31:13	--	gibson.freenode.net (gibson.freenode.net): *** No Ident response
+2013-01-09 03:31:13	--	irc: nickname "gerry" is already in use, trying nickname "gerry1"
+2013-01-09 03:31:14	--	Welcome to the freenode Internet Relay Chat Network gerry1
+2013-01-09 03:31:14	--	Your host is gibson.freenode.net[213.179.58.83/6667], running version ircd-seven-1.1.3
+2013-01-09 03:31:14	--	This server was created Mon Dec 31 2012 at 22:37:41 CET
+2013-01-09 03:31:14	--	gibson.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2013-01-09 03:31:14	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-01-09 03:31:14	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-01-09 03:31:14	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-01-09 03:31:14	--	There are 221 users and 83591 invisible on 33 servers
+2013-01-09 03:31:14	--	34 :IRC Operators online
+2013-01-09 03:31:14	--	40735 :channels formed
+2013-01-09 03:31:14	--	I have 2569 clients and 1 servers
+2013-01-09 03:31:14	--	2569 2599 :Current local users 2569, max 2599
+2013-01-09 03:31:14	--	83812 83844 :Current global users 83812, max 83844
+2013-01-09 03:31:14	--	Highest connection count: 2600 (2599 clients) (70663 connections received)
+2013-01-09 03:31:14	--	- gibson.freenode.net Message of the Day -
+2013-01-09 03:31:14	--	- Welcome to gibson.freenode.net in Norway, EU!  Thanks to
+2013-01-09 03:31:14	--	- SSC Networks (www.ssc.no) for sponsoring this server!
+2013-01-09 03:31:14	--	-
+2013-01-09 03:31:14	--	- GIBSON, WILLIAM (1948-) He is married with two children. In
+2013-01-09 03:31:14	--	- the early 1980s he wrote Neuromancer, and with this novel he
+2013-01-09 03:31:14	--	- helped establish a new kind of science fiction literature
+2013-01-09 03:31:14	--	- called cyberpunk. William Gibson defined the word cyberspace,
+2013-01-09 03:31:14	--	- and described virtual reality long before we saw the
+2013-01-09 03:31:14	--	- similarities with todays Internet. He has won the Hugo Award,
+2013-01-09 03:31:14	--	- Nebula Award and the Philipp K. Dick Award.
+2013-01-09 03:31:14	--	-
+2013-01-09 03:31:14	--	- You're using freenode, a service of Peer-Directed Projects
+2013-01-09 03:31:14	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2013-01-09 03:31:14	--	-
+2013-01-09 03:31:14	--	- By connecting to freenode you indicate that you have read
+2013-01-09 03:31:14	--	- and agree to adhere to our policies and procedures as per
+2013-01-09 03:31:14	--	- the website (http://freenode.net). We would like to remind
+2013-01-09 03:31:14	--	- you that unauthorized public logging of channels on the
+2013-01-09 03:31:14	--	- network is prohibited. Public channel logging should only
+2013-01-09 03:31:14	--	- take place where the channel owner(s) has requested this
+2013-01-09 03:31:14	--	- and users of the channel are all made aware (if you are
+2013-01-09 03:31:14	--	- publically logging your channel, you may wish to keep a
+2013-01-09 03:31:14	--	- notice in topic and perhaps as a on-join message).
+2013-01-09 03:31:14	--	-
+2013-01-09 03:31:14	--	- freenode runs an open proxy scanner. Your use of the network
+2013-01-09 03:31:14	--	- indicates your acceptance of this policy. For details on
+2013-01-09 03:31:14	--	- freenode network policy, please take a look at our policy
+2013-01-09 03:31:14	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2013-01-09 03:31:14	--	- the network!
+2013-01-09 03:31:14	--	-
+2013-01-09 03:31:14	--	- Don't forget to check out these other Peer-Directed Projects:
+2013-01-09 03:31:14	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2013-01-09 03:31:14	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2013-01-09 03:31:15	--	- success with Picnics for Geeks across the globe, more info at
+2013-01-09 03:31:15	--	- [http://geeknic.org]
+2013-01-09 03:31:15	--	-
+2013-01-09 03:31:15	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2013-01-09 03:31:15	--	- a not for profit organisation registered in England and Wales.
+2013-01-09 03:31:15	--	-
+2013-01-09 03:31:15	--	- Thank you for using freenode!
+2013-01-09 03:31:15	--	-
+2013-01-09 03:31:15	--	- ***************************************************************
+2013-01-09 03:31:15	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-01-09 03:31:15	--	- ***************************************************************
+2013-01-09 03:31:15	--	End of /MOTD command.
+2013-01-09 03:31:15	--	User mode [+i] by gerry1
+2013-01-09 03:31:22	=!=	irc: too few arguments for "msg" command
+2013-01-09 03:31:46	--	MSG(nickserv): identify *************************
+2013-01-09 03:31:47	--	NickServ (NickServ@services.): gerry1 is not a registered nickname.
+2013-01-09 03:31:59	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2013-01-09 03:32:00	--	MSG(nickserv): identify *************************
+2013-01-09 03:32:01	--	NickServ (NickServ@services.): Invalid password for gdgon.
+2013-01-09 03:32:13	--	MSG(nickserv): identify **************************
+2013-01-09 03:32:14	--	NickServ (NickServ@services.): Invalid password for gdgon.
+2013-01-09 03:32:27	--	MSG(nickserv): identify **************************
+2013-01-09 03:32:28	--	NickServ (NickServ@services.): You are now identified for gdgon.
+2013-01-09 03:32:29	--	NickServ (NickServ@services.): 2 failed logins since last login.
+2013-01-09 03:32:29	--	NickServ (NickServ@services.): Last failed attempt from: gdgon!~gerry@120.29.66.12 on Jan 08 19:32:19 2013.
+2013-01-10 19:41:32	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-10 19:42:05	=!=	irc: address "irc.freenode.net" not found
+2013-01-10 19:42:05	=!=	irc: error: Name or service not known
+2013-01-10 19:42:05	--	irc: reconnecting to server in 10 seconds
+2013-01-10 19:42:15	--	irc: reconnecting to server...
+2013-01-10 19:42:15	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-10 19:42:55	=!=	irc: address "irc.freenode.net" not found
+2013-01-10 19:42:55	=!=	irc: error: Name or service not known
+2013-01-10 19:42:55	--	irc: reconnecting to server in 20 seconds
+2013-01-10 19:43:15	--	irc: reconnecting to server...
+2013-01-10 19:43:15	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-10 19:43:29	--	irc: connected to irc.freenode.net/6667 (81.18.85.57)
+2013-01-10 19:43:30	--	hobana.freenode.net (hobana.freenode.net): *** Looking up your hostname...
+2013-01-10 19:43:30	--	hobana.freenode.net (hobana.freenode.net): *** Checking Ident
+2013-01-10 19:43:30	--	hobana.freenode.net (hobana.freenode.net): *** No Ident response
+2013-01-10 19:43:31	--	hobana.freenode.net (hobana.freenode.net): *** Couldn't look up your hostname
+2013-01-10 19:43:31	--	Welcome to the freenode Internet Relay Chat Network gdgon
+2013-01-10 19:43:31	--	Your host is hobana.freenode.net[81.18.85.57/6667], running version ircd-seven-1.1.3
+2013-01-10 19:43:31	--	This server was created Fri Dec 14 2012 at 22:08:48 EET
+2013-01-10 19:43:31	--	hobana.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2013-01-10 19:43:31	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-01-10 19:43:31	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-01-10 19:43:31	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-01-10 19:43:31	--	There are 214 users and 76046 invisible on 33 servers
+2013-01-10 19:43:31	--	36 :IRC Operators online
+2013-01-10 19:43:31	--	16 :unknown connection(s)
+2013-01-10 19:43:31	--	40349 :channels formed
+2013-01-10 19:43:31	--	I have 4521 clients and 1 servers
+2013-01-10 19:43:31	--	4521 4529 :Current local users 4521, max 4529
+2013-01-10 19:43:31	--	76260 84150 :Current global users 76260, max 84150
+2013-01-10 19:43:31	--	Highest connection count: 4530 (4529 clients) (43497 connections received)
+2013-01-10 19:43:31	--	- hobana.freenode.net Message of the Day -
+2013-01-10 19:43:31	--	- Welcome to hobana.freenode.net in Pitesti, Romania! Thank
+2013-01-10 19:43:31	--	- you to RCS-RDS for sponsoring this server!
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- Ion Hobana (1931-2011) was a Romanian science fiction writer,
+2013-01-10 19:43:31	--	- literary critic and ufologist. Ion Hobana is a literary
+2013-01-10 19:43:31	--	- pseudonym, the writer's real name being Aurelian Manta Rosie.
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- You're using freenode, a service of Peer-Directed Projects
+2013-01-10 19:43:31	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- By connecting to freenode you indicate that you have read
+2013-01-10 19:43:31	--	- and agree to adhere to our policies and procedures as per
+2013-01-10 19:43:31	--	- the website (http://freenode.net). We would like to remind
+2013-01-10 19:43:31	--	- you that unauthorized public logging of channels on the
+2013-01-10 19:43:31	--	- network is prohibited. Public channel logging should only
+2013-01-10 19:43:31	--	- take place where the channel owner(s) has requested this
+2013-01-10 19:43:31	--	- and users of the channel are all made aware (if you are
+2013-01-10 19:43:31	--	- publically logging your channel, you may wish to keep a
+2013-01-10 19:43:31	--	- notice in topic and perhaps as a on-join message).
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- freenode runs an open proxy scanner. Your use of the network
+2013-01-10 19:43:31	--	- indicates your acceptance of this policy. For details on
+2013-01-10 19:43:31	--	- freenode network policy, please take a look at our policy
+2013-01-10 19:43:31	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2013-01-10 19:43:31	--	- the network!
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- Don't forget to check out these other Peer-Directed Projects:
+2013-01-10 19:43:31	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2013-01-10 19:43:31	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2013-01-10 19:43:31	--	- success with Picnics for Geeks across the globe, more info at
+2013-01-10 19:43:31	--	- [http://geeknic.org]
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2013-01-10 19:43:31	--	- a not for profit organisation registered in England and Wales.
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- Thank you for using freenode!
+2013-01-10 19:43:31	--	-
+2013-01-10 19:43:31	--	- ***************************************************************
+2013-01-10 19:43:31	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-01-10 19:43:31	--	- ***************************************************************
+2013-01-10 19:43:31	--	End of /MOTD command.
+2013-01-10 19:43:31	--	User mode [+i] by gdgon
+2013-01-10 19:43:32	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2013-01-10 19:44:26	--	MSG(nickserv): identify **************************
+2013-01-10 19:44:27	--	NickServ (NickServ@services.): You are now identified for gdgon.
+2013-01-11 11:17:51	--	irc: connecting to server irc.freenode.net/6667...
+2013-01-11 11:17:52	--	irc: connected to irc.freenode.net/6667 (89.16.176.16)
+2013-01-11 11:17:53	--	wolfe.freenode.net (wolfe.freenode.net): *** Looking up your hostname...
+2013-01-11 11:17:53	--	wolfe.freenode.net (wolfe.freenode.net): *** Checking Ident
+2013-01-11 11:17:54	--	wolfe.freenode.net (wolfe.freenode.net): *** No Ident response
+2013-01-11 11:17:54	--	wolfe.freenode.net (wolfe.freenode.net): *** Couldn't look up your hostname
+2013-01-11 11:17:54	--	irc: nickname "gerry" is already in use, trying nickname "gerry1"
+2013-01-11 11:17:54	--	Welcome to the freenode Internet Relay Chat Network gerry1
+2013-01-11 11:17:54	--	Your host is wolfe.freenode.net[89.16.176.16/6667], running version ircd-seven-1.1.3
+2013-01-11 11:17:54	--	This server was created Sun Nov 20 2011 at 13:26:13 GMT
+2013-01-11 11:17:54	--	wolfe.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQbcefgijklmnopqrstvz bkloveqjfI
+2013-01-11 11:17:54	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQcgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-01-11 11:17:54	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-01-11 11:17:54	--	EXTBAN=$,arx WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-01-11 11:17:54	--	There are 192 users and 72223 invisible on 32 servers
+2013-01-11 11:17:54	--	36 :IRC Operators online
+2013-01-11 11:17:54	--	10 :unknown connection(s)
+2013-01-11 11:17:54	--	40072 :channels formed
+2013-01-11 11:17:54	--	I have 2377 clients and 1 servers
+2013-01-11 11:17:54	--	2377 7732 :Current local users 2377, max 7732
+2013-01-11 11:17:54	--	72415 85546 :Current global users 72415, max 85546
+2013-01-11 11:17:54	--	Highest connection count: 7733 (7732 clients) (4052206 connections received)
+2013-01-11 11:17:54	--	- wolfe.freenode.net Message of the Day -
+2013-01-11 11:17:54	--	- Welcome to wolfe.freenode.net in Manchester, England, Uk!  Thanks to
+2013-01-11 11:17:54	--	- Bytemark Computer Consulting Ltd.  (www.bytemark.co.uk) for sponsoring
+2013-01-11 11:17:54	--	- this server!
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- WOLFE, GENE [1931-].  Prolific writer of short stories and
+2013-01-11 11:17:54	--	- novels. His best-known work is the multi-volume novel The
+2013-01-11 11:17:54	--	- Book of the New Sun. He has won multiple awards including
+2013-01-11 11:17:54	--	- the Nebula Award, the World Fantasy Award, The Campell
+2013-01-11 11:17:54	--	- Memorial Award and the Locus Award. He was awarded the World
+2013-01-11 11:17:54	--	- Fantasy Award for lifetime achievement in 1996.
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- You're using freenode, a service of Peer-Directed Projects
+2013-01-11 11:17:54	--	- Center Ltd (http://freenode.net/pdpc.shtml).
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- By connecting to freenode you indicate that you have read
+2013-01-11 11:17:54	--	- and agree to adhere to our policies and procedures as per
+2013-01-11 11:17:54	--	- the website (http://freenode.net). We would like to remind
+2013-01-11 11:17:54	--	- you that unauthorized public logging of channels on the
+2013-01-11 11:17:54	--	- network is prohibited. Public channel logging should only
+2013-01-11 11:17:54	--	- take place where the channel owner(s) has requested this
+2013-01-11 11:17:54	--	- and users of the channel are all made aware (if you are
+2013-01-11 11:17:54	--	- publically logging your channel, you may wish to keep a
+2013-01-11 11:17:54	--	- notice in topic and perhaps as a on-join message).
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- freenode runs an open proxy scanner. Your use of the network
+2013-01-11 11:17:54	--	- indicates your acceptance of this policy. For details on
+2013-01-11 11:17:54	--	- freenode network policy, please take a look at our policy
+2013-01-11 11:17:54	--	- page (http://freenode.net/policy.shtml). Thank you for using
+2013-01-11 11:17:54	--	- the network!
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- Don't forget to check out these other Peer-Directed Projects:
+2013-01-11 11:17:54	--	- FOSSCON [http://www.fosscon.org] and fossevents
+2013-01-11 11:17:54	--	- [http://www.fossevents.org], and soon we'll repeat last years
+2013-01-11 11:17:54	--	- success with Picnics for Geeks across the globe, more info at
+2013-01-11 11:17:54	--	- [http://geeknic.org]
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- freenode is a service of Peer-Directed Projects Center Ltd,
+2013-01-11 11:17:54	--	- a not for profit organisation registered in England and Wales.
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- Thank you for using freenode!
+2013-01-11 11:17:54	--	-
+2013-01-11 11:17:54	--	- ***************************************************************
+2013-01-11 11:17:54	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-01-11 11:17:54	--	- ***************************************************************
+2013-01-11 11:17:54	--	End of /MOTD command.
+2013-01-11 11:17:54	--	User mode [+i] by gerry1
+2013-01-11 11:18:00	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2013-01-11 11:18:16	--	MSG(nickserv): identify **************************
+2013-01-11 11:18:17	--	NickServ (NickServ@services.): You are now identified for gdgon.

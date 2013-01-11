@@ -1,0 +1,71 @@
+#!/bin/bash
+case "$1" in
+  "vim" )
+    if vim --serverlist | grep VIM$
+    then
+      screen -X select 0
+    else
+      vim --servername VIM
+    fi;;
+
+  "Torrents" )
+    if pgrep -f /usr/bin/transmission-remote-cli.py$
+    then
+      screen -X select 1
+    else
+      if pidof transmission-daemon
+      then
+        echo "transmission-daemon already running!"
+      else
+        transmission-daemon
+      fi
+      transmission-remote-cli.py
+    fi;;
+
+#  "Torrents" )
+#    if pidof rtorrent
+#    then
+#      screen -X select 1
+#    else
+#      rtorrent
+#    fi;;
+
+  "Music" )
+    if pidof ncmpcpp
+    then
+      screen  -X select 2
+    else
+      if pidof mpd
+      then
+        echo "mpd already running!"
+      else
+        mpd
+      fi
+      ncmpcpp
+    fi;;
+
+  "IM" )
+    if pidof irssi
+    then
+      screen -X select 3
+    else
+      irssi 
+    fi;;
+
+  "Mail" )
+    if pidof mutt
+    then
+      screen -X select 4
+    else
+      mutt
+    fi;;
+
+  "fm" )
+    if pgrep -f ranger$
+    then
+      screen -X select 5
+    else
+      sleep 1s;
+      ranger
+    fi;;
+esac

@@ -1,0 +1,9 @@
+export PATH="/home/gerry/bin:$PATH:/usr/local/bin:/home/.rvm/bin:/home/gerry/.gem/ruby/1.9.1/bin"
+export EDITOR="vim"
+export BROWSER="vp.sh"
+export TMPDIR="/home/gerry/tmp"
+export HISTIGNORE="&:ls:[bf]g:exit"
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

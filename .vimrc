@@ -31,7 +31,7 @@ set mouse=a
 set hidden
 set backspace=indent,eol,start
 set pastetoggle=<Leader><f2>
-set textwidth=72
+"set textwidth=72
 inoremap <C-k> <ESC>
 set list listchars=tab:▸\ ,trail:-
 

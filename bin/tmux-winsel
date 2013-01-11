@@ -1,0 +1,71 @@
+#!/bin/bash
+case "$1" in
+  "vim" )
+    if vim --serverlist | grep VIM$ > /dev/null
+    then
+      tmux select-window -t 0
+    else
+      tmux neww -n "vim" -t 0 vim --servername VIM
+    fi;;
+
+  "Torrents" )
+    if pgrep -f /usr/bin/transmission-remote-cli$ > /dev/null
+    then
+      tmux select-window -t 1
+    else
+      if [ ! `pidof transmission-daemon` ]
+      then
+        transmission-daemon
+      fi
+      tmux neww -n "t" -t 1 transmission-remote-cli
+    fi;;
+
+#  "Torrents" )
+#    if pidof rtorrent
+#    then
+#      tmux select-window -t 1
+#    else
+#      rtorrent
+#    fi;;
+
+  "Music" )
+    if pidof ncmpcpp > /dev/null
+    then
+      tmux select-window -t 2
+    else
+      if [ ! `pidof mpd` ]
+      then
+        mpd
+      fi
+      tmux neww -n "ncmpcpp" -t 2 ncmpcpp
+    fi;;
+
+  "IM" )
+    if pidof weechat-curses > /dev/null
+    then
+      tmux select-window -t 3
+    else
+      tmux neww -n "IRC" -t 3 weechat-curses
+      [[ ! $(pidof bitlbee) ]] && sudo systemctl start bitlbee &
+      ## Vertical split
+      #tmux splitw -h -l 15 "cat /home/gerry/.irssi/nicklistfifo"
+      #tmux selectp -t 0
+    fi;;
+
+  "Mail" )
+    if pidof mutt > /dev/null
+    then
+      tmux select-window -t 4
+    else
+      tmux neww -n "mutt" -t 4 mutt
+    fi;;
+
+  "fm" )
+    if pgrep -f ranger$ > /dev/null
+    then
+      tmux select-window -t 5
+    else
+      sleep 1s;
+      tmux neww -n "fm" -t 5 ranger
+    fi;;
+esac
