@@ -6,6 +6,9 @@ Bundle 'gmarik/vundle'
 
 " Vundles
 ""Bundle 'vim-scripts/vimwiki'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'jiangmiao/auto-pairs'
+Bundle 'vim-scripts/bufkill.vim'
 Bundle 'xolox/vim-notes'
 Bundle 'danro/rename.vim'
 Bundle 'kien/ctrlp.vim'
@@ -19,7 +22,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/slimv.vim'
 Bundle 'vim-scripts/tinymode.vim'
 Bundle 'vim-scripts/bufexplorer.zip'
-Bundle 'vim-scripts/YankRing.vim'
+"Bundle 'vim-scripts/YankRing.vim'
 
 " General settings
 filetype plugin indent on
@@ -32,7 +35,8 @@ set hidden
 set backspace=indent,eol,start
 set pastetoggle=<Leader><f2>
 "set textwidth=72
-inoremap <C-k> <ESC>
+"inoremap <C-k> <ESC>
+inoremap jj <ESC>
 set list listchars=tab:▸\ ,trail:-
 
 " No autocomments
@@ -50,9 +54,9 @@ set hls " Highlight search
 
 " Tabs
 set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=8
+set softtabstop=8
+set tabstop=8
 
 " Custom commands
 command! WriteAsRoot :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -89,7 +93,7 @@ colorscheme xoria256
 " Leader bindings
 let mapleader = ';'
 let maplocalleader = '\'
-map <leader>s :set list!<CR>
+"map <leader>s :set list!<CR>
 map <Leader>f :NERDTree<CR>
 map <Leader>F :NERDTreeClose<CR>
 map <Leader>t :TagbarToggle<CR>
@@ -104,12 +108,14 @@ map <Leader>k :bnext<CR>
 map <Leader>b :BufExplorer<CR>
 
 " ctrlp
-let g:ctrlp_map = '<Leader>o<Space>'
-map <Leader>o<Space> :CtrlPMixed<CR>
-map <Leader>of :CtrlPMRUFiles<CR>
+let g:ctrlp_map = '<Leader>of'
+map <Leader>of :CtrlPMixed<CR>
+map <Leader>or :CtrlPMRUFiles<CR>
 map <Leader>ob :CtrlPBuffer<CR>
 map <Leader>ot :CtrlPBufTag<CR>
 map <Leader>oT :CtrlPBufTagAll<CR>
+let g:ctrlp_max_depth = 10
+let g:ctrlp_max_files = 0
 
 " tinymode : Easy window resize
 call tinymode#EnterMap("winsize", "<C-W>h", "h")
@@ -136,15 +142,18 @@ let g:ctrlp_custom_ignore = {
 
 " Slimv
 "let g:slimv_swank_cmd = '! xterm -e sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp & '
-let g:slimv_updatetime = 10000
-let g:slimv_lisp = '/usr/bin/sbcl'
-let g:slimv_imp = 'sbcl'
+let g:slimv_swank_cmd = '! xterm -e authbind ccl64 --load /usr/share/emacs/site-lisp/slime/start-swank.lisp & '
+let g:slimv_updatetime = 200
+let g:slimv_lisp = '/usr/bin/ccl64'
+let g:slimv_imp = 'ccl'
 let g:slimv_browser_cmd = 'vp.sh'
 let g:slimv_ctags = '/usr/bin/ctags'
 let g:slimv_clhs_root = 'file:///usr/share/doc/HyperSpec/Body/'
-let g:paredit_leader = ','
+let g:paredit_leader = ';s'
 let g:slimv_leader = ';s'
-let g:lisp_rainbow = 1
+let g:lisp_rainbow = 0
+let g:paredit_electric_return=0
+"let g:paredit_mode = 0
 
 " vim-slime
 let g:slime_target= "tmux"
