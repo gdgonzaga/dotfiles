@@ -142,7 +142,9 @@ let g:ctrlp_custom_ignore = {
 
 " Slimv
 "let g:slimv_swank_cmd = '! xterm -e sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp & '
-let g:slimv_swank_cmd = '! xterm -e authbind ccl64 --load /usr/share/emacs/site-lisp/slime/start-swank.lisp & '
+"let g:slimv_swank_cmd = '! xterm -e authbind ccl64 --load /usr/share/emacs/site-lisp/slime/start-swank.lisp & '
+"let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
+let g:slimv_swank_cmd = '! tmux neww "authbind ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 let g:slimv_updatetime = 200
 let g:slimv_lisp = '/usr/bin/ccl64'
 let g:slimv_imp = 'ccl'
