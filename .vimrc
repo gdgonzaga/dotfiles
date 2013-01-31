@@ -1,4 +1,4 @@
-" Vundle
+" ajdfoisadjfksadfjlksadundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -8,6 +8,8 @@ Bundle 'gmarik/vundle'
 ""Bundle 'vim-scripts/vimwiki'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'jiangmiao/auto-pairs'
+"Bundle 'vim-scripts/minibufexpl.vim'
+Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/bufkill.vim'
 Bundle 'xolox/vim-notes'
 Bundle 'danro/rename.vim'
@@ -18,10 +20,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/slimv.vim'
 Bundle 'vim-scripts/tinymode.vim'
-Bundle 'vim-scripts/bufexplorer.zip'
+"Bundle 'vim-scripts/bufexplorer.zip'
 "Bundle 'vim-scripts/YankRing.vim'
 
 " General settings
@@ -38,6 +40,9 @@ set pastetoggle=<Leader><f2>
 "inoremap <C-k> <ESC>
 inoremap jj <ESC>
 set list listchars=tab:▸\ ,trail:-
+
+set wrap
+set linebreak
 
 " No autocomments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -96,13 +101,14 @@ let maplocalleader = '\'
 "map <leader>s :set list!<CR>
 map <Leader>f :NERDTree<CR>
 map <Leader>F :NERDTreeClose<CR>
-map <Leader>t :TagbarToggle<CR>
+"map <Leader>t :TagbarToggle<CR>
 map <Leader>R :WriteAsRoot<CR>
 
 " Buffer management
 map <Leader><Leader> :b#<CR>
 map <Leader>j :bprev<CR>
 map <Leader>k :bnext<CR>
+map <Leader>g :buffer 
 
 " bufexplorer
 map <Leader>b :BufExplorer<CR>
@@ -141,18 +147,20 @@ let g:ctrlp_custom_ignore = {
     \ }
 
 " Slimv
-"let g:slimv_swank_cmd = '! xterm -e sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp & '
-"let g:slimv_swank_cmd = '! xterm -e authbind ccl64 --load /usr/share/emacs/site-lisp/slime/start-swank.lisp & '
 "let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
+"let g:slimv_swank_cmd = '! tmux neww "authbind ecl -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 let g:slimv_swank_cmd = '! tmux neww "authbind ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
+"let g:slimv_swank_cmd = '! tmux neww "athbind sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
+
 let g:slimv_updatetime = 200
-let g:slimv_lisp = '/usr/bin/ccl64'
-let g:slimv_imp = 'ccl'
+let g:slimv_lisp = '/usr/bin/sbcl'
+let g:slimv_imp = 'sbcl'
 let g:slimv_browser_cmd = 'vp.sh'
 let g:slimv_ctags = '/usr/bin/ctags'
 let g:slimv_clhs_root = 'file:///usr/share/doc/HyperSpec/Body/'
 let g:paredit_leader = ';s'
 let g:slimv_leader = ';s'
+"let g:slimv_keybindings = 3
 let g:lisp_rainbow = 0
 let g:paredit_electric_return=0
 "let g:paredit_mode = 0
@@ -180,4 +188,10 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki' }]
+
+" taglist
+map <Leader>t :TlistToggle<CR>
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Show_One_File = 0
+let Tlist_Enable_Fold_Column = 1
 
