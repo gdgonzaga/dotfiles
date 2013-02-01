@@ -39,7 +39,7 @@ set status_format="-%r-GMAIL: %f \[Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? D
 
 auto_view text/html
 
-# abook settings
+#abook settings
 set query_command = "abook --mutt-query '%s'"
 macro index,pager \ca "<pipe-message>abook --add-email<return>" "add the sender address to abook"
 
@@ -87,23 +87,20 @@ macro index,pager b ":set sidebar_visible=yes<Return>"
 macro index,pager A "<modify-labels-then-hide>+archive\n<sync-mailbox>"
 #
 # Color definitions
-#
-# white default green magenta blue cyan yellow red default colorx
-
-# intended for a dark bg
 
 color normal color249 default
 color quoted color24 default
+color quoted2 color24 default
 color signature color126 default
 color indicator brightwhite color235 
 color error red default
 color status color185 color24
-color tree color48 default	# the thread tree in the index menu
+color tree color48 default
 color tilde color245 default
-color message color100 default
-color markers yellow default
+color message color185 default
+color markers color185  default
 color attachment color221 default
-color search color48 color240	# how to hilite search patterns in the pager
+color search color48 color240
 
 # smileys :)
 #color body brightyellow default '(\(:|:\)|;\)|:-\)|:>|8-\))'
@@ -119,26 +116,9 @@ color header color209 default "^(Delivered-to):"
 color body blue default "(ftp|http)://\w[^ ]+[^.]" # point out URLs
 color body color128 default '[-.+\w]+@[-.\w]+[^.]' # e-mail addresses
 color underline brightgreen default
-
-## color-coding by sender/recipient
-#color index color177 default '~f @yahoogroups' 
-#color index color020 default '~f hkjww57d@facebookmail' 
-
-#color index color088 default '~f @odesk' 
-#color index color088 default '~f @wallingis' 
-#color index color088 default '~f @essays.ph' 
-#color index color088 default '~f @elance.com' 
-#color index color088 default '~f @guru.com' 
-#color index color009 default '~f @gadgetsgo.com' 
-
-#color index color012 default '~f @mitx.mit.edu' 
-#color index color012 default '~f @coursera.org' 
-#color index color012 default '~f @knowlabs.com' 
-
-# attributes when using a mono terminal
-#mono header underline ^(From|Subject):
 mono quoted bold
-## mutt-kz specific
+
+## mutt-kz
 set virtual_spoolfile = yes
 
 set nm_default_uri = "notmuch:///home/gerry/Mail"
@@ -150,6 +130,7 @@ virtual-mailboxes \
   "BT" "notmuch://?query=tag:bt and tag:unread" \
   "ROSS" "notmuch://?query=tag:ross NOT tag:archive" \
   "Archlinux" "notmuch://?query=tag:archlinux NOT tag:archive" \
+  "Github" "notmuch://?query=tag:github NOT tag:archive" \
   "PLUG" "notmuch://?query=tag:plug NOT tag:archive" \
   "Planet Lisp" "notmuch://?query=tag:planetlisp NOT tag:archive" \
   "Work" "notmuch://?query=tag:work NOT tag:archive" \
