@@ -33,16 +33,21 @@ C-t semicolon t :exec toggle-touchpad.sh > /dev/null 2>&1
 
 # audio
 C-t m C-g :abort
+
 C-t m space :exec mpc toggle | grep '\[' | cut -c1-10
-C-t m o :exec mpc stop > /dev/null && echo "[stop]"
-C-t m e :exec mpc volume +10 | grep volume | cut -c1-11
-C-t m d :exec mpc volume -10 | grep volume | cut -c1-11
-C-t m u :exec mpc update --wait > /dev/null && echo "mpd database updated"
-C-t m c :exec mpc clear > /dev/null && echo "playlist cleared"
-#C-t m r :exec mpc crop > /dev/null && echo "mpd cropped"
-C-t m l :exec mpc -f "%artist%  - [%title%]|[%file%]" prev | head -1
-C-t m m :exec mpc next -f "%artist% - [%title%]|[%file%]" | head -1
-C-t m S-d :exec mpc del 0 ; mpc | head -1
+C-t m o :exec mpc -q stop && echo "[stop]" && mpc current --wait
+C-t m l :exec mpc -q prev && mpc current --wait
+C-t m m :exec mpc -q next && mpc current --wait
+
+C-t m S-x :exec mpc del 0 ; mpc current
+
+C-t m S-e :exec mpc volume +15 | grep volume | cut -c1-11
+C-t m S-d :exec mpc volume -15 | grep volume | cut -c1-11
+C-t m e :exec mpc volume +5 | grep volume | cut -c1-11
+C-t m d :exec mpc volume -5 | grep volume | cut -c1-11
+
+C-t m u :exec mpc update -q --wait && echo "[mpd database updated]"
+C-t m c :exec mpc -q clear && echo "[playlist cleared]"
 
 C-t m q :exec dmpd-select.sh | head -1
 C-t m v :exec amixer sset Front mute | tail -1
