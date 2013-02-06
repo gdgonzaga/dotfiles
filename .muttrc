@@ -128,6 +128,7 @@ set virtual_spoolfile = yes
 set nm_default_uri = "notmuch:///home/gerry/Mail"
 
 virtual-mailboxes \
+  "UNREAD" "notmuch://?query=tag:unread NOT tag:spam" \
   "INBOX" "notmuch://?query=tag:inbox NOT tag:archive" \
   "Pros" "notmuch://?query=tag:jobs NOT tag:archive" \
   "RSS" "notmuch://?query=tag:rss NOT tag:archive" \
