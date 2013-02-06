@@ -37,7 +37,7 @@ alias lr='ls -ltrh'
 alias wicd-curses='wicd-curses; clear'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
 
-man() {
+function man {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
         LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -47,6 +47,10 @@ man() {
         LESS_TERMCAP_ue=$(printf "\e[0m") \
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
+}
+
+function def {
+    sdcv "$@" | less
 }
 
 # C-s fix
