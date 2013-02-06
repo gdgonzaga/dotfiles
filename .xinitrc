@@ -35,7 +35,7 @@ export PATH="/home/gerry/bin:$PATH:/usr/local/bin:/usr/bin/vendor_perl"
 feh  --bg-center '/home/gerry/.g/wallpaper'
 watch-mail.sh &
 dunst &
-unclutter &
+unclutter -noevents &
 autocutsel &
 mpd &
 
