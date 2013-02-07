@@ -49,8 +49,8 @@ function save_playlist {
     [ -n "$FILE" ] && mpc save "$FILE"
 }
 
-function current_to_playlist {
-}
+#function current_to_playlist {
+#}
 
 case $1 in
     song) select_song
