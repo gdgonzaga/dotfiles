@@ -22,22 +22,22 @@ C-t C-t :escape
 C-t C-g :abort
 C-t C-r :reload
 
-# execute commands
+## execute commands
 C-t e C-g :abort
 C-t e b :exec vp.sh
 C-t e m :exec smplayer
 
-# misc
+## misc
 C-t semicolon s :exec toggle-speakers.sh > /dev/null 2>&1
 C-t semicolon t :exec toggle-touchpad.sh > /dev/null 2>&1
 
-# audio
+## mpd
 C-t m C-g :abort
 
 C-t m space :exec mpc toggle | grep '\[' | cut -c1-10
 C-t m o :exec mpc -q stop && echo "[stop]" && mpc current --wait
-C-t m l :exec mpc -q prev && mpc current --wait
-C-t m m :exec mpc -q next && mpc current --wait
+C-t m l :exec mpc -q prev
+C-t m m :exec mpc -q next
 
 C-t m S-x :exec mpc del 0 ; mpc current
 
@@ -49,6 +49,18 @@ C-t m d :exec mpc volume -5 | grep volume | cut -c1-11
 C-t m u :exec mpc update -q --wait && echo "[mpd database updated]"
 C-t m c :exec mpc -q clear && echo "[playlist cleared]"
 
-C-t m q :exec dmpd-select.sh | head -1
 C-t m v :exec amixer sset Front mute | tail -1
 C-t m S-v :exec amixer sset Front unmute | tail -1
+
+# dmpd.sh
+C-t m q :exec dmpd-select.sh song > /dev/null
+
+C-t m a :exec dmpd-select.sh cartist
+C-t m A :exec dmpd-select.sh artist
+
+C-t m b :exec dmpd-select.sh calbum
+C-t m B :exec dmpd-select.sh album
+
+C-t m p p :exec dmpd-select.sh cplaylist
+C-t m p P :exec dmpd-select.sh playlist
+C-t m p s :exec dmpd-select.sh save
