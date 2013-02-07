@@ -38,6 +38,7 @@ dunst &
 unclutter -noevents &
 autocutsel &
 mpd &
+follow-mpd.sh &
 
 # screen powersave
 #xset +dpms
