@@ -5,6 +5,8 @@
 FONT="-*-dina-medium-r-normal-*-*-*-*-*-*-*-*-*"
 N_LIST_ITEMS=20
 DMENU_QUERY="dmenu -fn $FONT -i -l $N_LIST_ITEMS"
+PLAYLIST_DIR="$HOME/.mpd/playlists"
+
 
 function select_song {
     MPC_FORMAT="%artist% (%album%) - [%title%]|[%file%]"
@@ -49,8 +51,18 @@ function save_playlist {
     [ -n "$FILE" ] && mpc save "$FILE"
 }
 
-#function current_to_playlist {
-#}
+function current_to_playlist {
+    PLAYLIST_NAME="$(ls "$PLAYLIST_DIR" | sed 's/\.m3u$//' | $DMENU_QUERY)"
+    PLAYLIST_FILE="$PLAYLIST_DIR/$PLAYLIST_NAME.m3u"
+
+    if [ -n "$(cat "$PLAYLIST_FILE" | grep "$(mpc -f %file% current)")" ]; then
+        echo "[already in playlist!]"
+        exit 2
+    else
+        echo "$(mpc -f "%file%" current)" >> "$PLAYLIST_FILE"
+        echo "[added to $PLAYLIST_NAME]"
+    fi
+}
 
 case $1 in
     song) select_song
@@ -69,4 +81,7 @@ case $1 in
         ;;
     save) save_playlist
         ;;
+    add) current_to_playlist
+        ;;
+    all) mpc clear; mpc listall | mpc add && echo "[all songs loaded]"
 esac
