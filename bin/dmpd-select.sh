@@ -40,7 +40,6 @@ DMENU_QUERY="dmenu -fn $FONT -i -l $N_LIST_ITEMS"
 SLEEP_DELAY=0.1
 OPACITY=90
 
-
 # Make dmenu transparent. Run just before invoking dmenu.
 # Usage:   transparent
 function transparent {
@@ -59,7 +58,7 @@ function select_song {
     [ -n "$SONG_NUMBER" ] && mpc play $SONG_NUMBER
 }
 
-# Returns the item chosen from dmenu.
+# Accessory function. Returns the item chosen from dmenu.
 # Usage:   query tag [prompt]
 # Example: query artist "Enter artist name"
 function query {
@@ -69,7 +68,8 @@ function query {
     echo -n $(mpc list "$TAG" | sort | $DMENU_QUERY -p "$PROMPT")
 }
 
-# Add songs that match the tag-query pair to the current playlist
+# Accessory function. Add songs that match the tag-query pair to the
+# current playlist
 # Usage:   add tag string
 # Example: add artist "Pearl Jam"
 function add {
@@ -97,12 +97,14 @@ function clear_query_add {
 # Add the contents of [playlist] to the current playlist.
 # Usage:   load_playlist
 function load_playlist {
+    transparent
     mpc lsplaylists | $DMENU_QUERY -p "Load playlist" | mpc load
 }
 
 # Like load_playlist, but clear the current playlist first.
 # Usage:   clear_load_playlist
 function clear_load_playlist {
+    transparent
     PLAYLIST="$(mpc lsplaylists | $DMENU_QUERY -p "Load playlist")"
     [ -n "$PLAYLIST" ] && mpc clear && mpc load "$PLAYLIST"
 }
@@ -110,6 +112,7 @@ function clear_load_playlist {
 # Save the current [playlist]. Uses dmenu to get the [playlist].
 # Usage:   save_playlist
 function save_playlist {
+    transparent
     FILE="$(mpc lsplaylists | $DMENU_QUERY -p "Save playlist")"
     [ -n "$FILE" ] && mpc save "$FILE"
 }
@@ -117,9 +120,12 @@ function save_playlist {
 # Add the current song to [playlist]. Uses dmenu to get the [playlist].
 # Usage:   current_to_playlist
 function current_to_playlist {
+    transparent
     PLAYLIST_NAME="$(ls "$PLAYLIST_DIR" | sed 's/\.m3u$//' |
                    $DMENU_QUERY -p "Add current song to playlist")"
     PLAYLIST_FILE="$PLAYLIST_DIR/$PLAYLIST_NAME.m3u"
+
+    [ -z PLAYLIST_NAME ] && exit
 
     if [ -n "$(cat "$PLAYLIST_FILE" | grep "$(mpc -f %file% current)")" ]; then
         echo "[already in playlist!]"
