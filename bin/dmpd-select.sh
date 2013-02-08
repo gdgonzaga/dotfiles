@@ -7,8 +7,13 @@ N_LIST_ITEMS=20
 PLAYLIST_DIR="$HOME/.mpd/playlists"
 DMENU_QUERY="dmenu -fn $FONT -i -l $N_LIST_ITEMS"
 
+function transparent {
+    sleep 0.1; compton-trans -w $(xwininfo -root -children | grep 1600x | head -1 | cut -d' ' -f6) 90
+}
+
 function select_song {
     MPC_FORMAT="%artist% (%album%) - [%title%]|[%file%]"
+    transparent &
     SONG_NUMBER=$(mpc playlist -f "$MPC_FORMAT" |
                   nl -s ")  " |
                   $DMENU_QUERY -p "Search song" |
@@ -20,6 +25,7 @@ function select_song {
 function query {
     TAG="$1"
     [ -n "$2" ] && PROMPT="$2"
+    transparent &
     echo -n $(mpc list "$TAG" | sort | $DMENU_QUERY -p "$PROMPT")
 }
 
