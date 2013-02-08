@@ -43,7 +43,7 @@ OPACITY=90
 # Make dmenu transparent. Run just before invoking dmenu.
 # Usage:   transparent
 function transparent {
-    (sleep $SLEEP_DELAY; compton-trans -w $(xwininfo -root -children | grep 1600x | head -1 | cut -d' ' -f6) $OPACITY) &
+    (sleep $SLEEP_DELAY; compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $OPACITY) &
 }
 
 # Use dmenu to list all songs in the current playlist and play whichever
