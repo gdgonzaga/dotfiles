@@ -28,8 +28,8 @@ C-t e b :exec vp.sh
 C-t e m :exec smplayer
 
 ## misc
-C-t semicolon s :exec toggle-speakers.sh > /dev/null 2>&1
-C-t semicolon t :exec toggle-touchpad.sh > /dev/null 2>&1
+C-t semicolon s :exec toggle-speakers.sh > /dev/null && echo "[toggle speakers]"
+C-t semicolon t :exec toggle-touchpad.sh > /dev/null && echo "[toggle touchpad]"
 
 ## mpd
 C-t m C-g :abort
@@ -49,8 +49,7 @@ C-t m d :exec mpc volume -5 | grep volume | cut -c1-11
 C-t m u :exec mpc update -q --wait && echo "[mpd database updated]"
 C-t m c :exec mpc -q clear && echo "[playlist cleared]"
 
-C-t m v :exec amixer sset Front mute | tail -1
-C-t m S-v :exec amixer sset Front unmute | tail -1
+C-t m v :exec pavucontrol
 
 # dmpd.sh
 C-t m q :exec dmpd-select.sh song > /dev/null
