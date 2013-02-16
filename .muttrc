@@ -98,7 +98,7 @@ color quoted5 color221 default
 color signature color126 default
 color indicator brightwhite color235 
 color error color009 default
-color status color185 color24
+color status color252 color24
 color tree color48 default
 color tilde color245 default
 color message color185 default
