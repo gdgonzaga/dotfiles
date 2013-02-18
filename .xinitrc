@@ -56,8 +56,6 @@ synclient VertTwoFingerScroll=1
 #synclient CircScrollTrigger=1
 synclient PalmDetect=1
 
-#xcompmgr &
-#urxvt -e screen -x &
 urxvt -e tmux attach &
 
 DEFAULT_SESSION="dwm"
