@@ -44,6 +44,9 @@ set list listchars=tab:▸\ ,trail:-
 set wrap
 set linebreak
 
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
 " No autocomments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -195,3 +198,7 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Show_One_File = 0
 let Tlist_Enable_Fold_Column = 1
 
+" vimnotes
+let g:notes_directory = '/home/gerry/secure/vim-notes'
+let g:notes_title_sync = 'rename_file'
+map <leader>ns :SearchNotes 
