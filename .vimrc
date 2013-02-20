@@ -7,7 +7,6 @@ Bundle 'gmarik/vundle'
 " Vundles
 ""Bundle 'vim-scripts/vimwiki'
 "Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'jiangmiao/auto-pairs'
 "Bundle 'vim-scripts/minibufexpl.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/bufkill.vim'
