@@ -8,7 +8,7 @@ static const char normfgcolor[]     = "#bbbbbb";
 static const char selbordercolor[]  = "#005577";
 static const char selbgcolor[]      = "#005577";
 static const char selfgcolor[]      = "#eeeeee";
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
@@ -18,7 +18,7 @@ static const char *tags[] = { "main", "term", "web", "media", "misc" };
 
 static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
-    { "URxvt",    NULL,       NULL,       3,           False,       -1 },
+    { "URxvt",    NULL,       NULL,       15,           False,       -1 },
     { "Mirage",   NULL,       NULL,       1 << 3,       False,       -1 },
     { "feh",      NULL,       NULL,       1 << 3,       False,       -1 },
     { "Lucidor",  NULL,       NULL,       1 << 3,       False,       -1 },
@@ -56,7 +56,6 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "urxvt", NULL };
 
 #include "push.c"
-
 
 static Key keys[] = {
     /* modifier                     key        function        argument */

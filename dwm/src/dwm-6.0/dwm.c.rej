@@ -1,0 +1,26 @@
+--- dwm.c	Mon Dec 19 15:38:30 2011 +0100
++++ dwm.c	Fri Apr 06 08:23:42 2012 +0200
+@@ -224,6 +224,7 @@
+ static void showhide(Client *c);
+ static void sigchld(int unused);
+ static void spawn(const Arg *arg);
++static void swapfocus();
+ static void tag(const Arg *arg);
+ static void tagmon(const Arg *arg);
+ static int textnw(const char *text, unsigned int len);
+@@ -1784,6 +1794,7 @@
+ unfocus(Client *c, Bool setfocus) {
+ 	if(!c)
+ 		return;
++	prevclient = c;
+ 	grabbuttons(c, False);
+ 	XSetWindowBorder(dpy, c->win, dc.norm[ColBorder]);
+ 	if(setfocus)
+@@ -2125,6 +2136,7 @@
+ void
+ zoom(const Arg *arg) {
+ 	Client *c = selmon->sel;
++	prevclient = selmon->clients;
+ 
+ 	if(!selmon->lt[selmon->sellt]->arrange
+ 	|| (selmon->sel && selmon->sel->isfloating))
