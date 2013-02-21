@@ -80,29 +80,23 @@ function add {
 
 # Ask the user for [tag] and add all matching tracks to the current
 # playlist.
-# Usage:   query_add tag
-# Example: query_add artist
 function query_add {
    add $1 "$(query $1 "Add $1")"
 }
 
 # Like query_add, but clears the current playlist first.
-# Usage:   clear_query_add tag
-# Example: clear_query_add artist
 function clear_query_add {
     TERM=$(query "$1" "Load $1")
     [ -n "$TERM" ] && mpc clear && add $1 "$TERM"
 }
 
 # Add the contents of [playlist] to the current playlist.
-# Usage:   load_playlist
 function load_playlist {
     transparent
     mpc lsplaylists | $DMENU_QUERY -p "Load playlist" | mpc load
 }
 
 # Like load_playlist, but clear the current playlist first.
-# Usage:   clear_load_playlist
 function clear_load_playlist {
     transparent
     PLAYLIST="$(mpc lsplaylists | $DMENU_QUERY -p "Load playlist")"
@@ -110,15 +104,16 @@ function clear_load_playlist {
 }
 
 # Save the current [playlist]. Uses dmenu to get the [playlist].
-# Usage:   save_playlist
 function save_playlist {
     transparent
     FILE="$(mpc lsplaylists | $DMENU_QUERY -p "Save playlist")"
-    [ -n "$FILE" ] && mpc save "$FILE"
+    # mpc will not save to $FILE if it already exists, so delete it first
+    [ -n "$FILE" ] && rm "$PLAYLIST_DIR/$FILE".m3u &&
+        mpc save "$FILE" && echo "Playlist saved" ||
+        echo "error: can't save playlist"
 }
 
 # Add the current song to [playlist]. Uses dmenu to get the [playlist].
-# Usage:   current_to_playlist
 function current_to_playlist {
     transparent
     PLAYLIST_NAME="$(ls "$PLAYLIST_DIR" | sed 's/\.m3u$//' |

@@ -1,5 +1,10 @@
 # xchainkeys configuration file
 #
+# Depends on:
+#   ponymix
+#   dmpd-seclect.sh
+#   mpc
+#   pavucontrol
 
 # chain options
 timeout 5000
@@ -28,8 +33,8 @@ C-t e b :exec vp.sh
 C-t e m :exec smplayer
 
 ## misc
-C-t semicolon s :exec toggle-speakers.sh > /dev/null 2>&1
-C-t semicolon t :exec toggle-touchpad.sh > /dev/null 2>&1
+C-t semicolon s :exec toggle-speakers.sh > /dev/null && echo "[toggle speakers]"
+C-t semicolon t :exec toggle-touchpad.sh > /dev/null && echo "[toggle touchpad]"
 
 ## mpd
 C-t m C-g :abort
@@ -41,16 +46,19 @@ C-t m m :exec mpc -q next
 
 C-t m S-x :exec mpc del 0 ; mpc current
 
-C-t m S-e :exec mpc volume +15 | grep volume | cut -c1-11
-C-t m S-d :exec mpc volume -15 | grep volume | cut -c1-11
-C-t m e :exec mpc volume +5 | grep volume | cut -c1-11
-C-t m d :exec mpc volume -5 | grep volume | cut -c1-11
+# volume controls
+C-t m S-e :exec ponymix increase 15 | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m S-d :exec ponymix decrease 15 | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m e :exec ponymix increase 5 | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m d :exec ponymix decrease 5 | sed 's/^/[volume: /' | sed 's/$/]/'
+# set volume with ponymix
+C-t m v :exec echo -e "0\n50\n80\n100\n120\n150" | dmenu -p "Set volume:" | xargs ponymix set-volume | sed 's/^/[volume: /' | sed 's/$/]/'
+
+C-t m S-v :exec pavucontrol
 
 C-t m u :exec mpc update -q --wait && echo "[mpd database updated]"
 C-t m c :exec mpc -q clear && echo "[playlist cleared]"
 
-C-t m v :exec amixer sset Front mute | tail -1
-C-t m S-v :exec amixer sset Front unmute | tail -1
 
 # dmpd.sh
 C-t m q :exec dmpd-select.sh song > /dev/null

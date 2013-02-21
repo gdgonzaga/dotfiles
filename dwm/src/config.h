@@ -1,0 +1,1 @@
+/home/gerry/dotfiles/dwm/config.h
