@@ -5,7 +5,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Vundles
-""Bundle 'vim-scripts/vimwiki'
+Bundle 'vim-scripts/vimwiki'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'vim-scripts/minibufexpl.vim'
 Bundle 'vim-scripts/taglist.vim'
@@ -22,6 +22,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/slimv.vim'
 Bundle 'vim-scripts/tinymode.vim'
+Bundle 'mattn/calendar-vim'
 "Bundle 'vim-scripts/bufexplorer.zip'
 "Bundle 'vim-scripts/YankRing.vim'
 
@@ -189,7 +190,18 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki' }]
+let wiki_1 = {}
+let wiki_1.path = '~/seafile/plain/vimwiki/'
+"let wiki_1.html_template = '~/public_html/template.tpl'
+"let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+"let wiki_1.index = 'main'
+
+let wiki_2 = {}
+let wiki_2.path = '~/seafile/public-vimwiki/'
+let wiki_2.index = '~/seafile/public-vimwiki/html/'
+
+"let g:vimwiki_list = [wiki_1, wiki_2]
+let g:vimwiki_list = [wiki_1, wiki_2]
 
 " taglist
 map <Leader>t :TlistToggle<CR>
