@@ -74,7 +74,7 @@ stumpwm)
 	;;
 *)
         conky -c ~/.g/conkyrc-dwm | while read -r; do xsetroot -name "$(echo -e "$REPLY")"; done &
-        compton -f -D 2 &
+        compton -f -D 2 --inactive-dim 0.2 --focus-exclude 'g:ei:Smplayer' &
         (xchainkeys -f ~/.g/xck-dwm | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
         exec dwm
         #exec "$DEFAULT_SESSION"
