@@ -86,7 +86,7 @@ hi Ignore       ctermfg=238 guifg=#444444
 hi Number       ctermfg=180 guifg=#dfaf87
 hi PreProc      ctermfg=150 guifg=#afdf87
 hi Special      ctermfg=174 guifg=#df8787
-hi Statement    ctermfg=110 guifg=#87afdf                           cterm=none gui=none
+hi Statement    ctermfg=110 guifg=#87afdf                           cterm=bold gui=none
 hi Type         ctermfg=146 guifg=#afafdf                           cterm=none gui=none
 
 "" Special {{{2
@@ -141,3 +141,77 @@ hi treeLink       ctermfg=182  guifg=#dfafdf
 " sign define both        linehl=currentLine text=>>
 " sign define empty       linehl=empty
 
+""" Vimwiki {{{3
+hi VimwikiHeader1   ctermfg=027   cterm=bold
+hi VimwikiHeader2   ctermfg=201   cterm=bold
+hi VimwikiHeader3   ctermfg=099   cterm=bold
+hi VimwikiHeader4   ctermfg=051   cterm=bold
+hi VimwikiHeader5   ctermfg=171   cterm=bold
+hi VimwikiHeader6   ctermfg=123   cterm=bold
+"hi VimwikiMarkers   ctermfg=138   cterm=bold
+
+"hi VimwikiEqInChar   ctermfg=177   cterm=bold
+"hi VimwikiCellSeparator    ctermfg=177   cterm=bold
+"hi VimwikiBoldChar    ctermfg=177   cterm=bold
+"hi VimwikiItalicChar    ctermfg=177   cterm=bold
+"hi VimwikiBoldItalicChar    ctermfg=177   cterm=bold
+"hi VimwikiItalicBoldChar    ctermfg=177   cterm=bold
+"hi VimwikiDelTextChar    ctermfg=177   cterm=bold
+"hi VimwikiSuperScriptChar    ctermfg=177   cterm=bold
+"hi VimwikiSubScriptChar    ctermfg=177   cterm=bold
+"hi VimwikiCodeChar    ctermfg=009
+hi VimwikiHeaderChar    ctermfg=240   cterm=bold
+"
+"hi VimwikiEqInCharT    ctermfg=177   cterm=bold
+"hi VimwikiBoldCharT    ctermfg=177   cterm=bold
+"hi VimwikiItalicCharT    ctermfg=177   cterm=bold
+"hi VimwikiBoldItalicCharT    ctermfg=177   cterm=bold
+"hi VimwikiItalicBoldCharT    ctermfg=177   cterm=bold
+"hi VimwikiDelTextCharT    ctermfg=177   cterm=bold
+"hi VimwikiSuperScriptCharT    ctermfg=177   cterm=bold
+"hi VimwikiSubScriptCharT    ctermfg=177   cterm=bold
+""hi VimwikiCodeCharT    ctermfg=177   cterm=bold
+"hi VimwikiHeaderCharT    ctermfg=177   cterm=bold
+
+"hi VimwikiMarkers Normal
+
+"hi VimwikiEqIn Number
+"hi VimwikiEqInT VimwikiEqIn
+
+"hi VimwikiBold term=bold cterm=bold gui=bold
+"hi VimwikiBoldT VimwikiBold
+
+"hi VimwikiItalic term=italic cterm=italic gui=italic
+"hi VimwikiItalicT VimwikiItalic
+
+"hi VimwikiBoldItalic term=bold cterm=bold gui=bold,italic
+"hi VimwikiItalicBold VimwikiBoldItalic
+"hi VimwikiBoldItalicT VimwikiBoldItalic
+"hi VimwikiItalicBoldT VimwikiBoldItalic
+
+"hi VimwikiUnderline gui=underline
+
+hi VimwikiCode ctermfg=100
+"hi VimwikiCodeT VimwikiCode
+
+"hi VimwikiPre PreProc
+"hi VimwikiPreT VimwikiPre
+
+"hi VimwikiMath Number
+"hi VimwikiMathT VimwikiMath
+
+hi VimwikiNoExistsLink ctermfg=009
+"hi VimwikiNoExistsLinkT VimwikiNoExistsLink
+
+hi VimwikiLink    ctermfg=027   cterm=underline
+"hi VimwikiLinkT VimwikiLink
+
+"hi VimwikiList Identifier
+"hi VimwikiListTodo VimwikiList
+""hi VimwikiCheckBox VimwikiList
+"hi VimwikiCheckBoxDone Comment
+"hi VimwikiEmoticons Character
+"hi VimwikiHR Identifier
+
+"hi VimwikiDelText Constant
+"hi VimwikiDelTextT VimwikiDelText

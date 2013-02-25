@@ -10,16 +10,16 @@ Bundle 'vim-scripts/vimwiki'
 "Bundle 'vim-scripts/minibufexpl.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/bufkill.vim'
-Bundle 'xolox/vim-notes'
+"Bundle 'xolox/vim-notes'
 Bundle 'danro/rename.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+"Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 Bundle 'kien/rainbow_parentheses.vim'
-"Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/slimv.vim'
 Bundle 'vim-scripts/tinymode.vim'
 Bundle 'mattn/calendar-vim'
@@ -62,9 +62,9 @@ set hls " Highlight search
 
 " Tabs
 set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
 " Custom commands
 command! WriteAsRoot :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -190,18 +190,25 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " vimwiki
+map <Leader>wha :VimwikiAll2HTML<CR>
+"let g:vimwiki_folding = 1
+
 let wiki_1 = {}
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
 let wiki_1.path = '~/seafile/plain/vimwiki/'
 "let wiki_1.html_template = '~/public_html/template.tpl'
 "let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 "let wiki_1.index = 'main'
 
-let wiki_2 = {}
-let wiki_2.path = '~/seafile/public-vimwiki/'
-let wiki_2.index = '~/seafile/public-vimwiki/html/'
+let lin_wiki = {}
+let lin_wiki.syntax = 'markdown'
+let lin_wiki.ext = '.md'
+let lin_wiki.path = '~/seafile/plain/linwiki/'
+"let lin_wiki.path_html = '~/mnt/public-vimwiki-html/'
 
-"let g:vimwiki_list = [wiki_1, wiki_2]
-let g:vimwiki_list = [wiki_1, wiki_2]
+"let g:vimwiki_list = [wiki_1, public_wiki]
+let g:vimwiki_list = [wiki_1, lin_wiki]
 
 " taglist
 map <Leader>t :TlistToggle<CR>
@@ -210,6 +217,10 @@ let Tlist_Show_One_File = 0
 let Tlist_Enable_Fold_Column = 1
 
 " vimnotes
-let g:notes_directory = '/home/gerry/secure/vim-notes'
+let g:notes_directory = '/home/gerry/seafile/plain/vim-notes/'
 let g:notes_title_sync = 'rename_file'
-map <leader>ns :SearchNotes 
+let g:notes_suffix = '.md'
+map <leader>n/ :SearchNotes 
+map <leader>ne :NoteFromSelectedText<cr>
+map <leader>ns :SplitNoteFromSelectedText<cr>
+map <leader>nt :TabNoteFromSelectedText<cr>
