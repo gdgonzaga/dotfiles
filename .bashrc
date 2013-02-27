@@ -38,7 +38,11 @@ alias lr='ls -ltrh'
 alias wicd-curses='wicd-curses; clear'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
 
-#function def { sdcv "$@" | less; }
+alias vr='vim --servername gg --remote-tab'
+alias vre='vim --servername gg --remote'
+alias vrs='vim --servername gg'
+
+function def { sdcv "$@" | less; }
 
 function man {
     env \
@@ -51,6 +55,10 @@ function man {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
 }
+
+# Source secure
+
+. ~/secure/bashrc
 
 # C-s fix
 stty ixany
