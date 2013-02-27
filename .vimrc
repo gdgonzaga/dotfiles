@@ -1,14 +1,15 @@
-" ajdfoisadjfksadfjlksadundle
+" Vundles
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Vundles
 Bundle 'vim-scripts/vimwiki'
 "Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'vim-scripts/minibufexpl.vim'
+"Bundle 'sandeepcr529/Buffet.vim'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'jeetsukumaran/vim-buffergator'
+"Bundle 'vim-scripts/minibufexpl.vim'
 Bundle 'vim-scripts/bufkill.vim'
 "Bundle 'xolox/vim-notes'
 Bundle 'danro/rename.vim'
@@ -16,7 +17,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-surround'
+"Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 Bundle 'kien/rainbow_parentheses.vim'
@@ -40,6 +41,7 @@ set pastetoggle=<Leader><f2>
 "inoremap <C-k> <ESC>
 inoremap jj <ESC>
 set list listchars=tab:▸\ ,trail:-
+set autochdir
 
 set wrap
 set linebreak
@@ -102,6 +104,14 @@ colorscheme xoria256
 let mapleader = ';'
 let maplocalleader = '\'
 "map <leader>s :set list!<CR>
+
+" Buffergator
+let g:buffergator_suppress_keymaps = 1
+map <Leader>b :BuffergatorToggle<CR>
+map <Leader>a :BuffergatorTabsToggle<CR>
+
+" NERDTree
+let NERDTreeAutoDeleteBuffer=1
 map <Leader>f :NERDTree<CR>
 map <Leader>F :NERDTreeClose<CR>
 "map <Leader>t :TagbarToggle<CR>
@@ -112,9 +122,6 @@ map <Leader><Leader> :b#<CR>
 map <Leader>j :bprev<CR>
 map <Leader>k :bnext<CR>
 map <Leader>g :buffer 
-
-" bufexplorer
-map <Leader>b :BufExplorer<CR>
 
 " ctrlp
 let g:ctrlp_map = '<Leader>of'
@@ -144,8 +151,8 @@ map <C-W>m :wincmd _<CR>
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '.git|.cache',
-    \ 'file': '\.png$\|\.jpg$\|\.mkv$\|\.avi$',
+    \ 'dir':  '.gitignore|.git|.cache',
+    \ 'file': '\.swp|\.mp3$|\.png$\|\.jpg$\|\.mkv$\|\.avi$',
     \ 'link': '',
     \ }
 
@@ -184,14 +191,17 @@ let g:rbpt_colorpairs = [
     \ ['cyan',         'firebrick3'],
     \ ]
 let g:rbpt_max = 8
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au Syntax lisp RainbowParenthesesToggle
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+"map <Leader>gr :RainbowParenthesesToggle<CR>
 
 " vimwiki
 map <Leader>wha :VimwikiAll2HTML<CR>
-"let g:vimwiki_folding = 1
+map <Leader>wls :VimwikiSplitLink<CR>
+let g:vimwiki_folding = 1
 
 let wiki_1 = {}
 let wiki_1.syntax = 'markdown'
@@ -216,11 +226,11 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Show_One_File = 0
 let Tlist_Enable_Fold_Column = 1
 
-" vimnotes
-let g:notes_directory = '/home/gerry/seafile/plain/vim-notes/'
-let g:notes_title_sync = 'rename_file'
-let g:notes_suffix = '.md'
-map <leader>n/ :SearchNotes 
-map <leader>ne :NoteFromSelectedText<cr>
-map <leader>ns :SplitNoteFromSelectedText<cr>
-map <leader>nt :TabNoteFromSelectedText<cr>
+"" vimnotes
+"let g:notes_directory = '/home/gerry/seafile/plain/vim-notes/'
+"let g:notes_title_sync = 'rename_file'
+"let g:notes_suffix = '.md'
+"map <leader>n/ :SearchNotes 
+"map <leader>ne :NoteFromSelectedText<cr>
+"map <leader>ns :SplitNoteFromSelectedText<cr>
+"map <leader>nt :TabNoteFromSelectedText<cr>

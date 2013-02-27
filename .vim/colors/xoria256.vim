@@ -75,19 +75,19 @@ hi VertSplit    ctermfg=237 guifg=#3a3a3a ctermbg=237 guibg=#3a3a3a cterm=none g
 hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=96  guibg=#875f87
 " hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=24  guibg=#005f87
 hi VisualNOS    ctermfg=255 guifg=#eeeeee ctermbg=60  guibg=#5f5f87
-hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87 cterm=bold gui=bold
+hi WildMenu     ctermfg=0   guifg=#000000 ctermbg=150 guibg=#afdf87
 
 "" Syntax highlighting {{{2
 hi Comment      ctermfg=244 guifg=#808080
 "hi Comment      ctermfg=173  guifg=#808080
 hi Constant     ctermfg=229 guifg=#ffffaf
-hi Identifier   ctermfg=182 guifg=#dfafdf                           cterm=none
+hi Identifier   ctermfg=182 guifg=#dfafdf cterm=none
 hi Ignore       ctermfg=238 guifg=#444444
 hi Number       ctermfg=180 guifg=#dfaf87
 hi PreProc      ctermfg=150 guifg=#afdf87
 hi Special      ctermfg=174 guifg=#df8787
-hi Statement    ctermfg=110 guifg=#87afdf                           cterm=bold gui=none
-hi Type         ctermfg=146 guifg=#afafdf                           cterm=none gui=none
+hi Statement    ctermfg=110 guifg=#87afdf cterm=bold gui=none
+hi Type         ctermfg=146 guifg=#afafdf cterm=none gui=none
 
 "" Special {{{2
 """ .diff {{{3
@@ -142,20 +142,16 @@ hi treeLink       ctermfg=182  guifg=#dfafdf
 " sign define empty       linehl=empty
 
 """ Vimwiki {{{3
-hi VimwikiHeader1   ctermfg=027   cterm=bold
-hi VimwikiHeader2   ctermfg=201   cterm=bold
-hi VimwikiHeader3   ctermfg=099   cterm=bold
-hi VimwikiHeader4   ctermfg=051   cterm=bold
-hi VimwikiHeader5   ctermfg=171   cterm=bold
-hi VimwikiHeader6   ctermfg=123   cterm=bold
+hi VimwikiHeader1   ctermfg=110   cterm=bold
+hi VimwikiHeader2   ctermfg=110   cterm=bold
+hi VimwikiHeader3   ctermfg=110   cterm=bold
+hi VimwikiHeader4   ctermfg=110   cterm=bold
+hi VimwikiHeader5   ctermfg=110   cterm=bold
+hi VimwikiHeader6   ctermfg=110   cterm=bold
 "hi VimwikiMarkers   ctermfg=138   cterm=bold
 
 "hi VimwikiEqInChar   ctermfg=177   cterm=bold
 "hi VimwikiCellSeparator    ctermfg=177   cterm=bold
-"hi VimwikiBoldChar    ctermfg=177   cterm=bold
-"hi VimwikiItalicChar    ctermfg=177   cterm=bold
-"hi VimwikiBoldItalicChar    ctermfg=177   cterm=bold
-"hi VimwikiItalicBoldChar    ctermfg=177   cterm=bold
 "hi VimwikiDelTextChar    ctermfg=177   cterm=bold
 "hi VimwikiSuperScriptChar    ctermfg=177   cterm=bold
 "hi VimwikiSubScriptChar    ctermfg=177   cterm=bold
@@ -178,21 +174,28 @@ hi VimwikiHeaderChar    ctermfg=240   cterm=bold
 "hi VimwikiEqIn Number
 "hi VimwikiEqInT VimwikiEqIn
 
-"hi VimwikiBold term=bold cterm=bold gui=bold
+hi VimwikiBold ctermfg=015 cterm=bold gui=bold
+hi link VimwikiBoldChar VimwikiHeaderChar
 "hi VimwikiBoldT VimwikiBold
 
-"hi VimwikiItalic term=italic cterm=italic gui=italic
-"hi VimwikiItalicT VimwikiItalic
+hi VimwikiItalic ctermfg=229 term=italic gui=italic
+hi link VimwikiItalicChar VimwikiHeaderChar
+"hi VimwikiItalicT ctermfg=110 term=italic cterm=underline gui=italic
 
-"hi VimwikiBoldItalic term=bold cterm=bold gui=bold,italic
-"hi VimwikiItalicBold VimwikiBoldItalic
+hi VimwikiBoldItalic ctermfg=229 cterm=bold
+
+hi link VimwikiBoldItalic VimwikiBoldItalic
+hi link VimwikiBoldItalicChar  VimwikiHeaderChar
 "hi VimwikiBoldItalicT VimwikiBoldItalic
+
+hi link VimwikiItalicBold VimwikiBoldItalic
+hi link VimwikiItalicBoldChar VimwikiHeaderChar
 "hi VimwikiItalicBoldT VimwikiBoldItalic
 
 "hi VimwikiUnderline gui=underline
 
-hi VimwikiCode ctermfg=100
-"hi VimwikiCodeT VimwikiCode
+hi VimwikiCode ctermfg=137
+hi link VimwikiCodeT VimwikiHeaderChar
 
 "hi VimwikiPre PreProc
 "hi VimwikiPreT VimwikiPre
@@ -200,13 +203,13 @@ hi VimwikiCode ctermfg=100
 "hi VimwikiMath Number
 "hi VimwikiMathT VimwikiMath
 
-hi VimwikiNoExistsLink ctermfg=009
+hi VimwikiNoExistsLink ctermfg=009   cterm=underline
 "hi VimwikiNoExistsLinkT VimwikiNoExistsLink
 
-hi VimwikiLink    ctermfg=027   cterm=underline
+hi VimwikiLink    ctermfg=004   cterm=underline
 "hi VimwikiLinkT VimwikiLink
 
-"hi VimwikiList Identifier
+hi VimwikiList ctermfg=146
 "hi VimwikiListTodo VimwikiList
 ""hi VimwikiCheckBox VimwikiList
 "hi VimwikiCheckBoxDone Comment
