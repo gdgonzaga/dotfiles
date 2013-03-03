@@ -11,10 +11,12 @@
 #   notmuch
 #   libnotify
 #   inotify-tools
-#   notmuch-postsync.sh (script for setting tags to new mail)
+#   notmuch-postsync.sh (set tags for new emails)
 #   conky (optional)
 #
 # TODO: Put all notification files in a single directory
+
+SLEEP_DELAY=5
 
 # Initialize the DATA variable using the configuration below
 function init_tags {
@@ -30,6 +32,7 @@ function init_tags {
 function count {
     INDEX=3
     while [[ $INDEX -lt ${#DATA[@]} ]]; do
+        # Bind the lines of the current block to temporary variables
         QUERY="${DATA[$INDEX]}"
         FILE="${DATA[$(($INDEX - 1))]}"
         NOTIFY="${DATA[$(($INDEX - 2))]}"
@@ -37,7 +40,9 @@ function count {
 
         COUNT=$(notmuch search $QUERY and tag:unread | wc -l)
 
+        # Update INDEX to point at the last line of the next block
         INDEX=$((INDEX + 4))
+
         notify "$NAME" "$COUNT" "$FILE" "$NOTIFY"
     done
 }
@@ -63,9 +68,11 @@ function notify {
 #### CONFIGURE HERE
 MAILDIR=~/Mail
 init_tags < <(cat << EOF
-# SYNTAX:
 # Comments and empty lines are skipped
-#  <category name>
+# Comments are lines that have '#' as the first character
+#
+# SYNTAX:
+#  <block name>
 #  <notify-send urgency: low|normal|critical|n (n = no notification)>
 #  <notification file>
 #  <notmuch search query>
@@ -97,5 +104,5 @@ while true; do
   notmuch-postsync.sh
   count
   inotifywait $MAILDIR -e create -e delete -e move -r -q --exclude ".notmuch" > /dev/null
-  sleep 5;
+  sleep $SLEEP_DELAY;
 done
