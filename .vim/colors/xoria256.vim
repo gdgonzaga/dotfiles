@@ -142,12 +142,12 @@ hi treeLink       ctermfg=182  guifg=#dfafdf
 " sign define empty       linehl=empty
 
 """ Vimwiki {{{3
-hi VimwikiHeader1   ctermfg=110   cterm=bold
+hi VimwikiHeader1   ctermfg=111   cterm=bold
 hi VimwikiHeader2   ctermfg=110   cterm=bold
-hi VimwikiHeader3   ctermfg=110   cterm=bold
-hi VimwikiHeader4   ctermfg=110   cterm=bold
-hi VimwikiHeader5   ctermfg=110   cterm=bold
-hi VimwikiHeader6   ctermfg=110   cterm=bold
+hi VimwikiHeader3   ctermfg=109   cterm=bold
+hi VimwikiHeader4   ctermfg=108   cterm=bold
+hi VimwikiHeader5   ctermfg=107   cterm=bold
+hi VimwikiHeader6   ctermfg=106   cterm=bold
 "hi VimwikiMarkers   ctermfg=138   cterm=bold
 
 "hi VimwikiEqInChar   ctermfg=177   cterm=bold
