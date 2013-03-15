@@ -29,8 +29,11 @@ C-t C-r :reload
 
 ## execute commands
 C-t e C-g :abort
-C-t e b :exec vp.sh
 C-t e m :exec smplayer
+
+## browser commands
+C-t b b :exec dvp.sh bma
+C-t b o :exec dvp.sh open
 
 ## misc
 C-t semicolon s :exec toggle-speakers.sh > /dev/null && echo "[toggle speakers]"
