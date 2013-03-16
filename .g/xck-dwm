@@ -32,8 +32,8 @@ C-t e C-g :abort
 C-t e m :exec smplayer
 
 ## browser commands
-C-t b b :exec dvp.sh bma
-C-t b o :exec dvp.sh open
+C-t b b :exec dvp.sh bookmarks
+C-t b o :exec dvp.sh search
 
 ## misc
 C-t semicolon s :exec toggle-speakers.sh > /dev/null && echo "[toggle speakers]"

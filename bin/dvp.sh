@@ -1,5 +1,6 @@
 #!/bin/bash
-# TODO: Add session management
+# Depends on:
+#   dmenu, compton, xorg-xwininfo
 
 DMENU_FONT="-*-dina-medium-r-normal-*-*-*-*-*-*-*-*-*"
 DMENU_LIST_ITEMS=20
@@ -13,9 +14,18 @@ function transparent {
     compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $DMENU_OPACITY
 }
 
+# Usage:
+# dmenu_query <prompt> <options>
 function dmenu_query {
+  PROMPT="$1"
+  OPTIONS="$2"
   transparent &
-  dmenu -fn $DMENU_FONT -i -l $DMENU_LIST_ITEMS -p "$1"
+  ANSWER="$(echo -e "$OPTIONS" |
+            dmenu -fn $DMENU_FONT -i -l $DMENU_LIST_ITEMS -p "$PROMPT")"
+
+  [ -z "$ANSWER" ] && exit 2 && echo "Nothing selected"
+
+  echo "$ANSWER"
 }
 
 function get_bookmark_titles {
@@ -23,45 +33,88 @@ function get_bookmark_titles {
 }
 
 function get_bookmark_url {
+  # Escape open brackets for grep
   QUERY="$(echo "$1" | sed 's/\[/\\[/')"
   cat "$BOOKMARK_FILE"  | grep "$QUERY" | cut -d' ' -f1
 }
 
 function manage_bookmarks {
-  QUERY="$(echo "$(get_bookmark_titles)" | dmenu_query "Select bookmark:")"
+  QUERY="$(dmenu_query "Select bookmark:" "$(get_bookmark_titles)")"
   # Exit if no bookmark is selected
   [ -z "$QUERY" ] && exit
 
-  ACTION="$(echo -e "Open\nDelete" | dmenu_query "Action:")"
+  ACTION="$(dmenu_query "Action:" "Open\nDelete")"
 
   case $ACTION in
-    Open)   vp.sh "$(get_bookmark_url "$QUERY")"
+    Open)   open "$(get_bookmark_url "$QUERY")"
             ;;
     Delete) # Escape open brackets for grep
             GREP_Q="$(echo "$QUERY" | sed 's/\[/\\[/')"
             TMP=$(cat "$BOOKMARK_FILE" | grep -v "$GREP_Q")
             echo "$TMP" > "$BOOKMARK_FILE"
             ;;
-    *)      exit 0
+    *)      exit 0 # Exit if no action is selected
   esac
 }
 
-function open {
-  [ -n "$1" ] && URL="$1" || URL="google.com"
+function prune_sessions {
+  for file in $(ls -A "$TABDIR"); do
+    if [ -z "$(xwininfo -root -children |
+        grep $(cat "$TABDIR/$file"))" ]; then
+      rm "$TABDIR/$file"
+    fi
+  done
+}
 
-  if  [ `ls -A $TABDIR` ] ; then
-    TABFILE="$TABDIR/`ls $TABDIR | tail -1`"
-    vimprobable2 -e $(echo $(($(cat $TABFILE)))) "$URL" >/dev/null 2>&1 &
-  else
-    TABFILE="$TABDIR/`date +%Y%m%d%H%M%S`"
-    (tabbed vimprobable2 "$URL" -e  > $TABFILE) >/dev/null 2>&1 &
-    wait $!
-    rm $TABFILE
-  fi
+function open_new_session {
+  URL="$1"
+  prune_sessions
+
+  # Ask for new session name
+  SESSION="$(dmenu_query "New session name:" "$(ls "$TABDIR")")"
+
+  # Exit if nothing was entered
+  [ -z "$SESSION" ] && echo "No session selected" && exit
+
+  # Otherwise, open a new tabbed window
+  # and store the XID
+  TABFILE="$TABDIR/$SESSION"
+  (tabbed vimprobable2 "$URL" -e  > $TABFILE) >/dev/null 2>&1 &
+}
+
+function prompt_session {
+  URL="$1"
+  prune_sessions
+
+  # Ask which session to use
+  SESSION="$(dmenu_query "Select session name:" "$(ls "$TABDIR")")"
+
+  # Exit if no session was selected
+  [ -z "$SESSION" ] && exit
+
+  # Open vimprobable in the selected tabbed session
+  TABFILE="$TABDIR/$SESSION"
+  vimprobable2 -e $(echo $(($(cat $TABFILE)))) "$URL" >/dev/null 2>&1 &
+}
+
+function open {
+  URL="$1"
+
+  # Ask weather to open in existing session or new session
+  # TODO: Open in first session
+  ACTION="$(dmenu_query "Open with:" "Existing Session\nNew Session")"
+
+  case $ACTION in
+    "Existing Session")   prompt_session "$URL"
+                          ;;
+    "New Session")        open_new_session "$URL"
+                          ;;
+
+  esac
 }
 
 function prompt_open {
-  QUERY="$(echo -e "google.com" | dmenu_query "Open or search")"
+  QUERY="$(dmenu_query "Open or search" "google.com")"
   [ -z "$QUERY" ] && exit 0
   open "$QUERY"
 }
@@ -72,10 +125,14 @@ if [ ! -d $TABDIR ]; then
   mkdir $TABDIR
 fi
 
+
 case $1 in
-  open) prompt_open
-      ;;
-  bma) manage_bookmarks
-      ;;
-  *) exit 1
+  search)     prompt_open
+              ;;
+  bookmarks)  manage_bookmarks
+              ;;
+  '')         exit 1
+              # Show usage here
+              ;;
+  *)          open "$1"
 esac
