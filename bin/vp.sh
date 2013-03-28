@@ -94,7 +94,7 @@ function open {
   TABFILE="$TABDIR/$SESSION"
   # Create a new tabbed window if the session doesn't exist
   session_exists "$SESSION" || tabbed vimprobable2 "$URL" -e  > "$TABFILE"
-  (vimprobable2 "$URL" -e $(< "$TABFILE") 1>/dev/null &2>1) &
+  (vimprobable2 "$URL" -e $(< "$TABFILE") >/dev/null 2>&1) &
 }
 
 function search {
