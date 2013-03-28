@@ -62,19 +62,21 @@ DEFAULT_SESSION="dwm"
 
 case $1 in
 
+lxde) exec startlxde
+	;;
 kde)
         exec startkde
 	;;
 stumpwm)
 
         exec  \
-        sbcl--eval "(ql:quickload 'stumpwm)"\
-            --eval "(stumpwm:stumpwm)"\
-            --eval "(quit)"
+        sbcl --eval "(ql:quickload 'stumpwm)"\
+             --eval "(stumpwm:stumpwm)"\
+             --eval "(quit)"
 	;;
 *)
         conky -c ~/.g/conkyrc-dwm | while read -r; do xsetroot -name "$(echo -e "$REPLY")"; done &
-        compton -f -D 2 --inactive-dim 0.2 --focus-exclude 'g:ei:Smplayer' &
+        compton -f -D 2 --inactive-dim 0.3 --focus-exclude 'g:ei:Smplayer' &
         (xchainkeys -f ~/.g/xck-dwm | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
         exec dwm
         #exec "$DEFAULT_SESSION"
