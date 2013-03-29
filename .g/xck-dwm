@@ -47,13 +47,13 @@ C-t m o :exec mpc -q stop && echo "[stop]" && mpc current --wait
 C-t m l :exec mpc -q prev
 C-t m m :exec mpc -q next
 
-C-t m S-d :exec mpc del 0 ; mpc current
+C-t m S-x :exec mpc del 0 ; mpc current
 
 # volume controls
-C-t m S-r :exec ponymix increase 15 | sed 's/^/[volume: /' | sed 's/$/]/'
-C-t m S-f :exec ponymix decrease 15 | sed 's/^/[volume: /' | sed 's/$/]/'
-C-t m r :exec ponymix increase 5 | sed 's/^/[volume: /' | sed 's/$/]/'
-C-t m f :exec ponymix decrease 5 | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m S-e :exec ponymix increase 15 | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m S-d :exec ponymix decrease 15 | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m e :exec ponymix increase 5 | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m d :exec ponymix decrease 5 | sed 's/^/[volume: /' | sed 's/$/]/'
 # set volume with ponymix
 C-t m v :exec echo -e "0\n50\n80\n100\n120\n150" | dmenu -p "Set volume:" | xargs ponymix set-volume | sed 's/^/[volume: /' | sed 's/$/]/'
 
