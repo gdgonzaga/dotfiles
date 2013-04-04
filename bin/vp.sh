@@ -4,18 +4,17 @@
 # Depends on:
 #   dmenu, compton, xorg-xwininfo
 
-DMENU_FONT="-*-dina-medium-r-normal-*-*-*-*-*-*-*-*-*"
+DMENU_FONT="-*-termsyn-medium-*-*-*-*-*-*-*-*-*-*-*"
 DMENU_LIST_ITEMS=40
 DMENU_OPACITY=90
-TRANSPARENT_SLEEP_DELAY=0.1
+TRANSPARENT_SLEEP_DELAY=1
 BOOKMARK_FILE="$HOME/.config/vimprobable/bookmarks"
 TABDIR="$TMPDIR/tabbed"
 
 # dmenu_query <prompt> <options>
 function dmenu_query {
   # Transparency
-  (sleep $TRANSPARENT_SLEEP_DELAY
-  compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $DMENU_OPACITY) &
+  (sleep $TRANSPARENT_SLEEP_DELAY; compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $DMENU_OPACITY) &
 
   PROMPT="$1"
 
@@ -93,8 +92,9 @@ function open {
 
   TABFILE="$TABDIR/$SESSION"
   # Create a new tabbed window if the session doesn't exist
-  session_exists "$SESSION" || tabbed vimprobable2 "$URL" -e  > "$TABFILE"
-  (vimprobable2 "$URL" -e $(< "$TABFILE") >/dev/null 2>&1) &
+  session_exists "$SESSION" || tabbed  -d  > "$TABFILE" 2> /dev/null
+  # Launch vimprobable in the selected session
+  vimprobable2 -e $(< "$TABFILE") "$URL" > /dev/null 2>&1
 }
 
 function search {
