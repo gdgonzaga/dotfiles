@@ -5,7 +5,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'vim-scripts/vimwiki'
-"Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'sandeepcr529/Buffet.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
@@ -64,9 +63,9 @@ set hls " Highlight search
 
 " Tabs
 set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Custom commands
 command! WriteAsRoot :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -81,7 +80,8 @@ set wildmenu
 set wildmode=list:longest,full
 
 " Up and down linebreaks
-nnoremap gj nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 " Follow file, or open new file if it doesn't exist
 "map gf :e <cfile><cr>
@@ -107,14 +107,13 @@ let maplocalleader = '\'
 
 " Buffergator
 let g:buffergator_suppress_keymaps = 1
-map <Leader>b :BuffergatorToggle<CR>
-map <Leader>a :BuffergatorTabsToggle<CR>
+map <Leader>u :BuffergatorToggle<CR>
+"map <Leader>a :BuffergatorTabsToggle<CR>
 
 " NERDTree
-let NERDTreeAutoDeleteBuffer=1
+let NERDTreeAutoDeleteBuffer = 1
 map <Leader>f :NERDTree<CR>
 map <Leader>F :NERDTreeClose<CR>
-"map <Leader>t :TagbarToggle<CR>
 map <Leader>R :WriteAsRoot<CR>
 
 " Buffer management
@@ -159,7 +158,7 @@ let g:ctrlp_custom_ignore = {
 " Slimv
 "let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 "let g:slimv_swank_cmd = '! tmux neww "authbind ecl -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
-let g:slimv_swank_cmd = '! tmux neww "authbind ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
+let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 "let g:slimv_swank_cmd = '! tmux neww "athbind sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 
 let g:slimv_updatetime = 200
@@ -202,7 +201,7 @@ au Syntax lisp RainbowParenthesesToggle
 map <Leader>wha :VimwikiAll2HTML<CR>
 map <Leader>wls :VimwikiSplitLink<CR>
 let g:vimwiki_folding = 1
-
+let g:vimwiki_use_calendar = 1
 let wiki_1 = {}
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md'
