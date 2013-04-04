@@ -28,6 +28,7 @@ C-t C-g :abort
 C-t C-r :reload
 
 ## execute commands
+#W-e :exec dmenu_run
 C-t e C-g :abort
 C-t e m :exec smplayer
 

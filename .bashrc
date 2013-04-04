@@ -7,6 +7,7 @@ RET_SUCC="\[\033[0;32m\]\342\234\223"
 RET_FAIL="\[\033[0;31m\]"
 PROMPT_COMMAND='RET=$?; if [[ $RET -eq 0 ]]; then export PS1="${RET_SUCC} ${_PS1}"; else export PS1="${RET_FAIL}$RET ${_PS1}"; fi'
 
+#export _JAVA_AWT_WM_NONREPARENTING=1
 export GPG_TTY=$(tty)
 
 ## gpg-agent
@@ -28,6 +29,7 @@ export GPG_TTY=$(tty)
 
 # aliases
 #alias kc='eval $(keychain --eval --agents ssh,gpg --timeout 30 -Q --quiet id_rsa)'
+alias tmux='TERM=xterm-256color tmux'
 alias pacman='sudo pacman'
 alias emacs='emacs -nw'
 alias ls='ls --color=auto'
@@ -55,10 +57,6 @@ function man {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
 }
-
-# Source secure
-
-. ~/secure/bashrc
 
 # C-s fix
 stty ixany

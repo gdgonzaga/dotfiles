@@ -6,7 +6,7 @@ export TMPDIR="/home/gerry/tmp"
 export HISTIGNORE="&:ls:[bf]g:exit"
 
 #( tmux-status-helpers.sh > /dev/null &> /dev/null )&
-eval $(keychain --eval --timeout 30 -q id_rsa)
+#eval $(keychain --eval --timeout 30 -q id_rsa)
 
 #SSH_AGENT_CACHE=$TMPDIR/SSH_AGENT_CACHE
 ### Start ssh-aent if it isn't alredy running
