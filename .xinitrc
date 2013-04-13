@@ -32,9 +32,9 @@ setxkbmap -option ctrl:nocaps
 xset +fp /usr/share/fonts/local
 xset fp rehash
 export PATH="/home/gerry/bin:$PATH:/usr/local/bin:/usr/bin/vendor_perl"
-feh  --bg-center '/home/gerry/.g/wallpaper'
+feh  --bg-fill '/home/gerry/.g/wallpaper'
 watch-mail.sh &
-dunst &
+#dunst &
 unclutter -noevents &
 autocutsel &
 mpd &
@@ -55,14 +55,23 @@ synclient VertTwoFingerScroll=1
 #synclient CircularScrolling=1
 #synclient CircScrollTrigger=1
 synclient PalmDetect=1
+pnmixer &
 
 urxvt -e tmux attach &
 
-DEFAULT_SESSION="dwm"
+DEFAULT_SESSION="monsterwm"
 
 case $1 in
 
 lxde) exec startlxde
+	;;
+monsterwm)
+        (xchainkeys -f ~/.g/xck-dwm | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
+        (conky -c ~/.g/conkyrc-monster | while read -r; do xsetroot -name "$REPLY"; done) &
+        exec monsterwm-dzen.sh
+	;;
+herb)
+        exec herbstluftwm
 	;;
 kde)
         exec startkde
