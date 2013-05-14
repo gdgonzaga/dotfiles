@@ -257,7 +257,7 @@ input {
 #
 audio_output {
 	type		"httpd"
-	name		"gdg-mpd"
+	name		"gdg-mpd-http"
 	encoder		"vorbis"		# optional, vorbis or lame
 	port		"8000"
 	bind_to_address	"0.0.0.0"		# optional, IPv4 or IPv6
@@ -271,11 +271,21 @@ audio_output {
 #
 audio_output {
     type		"pulse"
-    name		"mpd"
+    name		"gdg-mpd-pulse"
 #	server		"remote_server"		# optional
 #	sink		"remote_server_sink"	# optional
 }
 #
+
+## Visualization
+
+audio_output {
+    type                    "fifo"
+    name                    "my_fifo"
+    path                    "/tmp/mpd.fifo"
+    format                  "44100:16:2"
+}
+
 ## Example "pipe" output:
 #
 #audio_output {
