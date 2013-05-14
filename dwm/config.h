@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-dina-medium-r-*-*-*-*-*-*-*-*-*-*";
+static const char font[]            = "-*-termsyn-medium-*-*-*-*-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#222222";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#ffffff";
@@ -14,18 +14,22 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
+static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const Bool showsystray       = True;     /* False means no systray */
+
 /* tagging */
 static const char *tags[] = { "main", "term", "web", "media", "misc" };
 
 static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
-    { "URxvt",    NULL,       NULL,       3,           False,       -1 },
+    { "URxvt",    NULL,       NULL,       3,            False,       -1 },
     { "Mirage",   NULL,       NULL,       1 << 3,       False,       -1 },
     { "feh",      NULL,       NULL,       1 << 3,       False,       -1 },
     { "Lucidor",  NULL,       NULL,       1 << 3,       False,       -1 },
     { "Zathura",  NULL,       NULL,       1 << 3,       False,       -1 },
     { "Tabbed",   NULL,       NULL,       1 << 2,       False,       -1 },
     { "Firefox",  NULL,       NULL,       1 << 2,       False,       -1 },
+    { "lxpanel",  NULL,       NULL,       31,           True,        -1 },
     { "Gimp",     NULL,       NULL,       1 << 4,       False,       -1 }
 };
 

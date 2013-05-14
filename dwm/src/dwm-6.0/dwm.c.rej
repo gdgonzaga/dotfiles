@@ -1,0 +1,37 @@
+--- dwm.c	Mon Dec 19 15:38:30 2011 +0100
++++ dwm.c	Fri Apr 06 08:25:40 2012 +0200
+@@ -270,18 +299,24 @@
+ static void updatenumlockmask(void);
+ static void updatesizehints(Client *c);
+ static void updatestatus(void);
++static void updatesystray(void);
++static void updatesystrayicongeom(Client *i, int w, int h);
++static void updatesystrayiconstate(Client *i, XPropertyEvent *ev);
+ static void updatewindowtype(Client *c);
+ static void updatetitle(Client *c);
+ static void updatewmhints(Client *c);
+ static void view(const Arg *arg);
+ static Client *wintoclient(Window w);
+ static Monitor *wintomon(Window w);
++static Client *wintosystrayicon(Window w);
+ static int xerror(Display *dpy, XErrorEvent *ee);
+ static int xerrordummy(Display *dpy, XErrorEvent *ee);
+ static int xerrorstart(Display *dpy, XErrorEvent *ee);
+ static void zoom(const Arg *arg);
+ 
+ /* variables */
++static Systray *systray = NULL;
++static unsigned long systrayorientation = _NET_SYSTEM_TRAY_ORIENTATION_HORZ;
+ static const char broken[] = "broken";
+ static char stext[256];
+ static int screen;
+@@ -824,6 +910,9 @@
+ 	if(m == selmon) { /* status is only drawn on selected monitor */
+ 		dc.w = TEXTW(stext);
+ 		dc.x = m->ww - dc.w;
++		if(showsystray && m == selmon) {
++			dc.x -= getsystraywidth();
++		}
+ 		if(dc.x < x) {
+ 			dc.x = x;
+ 			dc.w = m->ww - x;
