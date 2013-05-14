@@ -94,11 +94,14 @@ hi Type         ctermfg=146 guifg=#afafdf cterm=none gui=none
 hi diffAdded    ctermfg=150 guifg=#afdf87
 hi diffRemoved  ctermfg=174 guifg=#df8787
 """ vimdiff {{{3
-hi diffAdd      ctermfg=none  guifg=bg      ctermbg=151 guibg=#afdfaf
-"hi diffDelete   ctermfg=bg  guifg=bg      ctermbg=186 guibg=#dfdf87 cterm=none gui=none
-hi diffDelete   ctermfg=none  guifg=bg      ctermbg=246 guibg=#949494 cterm=none gui=none
-hi diffChange   ctermfg=none  guifg=bg      ctermbg=181 guibg=#dfafaf
-hi diffText     ctermfg=none  guifg=bg      ctermbg=174 guibg=#df8787 cterm=none gui=none
+"hi diffAdd      ctermfg=none  guifg=bg      ctermbg=151 guibg=#afdfaf
+hi diffAdd      ctermfg=none  guifg=bg      ctermbg=022 guibg=#afdfaf
+"hi diffDelete   ctermfg=none  guifg=bg      ctermbg=246 guibg=#949494 cterm=none gui=none
+hi diffDelete   ctermfg=none  guifg=bg      ctermbg=238 guibg=#949494 cterm=none gui=none
+"hi diffChange   ctermfg=none  guifg=bg      ctermbg=181 guibg=#dfafaf
+hi diffChange   ctermfg=none  guifg=bg      ctermbg=017 guibg=#dfafaf
+"hi diffText     ctermfg=none  guifg=bg      ctermbg=174 guibg=#df8787 cterm=none gui=none
+hi diffText     ctermfg=none  guifg=bg      ctermbg=017 guibg=#df8787 cterm=none gui=none
 """ HTML {{{3
 " hi htmlTag      ctermfg=146  guifg=#afafdf
 " hi htmlEndTag   ctermfg=146  guifg=#afafdf
