@@ -1,11 +1,12 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-_PS1='\[\033[38;5;185m\]\w \n\[\033[38;5;100m\]\$ \[\033[38;5;248m\]\[\033[0m\]'
-RET_SUCC="\[\033[0;32m\]\342\234\223"
+#_PS1='\[\033[38;5;185m\]\w \n\[\033[38;5;100m\]\$ \[\033[38;5;248m\]\[\033[0m\]'
+_PS1='\[\033[38;5;192m\]\u@\h \[\033[38;5;185m\]\w \n\[\033[38;5;100m\]\$ \[\033[38;5;248m\]\[\033[0m\]'
+#RET_SUCC="\[\033[0;32m\]:)"
 #RET_FAIL="\[\033[0;31m\]\342\234\227"
 RET_FAIL="\[\033[0;31m\]"
-PROMPT_COMMAND='RET=$?; if [[ $RET -eq 0 ]]; then export PS1="${RET_SUCC} ${_PS1}"; else export PS1="${RET_FAIL}$RET ${_PS1}"; fi'
+PROMPT_COMMAND='RET=$?; if [[ $RET -eq 0 ]]; then export PS1="${_PS1}"; else export PS1="${RET_FAIL}$RET ${_PS1}"; fi'
 
 #export _JAVA_AWT_WM_NONREPARENTING=1
 export GPG_TTY=$(tty)
@@ -43,8 +44,7 @@ alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
 alias vr='vim --servername gg --remote-tab'
 alias vre='vim --servername gg --remote'
 alias vrs='vim --servername gg'
-
-function def { sdcv "$@" | less; }
+alias def='SDCV_PAGER=less  sdcv'
 
 function man {
     env \
