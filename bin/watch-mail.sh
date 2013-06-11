@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # watch-mail.sh
 #
 # 1. Monitor maildir for created/deleted/moved files
@@ -16,57 +16,68 @@
 #
 # TODO: Put all notification files in a single directory
 
-SLEEP_DELAY=5
+sleep_delay=5
 
-# Initialize the DATA variable using the configuration below
+# Initialize the data variable using the configuration below
 function init_tags {
      while read line; do
          # Proceed if line is not empty and not a comment
          if [[ -n "$line" && -z "$(echo "$line" | grep "^#")" ]]; then
-             DATA[${#DATA[@]}]="$line"
+             data[${#data[@]}]="$line"
          fi
      done
  }
 
 # Count new mail
 function count {
-    INDEX=3
-    while [[ $INDEX -lt ${#DATA[@]} ]]; do
+    index=3
+    while [[ $index -lt ${#data[@]} ]]; do
         # Bind the lines of the current block to temporary variables
-        QUERY="${DATA[$INDEX]}"
-        FILE="${DATA[$(($INDEX - 1))]}"
-        NOTIFY="${DATA[$(($INDEX - 2))]}"
-        NAME="${DATA[$(($INDEX - 3))]}"
+        query="${data[$index]}"
+        file="${data[$(($index - 1))]}"
+        notify="${data[$(($index - 2))]}"
+        name="${data[$(($index - 3))]}"
 
-        COUNT=$(notmuch search $QUERY and tag:unread | wc -l)
+        count=$(notmuch search $query and tag:unread | wc -l)
 
-        # Update INDEX to point at the last line of the next block
-        INDEX=$((INDEX + 4))
+        # Update index to point at the last line of the next block
+        index=$((index + 4))
 
-        notify "$NAME" "$COUNT" "$FILE" "$NOTIFY"
+        notify "$name" "$count" "$file" "$notify"
     done
 }
 
 # Send notification and echo to file
 # Called by count
 function notify {
-  NAME="$1"
-  COUNT="$2"
-  FILE="$3"
-  NOTIFY="$4"
+  name="$1"
+  count="$2"
+  file="$3"
+  notify="$4"
 
-  if [ "$COUNT" -gt 0 ]; then
-      if [[ -e "$FILE" && "$(cat "$FILE")" -lt $COUNT && "$NOTIFY" != "n" ]]; then
-          notify-send -u "$NOTIFY" "New $NAME: $(($COUNT - $(cat "$FILE")))"
-      fi
-      echo -n "$COUNT" > "$FILE"
-  elif [ -f "$FILE" ]; then
-      rm $FILE
+  [ -f "$file" ] && old="$(cat "$file")"
+  [ -n "$old" ] && new=$(($count - $old)) || new="$count"
+
+  echo "NOTIFY: $name: count: $count old: $old new: $new"
+
+  # If there is new mail, do a notify-send
+  if [[ "$new" -gt 0 ]]; then
+      notify-send -u "$notify" "New $name: $new"
   fi
+
+  # If there is new mail, update the notification file
+  if [[ "$new" -gt 0 ]]; then
+      echo -n "$count" > "$file"
+
+  # Remove the notification file if there is no unread mail
+  elif [[ "$count" -le 0 ]]; then
+      rm $file
+  fi
+
 }
 
 #### CONFIGURE HERE
-MAILDIR=~/Mail
+maildir=~/Mail
 init_tags < <(cat << EOF
 # Comments and empty lines are skipped
 # Comments are lines that have '#' as the first character
@@ -93,7 +104,7 @@ critical
 tag:ross
 
 BT
-n
+normal
 /home/gerry/tmp/mail-bt
 tag:bt
 
@@ -103,6 +114,6 @@ EOF
 while true; do
   notmuch-postsync.sh
   count
-  inotifywait $MAILDIR -e create -e delete -e move -r -q --exclude ".notmuch" > /dev/null
-  sleep $SLEEP_DELAY;
+  inotifywait $maildir -e create -e delete -e move -r -q --exclude ".notmuch" > /dev/null
+  sleep $sleep_delay;
 done
