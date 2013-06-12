@@ -56,8 +56,15 @@ function notify {
   notify="$4"
 
   [ -f "$file" ] && old="$(cat "$file")"
-  [ -n "$old" ] && new=$(($count - $old)) || new="$count"
 
+  # Determine the number of new emails from the last sync
+  if [ -n "$old" ] && [[ $count -gt $old ]]; then
+     new=$(($count - $old))
+  else
+     new="$count"
+  fi
+
+  # DEBUG:
   echo "NOTIFY: $name: count: $count old: $old new: $new"
 
   # If there is new mail, do a notify-send
@@ -69,8 +76,8 @@ function notify {
   if [[ "$new" -gt 0 ]]; then
       echo -n "$count" > "$file"
 
-  # Remove the notification file if there is no unread mail
-  elif [[ "$count" -le 0 ]]; then
+  # Remove the notification file if it exists and there are no unread emails
+  elif [ -f "$file" ] && [[ "$count" -eq 0 ]]; then
       rm $file
   fi
 
