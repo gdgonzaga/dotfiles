@@ -38,7 +38,8 @@ watch-mail.sh &
 unclutter -noevents &
 autocutsel &
 mpd &
-follow-mpd.sh &
+#parcellite &
+#seafile-applet &
 
 # screen powersave
 #xset +dpms
@@ -55,37 +56,37 @@ synclient VertTwoFingerScroll=1
 #synclient CircularScrolling=1
 #synclient CircScrollTrigger=1
 synclient PalmDetect=1
-pnmixer &
+xinput set-prop "SynPS/2 Synaptics TouchPad"  "Device Accel Constant Deceleration" 4
 
 urxvt -e tmux attach &
 
-DEFAULT_SESSION="monsterwm"
+DEFAULT_SESSION="dwm"
 
 case $1 in
 
-lxde) exec startlxde
-	;;
-monsterwm)
+notion)
+        follow-mpd.sh &
+        exec notion
+        ;;
+cinnamon)
+        follow-mpd.sh &
         (xchainkeys -f ~/.g/xck-dwm | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
-        (conky -c ~/.g/conkyrc-monster | while read -r; do xsetroot -name "$REPLY"; done) &
-        exec monsterwm-dzen.sh
-	;;
-herb)
-        exec herbstluftwm
-	;;
-kde)
-        exec startkde
-	;;
+        exec cinnamon3d
+        ;;
 stumpwm)
-
-        exec  \
-        sbcl --eval "(ql:quickload 'stumpwm)"\
-             --eval "(stumpwm:stumpwm)"\
-             --eval "(quit)"
+        #(xchainkeys -f ~/.g/xck-stumpwm | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
+        #exec  \
+        #sbcl --eval "(ql:quickload 'stumpwm)"\
+             #--eval "(stumpwm:stumpwm)"\
+             #--eval "(quit)"
+        exec stumpwm
 	;;
 *)
+        pnmixer &
+        follow-mpd.sh &
         conky -c ~/.g/conkyrc-dwm | while read -r; do xsetroot -name "$(echo -e "$REPLY")"; done &
-        compton -f -D 2 --inactive-dim 0.3 --focus-exclude 'g:ei:Smplayer' &
+        #compton -f -D 2 --inactive-dim 0.3 --focus-exclude 'g:ei:Smplayer' &
+        compton &
         (xchainkeys -f ~/.g/xck-dwm | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
         exec dwm
         #exec "$DEFAULT_SESSION"
