@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-termsyn-medium-*-*-*-*-*-*-*-*-*-*-*";
+static const char font[]            = "-*-termsyn-medium-r-*-*-*-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#222222";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#ffffff";
@@ -11,25 +11,37 @@ static const char selbgcolor[]      = "#005577";
 static const char selfgcolor[]      = "#eeeeee";
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const Bool showsystray       = True;     /* False means no systray */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
-static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const Bool showsystray       = True;     /* False means no systray */
+static const char* colors[NumColors][ColLast] = {
+	// border          foreground   background
+	{ normbordercolor, normfgcolor, normbgcolor },  // normal
+	{ selbordercolor,  selfgcolor,  selbgcolor  },  // selected
+
+	{ normbordercolor, selbgcolor,  selfgcolor  },  // warning
+	{ normbordercolor, "#ffffff",   "#ff0000"   },  // error
+	{ normbordercolor, "#7598b2",   normbgcolor },  // delim
+
+        { normbordercolor, "#b10000",   normbgcolor },  // hot
+	{ normbordercolor, "#b15c00",   normbgcolor },  // medium
+	{ normbordercolor, "#6cb100",   normbgcolor },  // cool
+};
 
 /* tagging */
 static const char *tags[] = { "main", "term", "web", "media", "misc" };
 
 static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
-    { "URxvt",    NULL,       NULL,       3,            False,       -1 },
+    { "URxvt",    NULL,       NULL,       3,           False,       -1 },
     { "Mirage",   NULL,       NULL,       1 << 3,       False,       -1 },
     { "feh",      NULL,       NULL,       1 << 3,       False,       -1 },
     { "Lucidor",  NULL,       NULL,       1 << 3,       False,       -1 },
     { "Zathura",  NULL,       NULL,       1 << 3,       False,       -1 },
     { "Tabbed",   NULL,       NULL,       1 << 2,       False,       -1 },
     { "Firefox",  NULL,       NULL,       1 << 2,       False,       -1 },
-    { "lxpanel",  NULL,       NULL,       31,           True,        -1 },
     { "Gimp",     NULL,       NULL,       1 << 4,       False,       -1 }
 };
 
@@ -110,6 +122,7 @@ static Button buttons[] = {
     /* click                event mask      button          function        argument */
     { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
     { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkWinTitle,          0,              Button1,        focusonclick,   {0} },
     { ClkWinTitle,          0,              Button2,        zoom,           {0} },
     { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
     { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
