@@ -1,1 +1,1 @@
-/home/gerry/dwm/config.h
+../config.h

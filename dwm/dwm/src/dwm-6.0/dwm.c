@@ -2219,9 +2219,11 @@ togglefloating(const Arg *arg) {
             selmon->sel->oldbw = 0;
         }
 
+	if(selmon->sel->isfloating) {
         /*restore last known float dimensions*/
         resize(selmon->sel, selmon->sel->sfx, selmon->sel->sfy,
         selmon->sel->sfw, selmon->sel->sfh, False);
+    }
     } else {
         /*save last known float dimensions*/
         selmon->sel->sfx = selmon->sel->x;

@@ -16,18 +16,24 @@ static const Bool showsystray       = True;     /* False means no systray */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
+//#define NumColors 12
 static const char* colors[NumColors][ColLast] = {
 	// border          foreground   background
-	{ normbordercolor, normfgcolor, normbgcolor },  // normal
-	{ selbordercolor,  selfgcolor,  selbgcolor  },  // selected
+	{ normbordercolor, normfgcolor, normbgcolor },  // 1 normal
+	{ selbordercolor,  selfgcolor,  selbgcolor  },  // 2 selected
 
-	{ normbordercolor, selbgcolor,  selfgcolor  },  // warning
-	{ normbordercolor, "#ffffff",   "#ff0000"   },  // error
-	{ normbordercolor, "#7598b2",   normbgcolor },  // delim
+	{ normbordercolor, selbgcolor,  selfgcolor  },  // 3 warning
+	{ normbordercolor, "#ffffff",   "#ff0000"   },  // 4 error
+	//{ normbordercolor, "#7598b2",   normbgcolor },  // 5 delim
 
-        { normbordercolor, "#b10000",   normbgcolor },  // hot
-	{ normbordercolor, "#b15c00",   normbgcolor },  // medium
-	{ normbordercolor, "#6cb100",   normbgcolor },  // cool
+    //{ normbordercolor, "#b10000",   normbgcolor },  // 6 hot
+	//{ normbordercolor, "#b15c00",   normbgcolor },  // 7 medium
+	//{ normbordercolor, "#6cb100",   normbgcolor },  // 8 cool
+
+	{ normbordercolor, "#ff005f",   normbgcolor },  // 5 9 Mail-Red
+	{ normbordercolor, "#87ff5f",   normbgcolor },  // 6 10 Mail-Green
+	{ normbordercolor, "#87afff",   normbgcolor },  // 7 11 Title
+	{ normbordercolor, "#eeeeee",   normbgcolor },  // 8 12 Text
 };
 
 /* tagging */
@@ -55,6 +61,7 @@ static const Layout layouts[] = {
     { "[]=",      tile },    /* first entry is default */
     { "><>",      NULL },    /* no layout function means floating behavior */
     { "[M]",      monocle },
+    { "[]]",      deck },
 };
 
 /* key definitions */
@@ -96,6 +103,7 @@ static Key keys[] = {
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_s,      setlayout,      {.v = &layouts[3]} },
     { MODKEY,                       XK_space,  setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
     { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
