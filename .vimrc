@@ -1,30 +1,62 @@
 " Vundles
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
-Bundle 'vim-scripts/vimwiki'
-"Bundle 'sandeepcr529/Buffet.vim'
+"Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'jeetsukumaran/vim-buffergator'
-"Bundle 'vim-scripts/minibufexpl.vim'
-Bundle 'vim-scripts/bufkill.vim'
+"Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'vim-scripts/minibufexpl.vim'
+"Bundle 'fholgado/minibufexpl.vim'
+Bundle 'nanotech/jellybeans.vim'
+"Bundle 'vim-scripts/bufkill.vim'
+"Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-bufferline'
 "Bundle 'xolox/vim-notes'
 Bundle 'danro/rename.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdcommenter'
+"Bundle 'tpope/vim-vinegar.git'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'tpope/vim-markdown'
-"Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
-Bundle 'ervandew/supertab'
-Bundle 'kien/rainbow_parentheses.vim'
+"Bundle 'ervandew/supertab'
+"Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'vim-scripts/slimv.vim'
 Bundle 'vim-scripts/tinymode.vim'
-Bundle 'mattn/calendar-vim'
-"Bundle 'vim-scripts/bufexplorer.zip'
+"Bundle 'mattn/calendar-vim'
+Bundle 'jamessan/vim-gnupg'
+Bundle 'scrooloose/syntastic'
+Bundle 'matthewsimo/angular-vim-snippets'
+Bundle 'claco/jasmine.vim'
+Bundle 'Valloric/YouCompleteMe'
+"Bundle 'plasticboy/vim-markdown'
+"Bundle 'tpope/vim-markdown'
+"Bundle 'jtratner/vim-flavored-markdown'
 "Bundle 'vim-scripts/YankRing.vim'
+
+" Editing
+Bundle 'Raimondi/delimitMate'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/vim-easymotion'
+
+" UltiSnips
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+
+" Javascript
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'marijnh/tern_for_vim'
+
+" Node
+Bundle 'myhere/vim-nodejs-complete'
+
+" Colorschemes
+Bundle 'tomasr/molokai'
+Bundle 'croaker/mustang-vim'
+Bundle 'vim-scripts/xoria256.vim'
 
 " General settings
 filetype plugin indent on
@@ -38,9 +70,9 @@ set backspace=indent,eol,start
 set pastetoggle=<Leader><f2>
 "set textwidth=72
 "inoremap <C-k> <ESC>
-inoremap jj <ESC>
+inoremap kj <ESC>
 set list listchars=tab:▸\ ,trail:-
-set autochdir
+"set autochdir
 
 set wrap
 set linebreak
@@ -50,6 +82,9 @@ vnoremap <Space> zf
 
 " No autocomments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Spellcheck
+"set spell spellang=en_us
 
 " Better jump
 nnoremap ' `
@@ -89,16 +124,23 @@ nnoremap k gk
 " Mutt
 au BufRead /tmp/mutt-* set tw=72
 
+" plasticboy Markdown
+au BufNewFile,BufRead *.md setlocal filetype=markdown
+let g:vim_markdown_initial_foldlevel=2
+
 " Use ctrl-[hjkl] to select the active split
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
+" Set local current directory to same directory as current buffer
+nnoremap ;cd :lcd %:p:h<CR>:pwd<CR>
 
 " Colorscheme
 set t_Co=256
-colorscheme xoria256
+colorscheme xoria256.gdg
+"colorscheme jellybeans
 
 " Leader bindings
 let mapleader = ';'
@@ -106,31 +148,43 @@ let maplocalleader = '\'
 "map <leader>s :set list!<CR>
 
 " Buffergator
-let g:buffergator_suppress_keymaps = 1
 map <Leader>u :BuffergatorToggle<CR>
 "map <Leader>a :BuffergatorTabsToggle<CR>
+let g:buffergator_suppress_keymaps = 0
+let g:buffergator_autodismiss_on_select = 1
 
 " NERDTree
 let NERDTreeAutoDeleteBuffer = 1
-map <Leader>f :NERDTree<CR>
-map <Leader>F :NERDTreeClose<CR>
+map <Leader>f :NERDTreeToggle<CR>
+"map <Leader>F :NERDTreeClose<CR>
 map <Leader>R :WriteAsRoot<CR>
 
 " Buffer management
 map <Leader><Leader> :b#<CR>
-map <Leader>j :bprev<CR>
-map <Leader>k :bnext<CR>
+map <Leader>k :bprev<CR>
+map <Leader>j :bnext<CR>
 map <Leader>g :buffer 
 
 " ctrlp
-let g:ctrlp_map = '<Leader>of'
-map <Leader>of :CtrlPMixed<CR>
-map <Leader>or :CtrlPMRUFiles<CR>
-map <Leader>ob :CtrlPBuffer<CR>
-map <Leader>ot :CtrlPBufTag<CR>
-map <Leader>oT :CtrlPBufTagAll<CR>
-let g:ctrlp_max_depth = 10
+let g:ctrlp_map = '<Leader>o'
+let  g:ctrlp_cmd = 'CtrlPMixed'
+"map <Leader>o :CtrlPMixed<CR>
+"map <Leader>or :CtrlPMRUFiles<CR>
+map <Leader>b :CtrlPBuffer<CR>
+"map <Leader>ot :CtrlPBufTag<CR>
+"map <Leader>oT :CtrlPBufTagAll<CR>
+let g:ctrlp_by_filename = 1
+let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
+let g:ctrlp_use_caching = 1
+let g:ctrlp_cache_dir = "~/tmp/ctrlp"
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '.gitignore|.git|.cache',
+    \ 'file': '\.swp|\.mp3$|\.png$\|\.jpg$\|\.mkv$\|\.avi$',
+    \ 'link': '',
+    \ }
+
 
 " tinymode : Easy window resize
 call tinymode#EnterMap("winsize", "<C-W>h", "h")
@@ -148,29 +202,26 @@ map <C-W>m :wincmd _<CR>
 " NERDTree
 "autocmd VimEnter * if !argc() | NERDTree | endif
 
-" CtrlP
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '.gitignore|.git|.cache',
-    \ 'file': '\.swp|\.mp3$|\.png$\|\.jpg$\|\.mkv$\|\.avi$',
-    \ 'link': '',
-    \ }
-
 " Slimv
 "let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 "let g:slimv_swank_cmd = '! tmux neww "authbind ecl -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
-let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
+"let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 "let g:slimv_swank_cmd = '! tmux neww "athbind sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
+let g:slimv_swank_cmd = '! tmux neww "sbcl --load /home/gerry/opt/slime/start-swank.lisp " '
 
 let g:slimv_updatetime = 200
 let g:slimv_lisp = '/usr/bin/sbcl'
 let g:slimv_imp = 'sbcl'
-let g:slimv_browser_cmd = 'vp.sh'
+let g:slimv_browser_cmd = 'dwb'
 let g:slimv_ctags = '/usr/bin/ctags'
 let g:slimv_clhs_root = 'file:///usr/share/doc/HyperSpec/Body/'
-let g:paredit_leader = ';s'
-let g:slimv_leader = ';s'
+"let g:paredit_leader = ';s'
+let g:paredit_mode = 0
+"let g:slimv_leader = ';s'
 "let g:slimv_keybindings = 3
-let g:lisp_rainbow = 0
+let g:paredit_leader = ','
+let g:slimv_leader = ','
+let g:lisp_rainbow = 1
 let g:paredit_electric_return=0
 "let g:paredit_mode = 0
 
@@ -178,24 +229,24 @@ let g:paredit_electric_return=0
 let g:slime_target= "tmux"
 let g:slime_paste_file = tempname()
 
-" Rainbow Parens
-let g:rbpt_colorpairs = [
-    \ ['yellow',   'RoyalBlue3'],
-    \ ['blue',     'green'],
-    \ ['brown', 'DarkOrchid3'],
-    \ ['red',    'firebrick3'],
-    \ ['magenta',   'RoyalBlue3'],
-    \ ['yellow',       'RoyalBlue3'],
-    \ ['darkgreen',    'SeaGreen3'],
-    \ ['cyan',         'firebrick3'],
-    \ ]
-let g:rbpt_max = 8
-au Syntax lisp RainbowParenthesesToggle
-"au VimEnter * RainbowParenthesesToggle
+""" Rainbow Parens
+
+"let g:rbpt_colorpairs = [
+    "\ ['yellow',   'RoyalBlue3'],
+    "\ ['blue',     'green'],
+    "\ ['brown', 'DarkOrchid3'],
+    "\ ['red',    'firebrick3'],
+    "\ ['magenta',   'RoyalBlue3'],
+    "\ ['yellow',       'RoyalBlue3'],
+    "\ ['darkgreen',    'SeaGreen3'],
+    "\ ['cyan',         'firebrick3'],
+    "\ ]
+"let g:rbpt_max = 8
+"au VimEnter * RainbowParenthesesActivate
 "au Syntax * RainbowParenthesesLoadRound
 "au Syntax * RainbowParenthesesLoadSquare
 "au Syntax * RainbowParenthesesLoadBraces
-"map <Leader>gr :RainbowParenthesesToggle<CR>
+""map <Leader>gr :RainbowParenthesesToggle<CR>
 
 " vimwiki
 map <Leader>wha :VimwikiAll2HTML<CR>
@@ -203,8 +254,8 @@ map <Leader>wls :VimwikiSplitLink<CR>
 let g:vimwiki_folding = 1
 let g:vimwiki_use_calendar = 1
 let wiki_1 = {}
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.md'
+let wiki_1.syntax = 'media'
+let wiki_1.ext = '.wiki'
 let wiki_1.path = '~/seafile/plain/vimwiki/'
 "let wiki_1.html_template = '~/public_html/template.tpl'
 "let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
@@ -233,3 +284,62 @@ let Tlist_Enable_Fold_Column = 1
 "map <leader>ne :NoteFromSelectedText<cr>
 "map <leader>ns :SplitNoteFromSelectedText<cr>
 "map <leader>nt :TabNoteFromSelectedText<cr>
+
+"" Syntastic
+set statusline+=%{SyntasticStatuslineFlag()}
+let g:syntastic_check_on_open=1
+
+""""""""""""""""""""
+" GnuPG Extensions "
+""""""""""""""""""""
+
+" Tell the GnuPG plugin to armor new files.
+let g:GPGPreferArmor=1
+
+" Tell the GnuPG plugin to sign new files.
+let g:GPGPreferSign=1
+
+augroup GnuPGExtra
+" Set extra file options.
+    autocmd BufReadCmd,FileReadCmd *.\(gpg\|asc\|pgp\) call SetGPGOptions()
+" Automatically close unmodified files after inactivity.
+    autocmd CursorHold *.\(gpg\|asc\|pgp\) quit
+augroup END
+
+function SetGPGOptions()
+" Set updatetime to 1 minute.
+    set updatetime=60000
+" Fold at markers.
+    set foldmethod=marker
+" Automatically close all folds.
+    set foldclose=all
+" Only open folds with insert commands.
+    set foldopen=insert
+endfunction
+
+" Yank WORD to system clipboard in normal mode
+nmap <leader>y "+yE
+" Yank selection to system clipboard in visual mode
+vmap <leader>y "+y
+" Paste from clipboard
+nmap <leader>p "+p
+nmap <leader>P "+P
+
+" UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" YouCompleteMe ycm
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+
+" Indent
+imap <C-j> <CR><Esc>O
+
+1
+imap <C-c> <CR><Esc>O

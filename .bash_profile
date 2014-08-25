@@ -1,9 +1,17 @@
-export PATH="$HOME/bin:$HOME/bin-local:$PATH:/usr/local/bin:/home/.rvm/bin:/home/gerry/.gem/ruby/1.9.1/bin"
+export PATH="$HOME/bin:$HOME/bin-local:$PATH:/usr/local/bin:/home/gerry/.nvm/v0.10.30/bin:/home/gerry/.gem/ruby/1.9.1/bin"
 
 export EDITOR="vim"
-export BROWSER="vp.sh"
+export BROWSER="firefox"
+#export BROWSER="dwb"
 export TMPDIR="/home/gerry/tmp"
 export HISTIGNORE="&:ls:[bf]g:exit"
+
+#remind -z -k'mail -s REMIND\ %s gerry </dev/null' ~/.reminders
+
+#[[ -n $(pgrep remind) ]] && remind -z -k'mail -s REMIND\ -\ %s gerry </dev/null' ~/.reminders &
+
+# run gpg-agent
+#[ -z "$(pgrep gpg-agent)" ] && eval $(gpg-agent --daemon)
 
 #( tmux-status-helpers.sh > /dev/null &> /dev/null )&
 #eval $(keychain --eval --timeout 30 -q id_rsa)
@@ -29,3 +37,6 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 . $HOME/.bashrc
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export NVM_DIR="/home/gerry/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &> /dev/null # This loads nvm

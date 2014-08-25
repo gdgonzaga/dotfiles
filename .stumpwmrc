@@ -1,6 +1,7 @@
 (in-package :stumpwm)
 
-(run-shell-command "/home/gerry/bin/stumpwm-init.sh")
+;(run-shell-command "/home/gerry/bin/stumpwm-init.sh")
+;(run-shell-command "bash -c while true; do conky -c ~/.g/conkyrc-stumpwm > ~/tmp/stumpwm-conky")
 
 ;;; Load additional modules
 (set-contrib-dir "/home/gerry/.stumpwm")
@@ -13,7 +14,7 @@
 (load-module "mpd")
 ;(load-module "wifi")
 
-(set-font "-*-dina-medium-r-normal-*-*-*-*-*-*-*-*-*")
+(set-font "-*-termsyn-medium-*-*-*-*-*-*-*-*-*-*-*")
 
 ;; Override mode line current window highlighting
 (defun fmt-highlight (s)
@@ -38,21 +39,21 @@
                                   "^6*[ %W^6*]" ; Windows
                                   "^7*   "
                                   "^5*%m"       ; mpd
-                                  "^7*   "
-                                  "^0*%c %f"      ; cpu
-                                  '(:eval (run-shell-command *cpu-temp-command* t))
-                                  "^7*   "
-                                  "^1*%M"       ; mem
-                                  "^7*   "
-                                  "%D"          ; disk
-                                  "^7*   "
-                                  "^2*%l"       ; net
-                                  "^7*   "
-                                  '(:eval (run-shell-command "tail -1 ~/tmp/stumpwm-mail | tr -d '\\n'" t)) ; Mail
                                   ;"^7*   "
-                                  ;"^1*%I"       ; wifi
-                                  '(:eval (run-shell-command "date +'%a, %b %d %T' | tr -d '\\n'" t)))) ; Date
-
+                                  ;"^0*%c %f"      ; cpu
+                                  ;"^7*   "
+                                  ;"^1*%M"       ; mem
+                                  ;"^7*   "
+                                  ;"%D"          ; disk
+                                  ;"^7*   "
+                                  ;"^2*%l"       ; net
+                                  ;"^7*   "
+                                  ;'(:eval (run-shell-command "tail -1 ~/tmp/stumpwm-mail | tr -d '\\n'" t)) ; Mail
+                                  ;;"^7*   "
+                                  ;;"^1*%I"       ; wifi
+                                  ;'(:eval (run-shell-command "date +'%a, %b %d %T' | tr -d '\\n'" t)))) ; Date
+                                  '(:eval (run-shell-command "tail -1 ~/tmp/stumpwm-conky | tr -d '\\n'" t)) ; Mail
+))
 ;; Turn on/off the mode line for the current screen only
 (if (not (head-mode-line (current-head)))
      (toggle-mode-line (current-screen) (current-head)))
@@ -61,7 +62,7 @@
 (set-fg-color "PaleGoldenRod")
 (set-bg-color "Brown")
 (set-border-color "BurlyWood")
-(set-msg-border-width 3)
+(set-msg-border-width 1)
 (setf *message-window-gravity* :center
       *timeout-wait*           3
       *input-window-gravity*   :center)
@@ -69,8 +70,8 @@
 ;;;; Window appearance
 (set-focus-color "Gray")
 (set-unfocus-color "Black")
-(setq *maxsize-border-width* 3
-      *normal-border-width* 3
+(setq *maxsize-border-width* 1
+      *normal-border-width* 1
       *window-border-style* :tight)
 
 ;;;; Placement rules
@@ -121,14 +122,14 @@
 
 ;; Run commands
 (define-key *top-map* (kbd "s-e") "run-shell-command dmenu_run")
-(define-key *top-map* (kbd "s-w") "run-shell-command win7.sh")
 (define-key *root-map* (kbd "c") "run-shell-command urxvt -e screen -x")
 (define-key *root-map* (kbd "b") "run-shell-command vp.sh")
 (define-key *root-map* (kbd "m") '*mpd-map*)
 (define-key *root-map* (kbd ",") '*desktop-selection-map*)
 
 ;;;; Misc
-(setq *mouse-focus-policy* :click)
+;(setq *mouse-focus-policy* :click)
+(setq *mouse-focus-policy* :sloppy)
 (setq *mpd-volume-step* 10)
 
 ;;;; Restore desktop

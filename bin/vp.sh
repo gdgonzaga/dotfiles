@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Usage:
 # dvp.sh <bookmarks | URL or search string> [session name]
 # Depends on:
@@ -14,7 +14,7 @@ TABDIR="$TMPDIR/tabbed"
 # dmenu_query <prompt> <options>
 function dmenu_query {
   # Transparency
-  (sleep $TRANSPARENT_SLEEP_DELAY; compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $DMENU_OPACITY) &
+  #(sleep $TRANSPARENT_SLEEP_DELAY; compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $DMENU_OPACITY) &
 
   PROMPT="$1"
 

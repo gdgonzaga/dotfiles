@@ -32,7 +32,7 @@ Commands:
 PLAYLIST_DIR="$HOME/.mpd/playlists"
 
 # dmenu-specific
-FONT="-*-dina-medium-r-normal-*-*-*-*-*-*-*-*-*"
+FONT="-*-termsyn-medium-*-*-*-*-*-*-*-*-*-*-*"
 N_LIST_ITEMS=20
 DMENU_QUERY="dmenu -fn $FONT -i -l $N_LIST_ITEMS"
 
@@ -43,7 +43,8 @@ OPACITY=90
 # Make dmenu transparent. Run just before invoking dmenu.
 # Usage:   transparent
 function transparent {
-    (sleep $SLEEP_DELAY; compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $OPACITY) &
+    echo ' '
+    #(sleep $SLEEP_DELAY; compton-trans -w $(xwininfo -root -children | grep "has no name" | head -1 | cut -d' ' -f6) $OPACITY) &
 }
 
 # Use dmenu to list all songs in the current playlist and play whichever
@@ -57,6 +58,8 @@ function select_song {
                   cut -d")" -f1)
     [ -n "$SONG_NUMBER" ] && mpc play $SONG_NUMBER
 }
+
+trim () { echo $1; }
 
 # Accessory function. Returns the item chosen from dmenu.
 # Usage:   query tag [prompt]
@@ -74,20 +77,21 @@ function query {
 # Example: add artist "Pearl Jam"
 function add {
     TYPE=$1
-    QUERY="$2"
-    mpc search $TYPE "$QUERY" | mpc add
+    QUERY="$(trim "$2")"
+    #echo "$TYPE :: $QUERY"
+    mpc search "$TYPE" "$QUERY" | mpc add
 }
 
 # Ask the user for [tag] and add all matching tracks to the current
 # playlist.
 function query_add {
-   add $1 "$(query $1 "Add $1")"
+   add $1 "$(query "$1" "Add $1")"
 }
 
 # Like query_add, but clears the current playlist first.
 function clear_query_add {
     TERM=$(query "$1" "Load $1")
-    [ -n "$TERM" ] && mpc clear && add $1 "$TERM"
+    [ -n "$TERM" ] && mpc clear && add "$1" "$TERM"
 }
 
 # Add the contents of [playlist] to the current playlist.

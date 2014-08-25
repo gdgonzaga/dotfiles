@@ -28,9 +28,31 @@ precmd () {
         export PS1="${RET_FAIL} ${_PS1}"
     fi
 }
+
+# Add vi mode indicator
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
 ## end zsh config
 
 export GPG_TTY=$(tty)
+
+# gpg-agent
+[ -z "$(pidof gpg-agent)" ] && \
+    gpg-agent --daemon  --enable-ssh-support \
+                  #--write-env-file "${HOME}/.gpg-agent-info"
+
+ if [ -f "${HOME}/.gpg-agent-info" ]; 
+ then
+   . "${HOME}/.gpg-agent-info"
+   export GPG_AGENT_INFO
+   export SSH_AUTH_SOCK
+ fi
 
 # tmux
 [ -n "$TMUX" ] && export TERM=screen-256color
@@ -61,7 +83,5 @@ man() {
 
 # C-s fix
 stty ixany
-
-#set -o vi
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

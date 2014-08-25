@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 WIN=$1
 [ -n $2 ] && CMD="$2" || CMD="bash" # Set default command to bash
 

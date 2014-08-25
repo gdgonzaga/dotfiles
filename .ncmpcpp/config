@@ -231,7 +231,7 @@ visualizer_type = "spectrum" (spectrum/wave)
 ##   not available.
 ##
 #
-song_columns_list_format = "(4f)[green]{l} (15)[cyan]{a} (5f)[]{y} (30)[red]{b} (3f)[]{n} (40)[]{t|f}"
+song_columns_list_format = "(15)[cyan]{aE} (5f)[]{yE} (30)[red]{bE} (3f)[]{nE} (40)[]{t|f} (5f)[green]{lr}"
 #song_columns_list_format = "(7f)[green]{l} (15f)[cyan]{a} (40)[]{t|f} (5f)[]{y} (30)[red]{b} (3f)[]{n}"
 #
 ##### various settings #####

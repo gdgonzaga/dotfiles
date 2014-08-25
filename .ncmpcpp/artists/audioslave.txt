@@ -1,0 +1,167 @@
+Soundgarden frontman and rhythm guitarist Chris Cornell and the former instrumentalists of Rage Against the Machine: Tom Morello (lead guitar), Tim Commerford (bass and backing vocals) and Brad Wilk (drums).   Audioslave released three successful albums, received three Grammy nominations, sold more than eight million records worldwide, and became the first American rock band to perform an open-air concert in Cuba.
+
+        Read more about Audioslave on Last.fm.
+    
+    
+User-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL.]]>
+
+Similar artists:
+
+ * Chris Cornell (http://www.last.fm/music/Chris+Cornell)
+ * Tom Morello (http://www.last.fm/music/Soundgarden)
+ * Tim Commerford (http://www.last.fm/music/Rage+Against+the+Machine)
+ * Brad Wilk (http://www.last.fm/music/Temple+of+the+Dog)
+ * Chris Cornell (http://www.last.fm/music/Alter+Bridge)
+ * Soundgarden (http://www.last.fm/tag/rock)
+ * Rage Against the Machine (http://www.last.fm/tag/alternative%20rock)
+ * Temple of the Dog (http://www.last.fm/tag/hard%20rock)
+ * Alter Bridge (http://www.last.fm/tag/alternative)
+ * rock (http://www.last.fm/tag/grunge)
+ * alternative rock (l version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<artist>
+  <name>Audioslave</name>
+          <mbid>020bfbb4-05c3-4c86-b372-17825c262094</mbid>
+            <bandmembers>
+                    <member>
+                <name>Chris Cornell</name>
+                                    <yearfrom>2001</yearfrom>
+                                                    <yearto>2007</yearto>
+                            </member>
+                    <member>
+                <name>Tom Morello</name>
+                                    <yearfrom>2001</yearfrom>
+                                                    <yearto>2007</yearto>
+                            </member>
+                    <member>
+                <name>Tim Commerford</name>
+                                    <yearfrom>2001</yearfrom>
+                                                    <yearto>2007</yearto>
+                            </member>
+                    <member>
+                <name>Brad Wilk</name>
+                                    <yearfrom>2001</yearfrom>
+                                                    <yearto>2007</yearto>
+                            </member>
+            </bandmembers>
+        <url>http://www.last.fm/music/Audioslave</url>
+  <image size="small">http://userserve-ak.last.fm/serve/34/166295.jpg</image>
+  <image size="medium">http://userserve-ak.last.fm/serve/64/166295.jpg</image>
+  <image size="large">http://userserve-ak.last.fm/serve/126/166295.jpg</image>
+  <image size="extralarge">http://userserve-ak.last.fm/serve/252/166295.jpg</image>
+  <image size="mega">http://userserve-ak.last.fm/serve/_/166295/Audioslave.jpg</image>
+  <streamable>1</streamable>
+  <ontour>0</ontour>
+  <stats>
+    <listeners>1945690</listeners>
+    <playcount>44679517</playcount>
+      </stats>
+
+  <similar>
+	    <artist>
+	  <name>Chris Cornell</name>
+	  <url>http://www.last.fm/music/Chris+Cornell</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/44918275.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/44918275.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/44918275.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/44918275.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/_/44918275/Chris+Cornell+ccornell.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Soundgarden</name>
+	  <url>http://www.last.fm/music/Soundgarden</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/4727050.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/4727050.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/4727050.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/4727050.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/500/4727050/Soundgarden+2693.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Rage Against the Machine</name>
+	  <url>http://www.last.fm/music/Rage+Against+the+Machine</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/348946.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/348946.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/348946.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/348946.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/500/348946/Rage+Against+the+Machine.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Temple of the Dog</name>
+	  <url>http://www.last.fm/music/Temple+of+the+Dog</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/14307811.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/14307811.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/14307811.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/14307811.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/_/14307811/Temple+of+the+Dog+dd.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Alter Bridge</name>
+	  <url>http://www.last.fm/music/Alter+Bridge</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/57719607.png</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/57719607.png</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/57719607.png</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/57719607.png</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/500/57719607/Alter+Bridge+AB+by+Ashley+Maile.png</image>
+	  
+	        	</artist>
+  </similar>
+    <tags>
+        <tag>
+	  <name>rock</name>
+	  <url>http://www.last.fm/tag/rock</url>
+	</tag>
+        <tag>
+	  <name>alternative rock</name>
+	  <url>http://www.last.fm/tag/alternative%20rock</url>
+	</tag>
+        <tag>
+	  <name>hard rock</name>
+	  <url>http://www.last.fm/tag/hard%20rock</url>
+	</tag>
+        <tag>
+	  <name>alternative</name>
+	  <url>http://www.last.fm/tag/alternative</url>
+	</tag>
+        <tag>
+	  <name>grunge</name>
+	  <url>http://www.last.fm/tag/grunge</url>
+	</tag>
+      </tags>
+      <bio>
+        <links>
+        <link rel="original" href="http://www.last.fm/music/Audioslave/+wiki" />
+    </links>
+                                    <published>Wed, 30 Jun 2010 19:51:29 +0000</published>
+    <summary>
+        <![CDATA[        Audioslave was an American hard rock supergroup that formed in Los Angeles, CA in 2001. It consisted of <a href="http://www.last.fm/music/Soundgarden" class="bbcode_artist">Soundgarden</a> frontman and rhythm guitarist <a href="http://www.last.fm/music/Chris+Cornell" class="bbcode_artist">Chris Cornell</a> and the former instrumentalists of <a href="http://www.last.fm/music/Rage+Against+the+Machine" class="bbcode_artist">Rage Against the Machine</a>: <a href="http://www.last.fm/music/Tom+Morello" class="bbcode_artist">Tom Morello</a> (lead guitar), <a href="http://www.last.fm/music/Tim+Commerford" class="bbcode_artist">Tim Commerford</a> (bass and backing vocals) and <a href="http://www.last.fm/music/Brad+Wilk" class="bbcode_artist">Brad Wilk</a> (drums).   Audioslave released three successful albums, received three Grammy nominations, sold more than eight million records worldwide, and became the first American rock band to perform an open-air concert in Cuba.
+
+        <a href="http://www.last.fm/music/Audioslave">Read more about Audioslave on Last.fm</a>.
+    ]]>
+    </summary>
+    <content>
+            <![CDATA[        Audioslave was an American hard rock supergroup that formed in Los Angeles, CA in 2001. It consisted of <a href="http://www.last.fm/music/Soundgarden" class="bbcode_artist">Soundgarden</a> frontman and rhythm guitarist <a href="http://www.last.fm/music/Chris+Cornell" class="bbcode_artist">Chris Cornell</a> and the former instrumentalists of <a href="http://www.last.fm/music/Rage+Against+the+Machine" class="bbcode_artist">Rage Against the Machine</a>: <a href="http://www.last.fm/music/Tom+Morello" class="bbcode_artist">Tom Morello</a> (lead guitar), <a href="http://www.last.fm/music/Tim+Commerford" class="bbcode_artist">Tim Commerford</a> (bass and backing vocals) and <a href="http://www.last.fm/music/Brad+Wilk" class="bbcode_artist">Brad Wilk</a> (drums).   Audioslave released three successful albums, received three Grammy nominations, sold more than eight million records worldwide, and became the first American rock band to perform an open-air concert in Cuba.
+
+        <a href="http://www.last.fm/music/Audioslave">Read more about Audioslave on Last.fm</a>.
+    
+    
+User-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL.]]>
+    </content>
+            <placeformed>Los Angeles, CA</placeformed>                        <yearformed>2001</yearformed>
+            <formationlist>
+                    <formation>
+                <yearfrom>2001</yearfrom>
+                <yearto>2007</yearto>
+            </formation>
+            </formationlist>
+      </bio>
+  </artist></lfm>
+)
+ * hard rock (http://www.last.fm/music/Audioslave)
+ * alternative (http://www.last.fm/music/Chris+Cornell)
+ * grunge (http://www.last.fm/music/Soundgarden)
+
+http://www.last.fm/music/Audioslave

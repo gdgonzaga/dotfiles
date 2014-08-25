@@ -1,54 +1,65 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
+//static const char font[]            = "-*-dina-medium-r-*-*-*-*-*-*-*-*-*-*";
 static const char font[]            = "-*-termsyn-medium-r-*-*-*-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#222222";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#ffffff";
 //static const char normfgcolor[]     = "#bbbbbb";
-static const char selbordercolor[]  = "#005577";
-static const char selbgcolor[]      = "#005577";
+//static const char selbordercolor[]  = "#005577";
+static const char selbordercolor[]  = "#3388aa";
+static const char selbgcolor[]      = "#3388aa";
+//static const char selbgcolor[]      = "#222222";
 static const char selfgcolor[]      = "#eeeeee";
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const Bool showsystray       = True;     /* False means no systray */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
+static const Bool bottombar         = True;     /* True means an extra bar at the bottom */
 
-//#define NumColors 12
+#define NumColors 9
+//static const char csys[]    = "#7777d4";
+//static const char cfs[]     = "#a1c57c";
+//static const char cnet[]    = "#ffdf30";
+static const char csys[]    = "#9999ff";
+static const char cfs[]     = "#9999ff";
+static const char cnet[]    = "#9999ff";
 static const char* colors[NumColors][ColLast] = {
 	// border          foreground   background
-	{ normbordercolor, normfgcolor, normbgcolor },  // 1 normal
-	{ selbordercolor,  selfgcolor,  selbgcolor  },  // 2 selected
+	//{ normbordercolor, normfgcolor, normbgcolor },  // 1 normal
+	//{ selbordercolor,  selfgcolor,  selbgcolor  },  // 2 selected
+	{ normbordercolor, "#eeeeee",   normbgcolor },  // 1 Normal
+	{ normbordercolor, "#ffffff",   "#ee0000"   },  // 2 CRITICAL
+	{ normbordercolor, csys,   normbgcolor },    // 3 system
+	{ normbordercolor, cfs,    normbgcolor },    // 4 storage
+	{ normbordercolor, normbgcolor,   normbgcolor },  // 5 delim
+	{ selbordercolor,  cnet,   normbgcolor },  // 6 net
+	{ normbordercolor, normfgcolor, "#000099" },    // 7 Mail-Blue
+	{ normbordercolor, "#ff005f",   normbgcolor },  // 8 
+	{ normbordercolor, normfgcolor, "#009900" },  // 9 10 Mail-Green
 
-	{ normbordercolor, selbgcolor,  selfgcolor  },  // 3 warning
-	{ normbordercolor, "#ffffff",   "#ff0000"   },  // 4 error
-	//{ normbordercolor, "#7598b2",   normbgcolor },  // 5 delim
-
-    //{ normbordercolor, "#b10000",   normbgcolor },  // 6 hot
-	//{ normbordercolor, "#b15c00",   normbgcolor },  // 7 medium
-	//{ normbordercolor, "#6cb100",   normbgcolor },  // 8 cool
-
-	{ normbordercolor, "#ff005f",   normbgcolor },  // 5 9 Mail-Red
-	{ normbordercolor, "#87ff5f",   normbgcolor },  // 6 10 Mail-Green
-	{ normbordercolor, "#87afff",   normbgcolor },  // 7 11 Title
-	{ normbordercolor, "#eeeeee",   normbgcolor },  // 8 12 Text
 };
 
 /* tagging */
-static const char *tags[] = { "main", "term", "web", "media", "misc" };
+static const char *tags[] = { "rem", "term", "web", "vm", "media", "6", "7" };
 
 static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
-    { "URxvt",    NULL,       NULL,       3,           False,       -1 },
-    { "Mirage",   NULL,       NULL,       1 << 3,       False,       -1 },
-    { "feh",      NULL,       NULL,       1 << 3,       False,       -1 },
-    { "Lucidor",  NULL,       NULL,       1 << 3,       False,       -1 },
-    { "Zathura",  NULL,       NULL,       1 << 3,       False,       -1 },
-    { "Tabbed",   NULL,       NULL,       1 << 2,       False,       -1 },
+    //{ "URxvt",    NULL,       NULL,       3,           False,       -1 },
+    { "Vmplayer", NULL,       NULL,       1 << 3,       True,        -1 },
+    { "Tilda",    NULL,       NULL,       0,            True,        -1 },
+    { "VirtualBox", NULL,     NULL,       1 << 3,       True,        -1 },
+    { "Mirage",   NULL,       NULL,       1 << 4,       False,       -1 },
+    { "feh",      NULL,       NULL,       1 << 4,       False,       -1 },
+    { "Lucidor",  NULL,       NULL,       1 << 4,       False,       -1 },
+    { "Zathura",  NULL,       NULL,       1 << 4,       False,       -1 },
+    { "tabbed",   NULL,       NULL,       1 << 2,       False,       -1 },
+    { "Dwb",      NULL,       NULL,       1 << 2,       False,       -1 },
     { "Firefox",  NULL,       NULL,       1 << 2,       False,       -1 },
-    { "Gimp",     NULL,       NULL,       1 << 4,       False,       -1 }
+    { "Gimp",     NULL,       NULL,       1 << 5,       False,       -1 }
 };
 
 /* layout(s) */

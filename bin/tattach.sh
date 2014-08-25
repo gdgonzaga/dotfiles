@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 trim () { echo $1; }
 
 if [[ -z "$1" ]]; then

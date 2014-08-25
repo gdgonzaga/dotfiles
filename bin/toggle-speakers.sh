@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 STATUS_FILE=$TMPDIR/speaker-status
 
 amixer -D hw:0 set Speaker toggle

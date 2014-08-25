@@ -1,0 +1,113 @@
+# xchainkeys configuration file
+#
+# Depends on:
+#   ponymix
+#   dmpd-seclect.sh
+#   mpc
+#   pavucontrol
+
+# chain options
+timeout 5000
+
+# feedback options
+
+feedback on       # enable feedback
+delay 1000        # display current key combination
+hold 1000         # display error messages for 1 second
+position center   # center feedback window
+
+font fixed        # use the font "fixed" for the popup window
+foreground black  # black text and border
+background white  # white background
+
+# keybindings
+
+C-t :enter
+C-t C-t :escape
+C-t C-g :abort
+C-t C-r :reload
+
+## execute commands
+W-e :exec dmenu_run > /dev/null
+C-t e C-g :abort
+W-r :exec dmenu-launch > /dev/null
+C-t e m :exec smplayer
+C-t e n :exec urxvt -e vim +VimwikiIndex
+C-t e f :exec firefox
+C-t e d :exec dolphin
+
+## browser commands
+#C-t b b :exec vp.sh bookmarks
+C-t b o :exec dmenu-dwb.sh
+
+## misc
+#C-t semicolon s :exec toggle-speakers.sh > /dev/null
+C-t semicolon t :exec toggle-touchpad.sh > /dev/null
+
+## mpd
+C-t m C-g :abort
+
+# mpc
+C-t m space :exec mpc toggle | grep '\[' | cut -c1-10
+C-t m o :exec mpc -q stop && echo "[stop]" && mpc current --wait
+C-t m l :exec mpc -q prev
+C-t m m :exec mpc -q next
+
+C-t m S-x :exec mpc del 0 ; mpc current
+
+# volume controls
+#C-t m S-e ponymix set-volume $(($(ponymix get-volume) + 5)); notify-send -u low $(ponymix get-volume | sed 's/^/[volume: /' | sed 's/$/]/')
+C-t m S-e :exec ponymix set-volume $(($(ponymix get-volume) + 15)) | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m S-d :exec ponymix set-volume $(($(ponymix get-volume) - 15)) | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m e :exec ponymix set-volume $(($(ponymix get-volume) + 5)) | sed 's/^/[volume: /' | sed 's/$/]/'
+C-t m d :exec ponymix set-volume $(($(ponymix get-volume) - 5)) | sed 's/^/[volume: /' | sed 's/$/]/'
+#C-t m S-e :exec ponymix increase 15 | sed 's/^/[volume: /' | sed 's/$/]/'
+#C-t m S-d :exec ponymix decrease 15 | sed 's/^/[volume: /' | sed 's/$/]/'
+#C-t m e :exec ponymix increase 5 | sed 's/^/[volume: /' | sed 's/$/]/'
+#C-t m d :exec ponymix decrease 5 | sed 's/^/[volume: /' | sed 's/$/]/'
+# set volume with ponymix
+C-t m v :exec echo -e "0\n50\n80\n100\n120\n150" | dmenu -p "Set volume:" | xargs ponymix set-volume | sed 's/^/[volume: /' | sed 's/$/]/'
+
+C-t m S-v :exec pavucontrol
+
+C-t m u :exec mpc update -q --wait && echo "[mpd database updated]"
+C-t m c :exec mpc -q clear && echo "[playlist cleared]"
+
+# dmpd.sh
+C-t m q :exec dmpd-select.sh song > /dev/null
+
+C-t m a :exec dmpd-select.sh cartist
+C-t m S-a :exec dmpd-select.sh artist
+
+C-t m b :exec dmpd-select.sh calbum
+C-t m S-b :exec dmpd-select.sh album
+
+C-t m p p :exec dmpd-select.sh cplaylist
+C-t m p S-p :exec dmpd-select.sh playlist
+C-t m p S-s :exec dmpd-select.sh save
+C-t m p a :exec dmpd-select.sh add
+
+C-t m S-8 :exec dmpd-select.sh all
+
+## desktop control
+W-1 :exec wmctrl -s 0
+W-2 :exec wmctrl -s 1
+W-3 :exec wmctrl -s 2
+W-4 :exec wmctrl -s 3
+W-5 :exec wmctrl -s 4
+W-6 :exec wmctrl -s 5
+W-7 :exec wmctrl -s 6
+W-8 :exec wmctrl -s 7
+W-9 :exec wmctrl -s 8
+
+W-S-1 :exec wmctrl -r ":ACTIVE:" -t 0
+W-S-2 :exec wmctrl -r ":ACTIVE:" -t 1
+W-S-3 :exec wmctrl -r ":ACTIVE:" -t 2
+W-S-4 :exec wmctrl -r ":ACTIVE:" -t 3
+W-S-5 :exec wmctrl -r ":ACTIVE:" -t 4
+W-S-6 :exec wmctrl -r ":ACTIVE:" -t 5
+W-S-7 :exec wmctrl -r ":ACTIVE:" -t 6
+W-S-8 :exec wmctrl -r ":ACTIVE:" -t 7
+W-S-9 :exec wmctrl -r ":ACTIVE:" -t 8
+
+W-d :exec wmctrl -c ":ACTIVE:"
