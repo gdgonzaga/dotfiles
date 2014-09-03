@@ -1,9 +1,0 @@
-update_interval 1
-out_to_x no
-out_to_console yes
-#total_run_times 1
-#use_spacer left
-short_units
-
-TEXT
-CPU ${cpu cpu0}% ${execpi 1 sensors | grep Physical | cut -c18-19} | MEM $memeasyfree | / ${fs_free /} | NET ${downspeedf net}/${upspeedf net} | R/W ${diskio_read /dev/sda}/${diskio_write /dev/sda}

@@ -1,0 +1,188 @@
+grunge. Despite starting years earlier, and having a sound that more closely resembled Black Sabbath or Led Zeppelin than their contemporaries, they are considered one of the "big four" of the '90s Seattle grunge bands, along with Alice in Chains, Nirvana and Pearl Jam.  The band was formed in 1984 by Chris Cornell (vocals, and originally drums) and Hiro Yamamoto (bass), to be joined later by Kim Thayil (guitar) and Scott Sundquist (drums).
+
+        Read more about Soundgarden on Last.fm.
+    
+    
+User-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL.]]>
+
+Similar artists:
+
+ * Chris Cornell (http://www.last.fm/music/Temple+of+the+Dog)
+ * Hiro Yamamoto (http://www.last.fm/music/Alice+in+Chains)
+ * Kim Thayil (http://www.last.fm/music/Chris+Cornell)
+ * Scott Sundquist (http://www.last.fm/music/Pearl+Jam)
+ * Matt Cameron (http://www.last.fm/music/Audioslave)
+ * Jason Everman (http://www.last.fm/tag/grunge)
+ * Jason Everman (http://www.last.fm/tag/rock)
+ * Ben Shepherd (http://www.last.fm/tag/alternative%20rock)
+ * Temple of the Dog (http://www.last.fm/tag/alternative)
+ * Alice in Chains (http://www.last.fm/tag/hard%20rock)
+ * Chris Cornell (l version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<artist>
+  <name>Soundgarden</name>
+          <mbid>153c9281-268f-4cf3-8938-f5a4593e5df4</mbid>
+            <bandmembers>
+                    <member>
+                <name>Chris Cornell</name>
+                                    <yearfrom>1984</yearfrom>
+                                            </member>
+                    <member>
+                <name>Hiro Yamamoto</name>
+                                    <yearfrom>1984</yearfrom>
+                                                    <yearto>1989</yearto>
+                            </member>
+                    <member>
+                <name>Kim Thayil</name>
+                                    <yearfrom>1984</yearfrom>
+                                            </member>
+                    <member>
+                <name>Scott Sundquist</name>
+                                    <yearfrom>1984</yearfrom>
+                                            </member>
+                    <member>
+                <name>Matt Cameron</name>
+                                    <yearfrom>1986</yearfrom>
+                                            </member>
+                    <member>
+                <name>Jason Everman</name>
+                                    <yearfrom>1990</yearfrom>
+                                            </member>
+                    <member>
+                <name>Jason Everman</name>
+                                    <yearfrom>1990</yearfrom>
+                                            </member>
+                    <member>
+                <name>Ben Shepherd</name>
+                                    <yearfrom>1990</yearfrom>
+                                            </member>
+            </bandmembers>
+        <url>http://www.last.fm/music/Soundgarden</url>
+  <image size="small">http://userserve-ak.last.fm/serve/34/225382.jpg</image>
+  <image size="medium">http://userserve-ak.last.fm/serve/64/225382.jpg</image>
+  <image size="large">http://userserve-ak.last.fm/serve/126/225382.jpg</image>
+  <image size="extralarge">http://userserve-ak.last.fm/serve/252/225382.jpg</image>
+  <image size="mega">http://userserve-ak.last.fm/serve/_/225382/Soundgarden.jpg</image>
+  <streamable>1</streamable>
+  <ontour>1</ontour>
+  <stats>
+    <listeners>1516323</listeners>
+    <playcount>30589767</playcount>
+      </stats>
+
+  <similar>
+	    <artist>
+	  <name>Temple of the Dog</name>
+	  <url>http://www.last.fm/music/Temple+of+the+Dog</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/25445513.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/25445513.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/25445513.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/25445513.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/_/25445513/Temple+of+the+Dog+TempleDog11.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Alice in Chains</name>
+	  <url>http://www.last.fm/music/Alice+in+Chains</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/3373207.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/3373207.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/3373207.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/3373207.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/_/3373207/Alice+in+Chains+aic.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Chris Cornell</name>
+	  <url>http://www.last.fm/music/Chris+Cornell</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/63159279.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/63159279.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/63159279.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/63159279.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/_/63159279/Chris+Cornell+tumblr_lld8b8iX6A1qilmlmo1_500.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Pearl Jam</name>
+	  <url>http://www.last.fm/music/Pearl+Jam</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/216827.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/216827.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/216827.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/216827.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/_/216827/Pearl+Jam.jpg</image>
+	  
+	        	</artist>
+    <artist>
+	  <name>Audioslave</name>
+	  <url>http://www.last.fm/music/Audioslave</url>
+	  <image size="small">http://userserve-ak.last.fm/serve/34/27578.jpg</image>
+	  <image size="medium">http://userserve-ak.last.fm/serve/64/27578.jpg</image>
+	  <image size="large">http://userserve-ak.last.fm/serve/126/27578.jpg</image>
+	  <image size="extralarge">http://userserve-ak.last.fm/serve/252/27578.jpg</image>
+	  <image size="mega">http://userserve-ak.last.fm/serve/500/27578/Audioslave.jpg</image>
+	  
+	        	</artist>
+  </similar>
+    <tags>
+        <tag>
+	  <name>grunge</name>
+	  <url>http://www.last.fm/tag/grunge</url>
+	</tag>
+        <tag>
+	  <name>rock</name>
+	  <url>http://www.last.fm/tag/rock</url>
+	</tag>
+        <tag>
+	  <name>alternative rock</name>
+	  <url>http://www.last.fm/tag/alternative%20rock</url>
+	</tag>
+        <tag>
+	  <name>alternative</name>
+	  <url>http://www.last.fm/tag/alternative</url>
+	</tag>
+        <tag>
+	  <name>hard rock</name>
+	  <url>http://www.last.fm/tag/hard%20rock</url>
+	</tag>
+      </tags>
+      <bio>
+        <links>
+        <link rel="original" href="http://www.last.fm/music/Soundgarden/+wiki" />
+    </links>
+                                    <published>Wed, 14 Nov 2012 20:41:46 +0000</published>
+    <summary>
+        <![CDATA[        Soundgarden is a Seattle rock band who helped to define the sound that came to be called <a href="http://www.last.fm/tag/grunge" class="bbcode_tag" rel="tag">grunge</a>. Despite starting years earlier, and having a sound that more closely resembled <a href="http://www.last.fm/music/Black+Sabbath" class="bbcode_artist">Black Sabbath</a> or <a href="http://www.last.fm/music/Led+Zeppelin" class="bbcode_artist">Led Zeppelin</a> than their contemporaries, they are considered one of the &quot;big four&quot; of the '90s Seattle grunge bands, along with <a href="http://www.last.fm/music/Alice+in+Chains" class="bbcode_artist">Alice in Chains</a>, <a href="http://www.last.fm/music/Nirvana" class="bbcode_artist">Nirvana</a> and <a href="http://www.last.fm/music/Pearl+Jam" class="bbcode_artist">Pearl Jam</a>.  The band was formed in 1984 by <a href="http://www.last.fm/music/Chris+Cornell" class="bbcode_artist">Chris Cornell</a> (vocals, and originally drums) and <a href="http://www.last.fm/music/Hiro+Yamamoto" class="bbcode_artist">Hiro Yamamoto</a> (bass), to be joined later by <a href="http://www.last.fm/music/Kim+Thayil" class="bbcode_artist">Kim Thayil</a> (guitar) and <span title="Unknown artist" class="bbcode_unknown">Scott Sundquist</span> (drums).
+
+        <a href="http://www.last.fm/music/Soundgarden">Read more about Soundgarden on Last.fm</a>.
+    ]]>
+    </summary>
+    <content>
+            <![CDATA[        Soundgarden is a Seattle rock band who helped to define the sound that came to be called <a href="http://www.last.fm/tag/grunge" class="bbcode_tag" rel="tag">grunge</a>. Despite starting years earlier, and having a sound that more closely resembled <a href="http://www.last.fm/music/Black+Sabbath" class="bbcode_artist">Black Sabbath</a> or <a href="http://www.last.fm/music/Led+Zeppelin" class="bbcode_artist">Led Zeppelin</a> than their contemporaries, they are considered one of the &quot;big four&quot; of the '90s Seattle grunge bands, along with <a href="http://www.last.fm/music/Alice+in+Chains" class="bbcode_artist">Alice in Chains</a>, <a href="http://www.last.fm/music/Nirvana" class="bbcode_artist">Nirvana</a> and <a href="http://www.last.fm/music/Pearl+Jam" class="bbcode_artist">Pearl Jam</a>.  The band was formed in 1984 by <a href="http://www.last.fm/music/Chris+Cornell" class="bbcode_artist">Chris Cornell</a> (vocals, and originally drums) and <a href="http://www.last.fm/music/Hiro+Yamamoto" class="bbcode_artist">Hiro Yamamoto</a> (bass), to be joined later by <a href="http://www.last.fm/music/Kim+Thayil" class="bbcode_artist">Kim Thayil</a> (guitar) and <span title="Unknown artist" class="bbcode_unknown">Scott Sundquist</span> (drums).
+
+        <a href="http://www.last.fm/music/Soundgarden">Read more about Soundgarden on Last.fm</a>.
+    
+    
+User-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL.]]>
+    </content>
+            <placeformed>Seattle</placeformed>                        <yearformed>1984</yearformed>
+            <formationlist>
+                    <formation>
+                <yearfrom>1984</yearfrom>
+                <yearto>1997</yearto>
+            </formation>
+                    <formation>
+                <yearfrom>2010</yearfrom>
+                <yearto></yearto>
+            </formation>
+            </formationlist>
+      </bio>
+  </artist></lfm>
+)
+ * Pearl Jam (http://www.last.fm/music/Soundgarden)
+ * Audioslave (http://www.last.fm/music/Temple+of+the+Dog)
+ * grunge (http://www.last.fm/music/Alice+in+Chains)
+ * rock (http://www.last.fm/music/Chris+Cornell)
+ * alternative rock (http://www.last.fm/music/Pearl+Jam)
+ * alternative (http://www.last.fm/music/Audioslave)
+ * hard rock (http://www.last.fm/tag/grunge)
+
+http://www.last.fm/music/Soundgarden

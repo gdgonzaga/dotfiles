@@ -1,31 +1,65 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-dina-medium-r-*-*-*-*-*-*-*-*-*-*";
+//static const char font[]            = "-*-dina-medium-r-*-*-*-*-*-*-*-*-*-*";
+static const char font[]            = "-*-termsyn-medium-r-*-*-*-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#222222";
 static const char normbgcolor[]     = "#222222";
-static const char normfgcolor[]     = "#bbbbbb";
-static const char selbordercolor[]  = "#005577";
-static const char selbgcolor[]      = "#005577";
+static const char normfgcolor[]     = "#ffffff";
+//static const char normfgcolor[]     = "#bbbbbb";
+//static const char selbordercolor[]  = "#005577";
+static const char selbordercolor[]  = "#3388aa";
+static const char selbgcolor[]      = "#3388aa";
+//static const char selbgcolor[]      = "#222222";
 static const char selfgcolor[]      = "#eeeeee";
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const Bool showsystray       = True;     /* False means no systray */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
+static const Bool bottombar         = True;     /* True means an extra bar at the bottom */
+
+#define NumColors 9
+//static const char csys[]    = "#7777d4";
+//static const char cfs[]     = "#a1c57c";
+//static const char cnet[]    = "#ffdf30";
+static const char csys[]    = "#9999ff";
+static const char cfs[]     = "#9999ff";
+static const char cnet[]    = "#9999ff";
+static const char* colors[NumColors][ColLast] = {
+	// border          foreground   background
+	//{ normbordercolor, normfgcolor, normbgcolor },  // 1 normal
+	//{ selbordercolor,  selfgcolor,  selbgcolor  },  // 2 selected
+	{ normbordercolor, "#eeeeee",   normbgcolor },  // 1 Normal
+	{ normbordercolor, "#ffffff",   "#ee0000"   },  // 2 CRITICAL
+	{ normbordercolor, csys,   normbgcolor },    // 3 system
+	{ normbordercolor, cfs,    normbgcolor },    // 4 storage
+	{ normbordercolor, normbgcolor,   normbgcolor },  // 5 delim
+	{ selbordercolor,  cnet,   normbgcolor },  // 6 net
+	{ normbordercolor, normfgcolor, "#000099" },    // 7 Mail-Blue
+	{ normbordercolor, "#ff005f",   normbgcolor },  // 8 
+	{ normbordercolor, normfgcolor, "#009900" },  // 9 10 Mail-Green
+
+};
 
 /* tagging */
-static const char *tags[] = { "main", "term", "web", "media", "misc" };
+static const char *tags[] = { "rem", "term", "web", "vm", "media", "6", "7" };
 
 static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
-    { "URxvt",    NULL,       NULL,       3,           False,       -1 },
-    { "Mirage",   NULL,       NULL,       1 << 3,       False,       -1 },
-    { "feh",      NULL,       NULL,       1 << 3,       False,       -1 },
-    { "Lucidor",  NULL,       NULL,       1 << 3,       False,       -1 },
-    { "Zathura",  NULL,       NULL,       1 << 3,       False,       -1 },
-    { "Tabbed",   NULL,       NULL,       1 << 2,       False,       -1 },
+    //{ "URxvt",    NULL,       NULL,       3,           False,       -1 },
+    { "Vmplayer", NULL,       NULL,       1 << 3,       True,        -1 },
+    { "Tilda",    NULL,       NULL,       0,            True,        -1 },
+    { "VirtualBox", NULL,     NULL,       1 << 3,       True,        -1 },
+    { "Mirage",   NULL,       NULL,       1 << 4,       False,       -1 },
+    { "feh",      NULL,       NULL,       1 << 4,       False,       -1 },
+    { "Lucidor",  NULL,       NULL,       1 << 4,       False,       -1 },
+    { "Zathura",  NULL,       NULL,       1 << 4,       False,       -1 },
+    { "tabbed",   NULL,       NULL,       1 << 2,       False,       -1 },
+    { "Dwb",      NULL,       NULL,       1 << 2,       False,       -1 },
     { "Firefox",  NULL,       NULL,       1 << 2,       False,       -1 },
-    { "Gimp",     NULL,       NULL,       1 << 4,       False,       -1 }
+    { "Gimp",     NULL,       NULL,       1 << 5,       False,       -1 }
 };
 
 /* layout(s) */
@@ -38,6 +72,7 @@ static const Layout layouts[] = {
     { "[]=",      tile },    /* first entry is default */
     { "><>",      NULL },    /* no layout function means floating behavior */
     { "[M]",      monocle },
+    { "[]]",      deck },
 };
 
 /* key definitions */
@@ -79,6 +114,7 @@ static Key keys[] = {
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_s,      setlayout,      {.v = &layouts[3]} },
     { MODKEY,                       XK_space,  setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
     { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -105,6 +141,7 @@ static Button buttons[] = {
     /* click                event mask      button          function        argument */
     { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
     { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkWinTitle,          0,              Button1,        focusonclick,   {0} },
     { ClkWinTitle,          0,              Button2,        zoom,           {0} },
     { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
     { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },

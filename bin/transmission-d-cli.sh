@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 transmission-daemon
 sleep 1

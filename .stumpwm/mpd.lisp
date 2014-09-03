@@ -847,7 +847,7 @@ Passed an argument of zero and if crossfade is on, toggles crossfade off."
              (kbd "F") "mpd-set-xfade"
              (kbd "S") "mpd-current-song"
              (kbd "p") "mpd-play"
-             (kbd "q") "mpd-browse-playlist"
+;             (kbd "q") "mpd-browse-playlist"
              (kbd "o") "mpd-stop"
              (kbd "m") "mpd-next"
              (kbd "l") "mpd-prev"
@@ -857,9 +857,19 @@ Passed an argument of zero and if crossfade is on, toggles crossfade off."
              (kbd "u") "mpd-update"
              (kbd "a") "mpd-search-and-add-artist"
              (kbd "z") "mpd-playlist"
-             (kbd "v") "mpd-set-volume"
-             (kbd "e") "mpd-volume-up"
-             (kbd "d") "mpd-volume-down"
+;             (kbd "v") "mpd-set-volume"
+             ;(kbd "e") "mpd-volume-up"
+             ;(kbd "d") "mpd-volume-down"
+
+             (kbd "q") "run-shell-command dmpd-select.sh song"
+; notify-send -u low $(ponymix get-volume | sed 's/^/[volume: /' | sed 's/$/]/')
+             (kbd "e") "run-shell-command bash -c \"ponymix set-volume $(($(ponymix get-volume) + 5)); notify-send -u low $(ponymix get-volume | sed 's/^/[volume: /' | sed 's/$/]/')\""
+             (kbd "E") "run-shell-command bash -c \"ponymix set-volume $(($(ponymix get-volume) + 15)); notify-send -u low $(ponymix get-volume | sed 's/^/[volume: /' | sed 's/$/]/')\""
+             (kbd "d") "run-shell-command bash -c \"ponymix set-volume $(($(ponymix get-volume) - 5)); notify-send -u low $(ponymix get-volume | sed 's/^/[volume: /' | sed 's/$/]/')\""
+             (kbd "D") "run-shell-command bash -c \"ponymix set-volume $(($(ponymix get-volume) - 15)); notify-send -u low $(ponymix get-volume | sed 's/^/[volume: /' | sed 's/$/]/')\""
+
+             (kbd "v") "run-shell-command echo -e '0\\n50\\n80\\n100\\n120\\n150' | dmenu -fn '-*-termsyn-medium-*-*-*-*-*-*-*-*-*-*-*' -p 'Set volume:' | xargs ponymix set-volume | sed 's/^/[volume: /' | sed 's/$/]/'"
+
              (kbd "S") '*mpd-search-map*
              (kbd "b") '*mpd-browse-map*
              (kbd "A") '*mpd-add-map*)

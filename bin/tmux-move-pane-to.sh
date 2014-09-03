@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # tmux-move-pane-to.sh
 #
 # Move the current pane to target window by calling
