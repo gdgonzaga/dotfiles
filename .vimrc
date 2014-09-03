@@ -1,66 +1,62 @@
 " Vundles
+syntax on
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-Bundle 'gmarik/Vundle.vim'
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
-"Bundle 'vim-scripts/vimwiki'
-Bundle 'vim-scripts/taglist.vim'
-"Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'vim-scripts/minibufexpl.vim'
-"Bundle 'fholgado/minibufexpl.vim'
-Bundle 'nanotech/jellybeans.vim'
-"Bundle 'vim-scripts/bufkill.vim'
-"Bundle 'bling/vim-airline'
-"Bundle 'bling/vim-bufferline'
-"Bundle 'xolox/vim-notes'
-Bundle 'danro/rename.vim'
-Bundle 'kien/ctrlp.vim'
-"Bundle 'tpope/vim-vinegar.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
-"Bundle 'ervandew/supertab'
-"Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'vim-scripts/slimv.vim'
-Bundle 'vim-scripts/tinymode.vim'
-"Bundle 'mattn/calendar-vim'
-Bundle 'jamessan/vim-gnupg'
-Bundle 'scrooloose/syntastic'
-Bundle 'matthewsimo/angular-vim-snippets'
-Bundle 'claco/jasmine.vim'
-Bundle 'Valloric/YouCompleteMe'
-"Bundle 'plasticboy/vim-markdown'
-"Bundle 'tpope/vim-markdown'
-"Bundle 'jtratner/vim-flavored-markdown'
-"Bundle 'vim-scripts/YankRing.vim'
+"Plugin 'vim-scripts/vimwiki'
+"Plugin 'vim-scripts/taglist.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
+"Plugin 'fholgado/minibufexpl.vim'
+Plugin 'vim-scripts/bufkill.vim'
+"Plugin 'danro/rename.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-vinegar.git'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'ervandew/supertab'
+
+" common lisp
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kovisoft/slimv'
+
+Plugin 'vim-scripts/tinymode.vim'
+"Plugin 'mattn/calendar-vim'
+Plugin 'jamessan/vim-gnupg'
+"Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 
 " Editing
-Bundle 'Raimondi/delimitMate'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Lokaltog/vim-easymotion'
 
-" UltiSnips
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+"" UltiSnips
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 
-" Javascript
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'marijnh/tern_for_vim'
+"" Javascript
+"Plugin 'othree/javascript-libraries-syntax.vim'
+"Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'marijnh/tern_for_vim'
 
-" Node
-Bundle 'myhere/vim-nodejs-complete'
+"" Angular
+"Plugin 'matthewsimo/angular-vim-snippets'
+"Plugin 'claco/jasmine.vim'
 
-" Colorschemes
-Bundle 'tomasr/molokai'
-Bundle 'croaker/mustang-vim'
-Bundle 'vim-scripts/xoria256.vim'
+"" Node
+"Plugin 'myhere/vim-nodejs-complete'
+
+"" Colorschemes
+"Plugin 'tomasr/molokai'
+"Plugin 'vim-scripts/xoria256.vim'
+call vundle#end()
 
 " General settings
 filetype plugin indent on
-syntax on
 set nocompatible
 set number
 set ruler
@@ -148,10 +144,10 @@ let maplocalleader = '\'
 "map <leader>s :set list!<CR>
 
 " Buffergator
-map <Leader>u :BuffergatorToggle<CR>
+map <Leader>b :BuffergatorToggle<CR>
 "map <Leader>a :BuffergatorTabsToggle<CR>
-let g:buffergator_suppress_keymaps = 0
-let g:buffergator_autodismiss_on_select = 1
+let g:buffergator_suppress_keymaps = 1
+"let g:buffergator_autodismiss_on_select = 1
 
 " NERDTree
 let NERDTreeAutoDeleteBuffer = 1
@@ -168,10 +164,11 @@ map <Leader>g :buffer
 " ctrlp
 let g:ctrlp_map = '<Leader>o'
 let  g:ctrlp_cmd = 'CtrlPMixed'
-"map <Leader>o :CtrlPMixed<CR>
-"map <Leader>or :CtrlPMRUFiles<CR>
-map <Leader>b :CtrlPBuffer<CR>
-"map <Leader>ot :CtrlPBufTag<CR>
+map <Leader>oo :CtrlPMixed<CR>
+map <Leader>or :CtrlPMRUFiles<CR>
+map <Leader>of :CtrlPFiles<CR>
+map <Leader>ob :CtrlPBuffer<CR>
+map <Leader>ot :CtrlPBufTag<CR>
 "map <Leader>oT :CtrlPBufTagAll<CR>
 let g:ctrlp_by_filename = 1
 let g:ctrlp_max_depth = 40
@@ -179,6 +176,7 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_use_caching = 1
 let g:ctrlp_cache_dir = "~/tmp/ctrlp"
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '.gitignore|.git|.cache',
     \ 'file': '\.swp|\.mp3$|\.png$\|\.jpg$\|\.mkv$\|\.avi$',
@@ -209,44 +207,41 @@ map <C-W>m :wincmd _<CR>
 "let g:slimv_swank_cmd = '! tmux neww "athbind sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 let g:slimv_swank_cmd = '! tmux neww "sbcl --load /home/gerry/opt/slime/start-swank.lisp " '
 
-let g:slimv_updatetime = 200
-let g:slimv_lisp = '/usr/bin/sbcl'
-let g:slimv_imp = 'sbcl'
-let g:slimv_browser_cmd = 'dwb'
-let g:slimv_ctags = '/usr/bin/ctags'
+"let g:slimv_updatetime = 200
+"let g:slimv_lisp = '/usr/bin/sbcl'
+"let g:slimv_imp = 'sbcl'
+let g:slimv_repl_split = 4
+"let g:slimv_browser_cmd = 'dwb'
+"let g:slimv_ctags = '/usr/bin/ctags'
 let g:slimv_clhs_root = 'file:///usr/share/doc/HyperSpec/Body/'
 "let g:paredit_leader = ';s'
 let g:paredit_mode = 0
 "let g:slimv_leader = ';s'
 "let g:slimv_keybindings = 3
-let g:paredit_leader = ','
+"let g:paredit_leader = ','
 let g:slimv_leader = ','
-let g:lisp_rainbow = 1
-let g:paredit_electric_return=0
+let g:lisp_rainbow = 0
+"let g:paredit_electric_return=0
 "let g:paredit_mode = 0
 
-" vim-slime
-let g:slime_target= "tmux"
-let g:slime_paste_file = tempname()
+"" Rainbow Parens
 
-""" Rainbow Parens
-
-"let g:rbpt_colorpairs = [
-    "\ ['yellow',   'RoyalBlue3'],
-    "\ ['blue',     'green'],
-    "\ ['brown', 'DarkOrchid3'],
-    "\ ['red',    'firebrick3'],
-    "\ ['magenta',   'RoyalBlue3'],
-    "\ ['yellow',       'RoyalBlue3'],
-    "\ ['darkgreen',    'SeaGreen3'],
-    "\ ['cyan',         'firebrick3'],
-    "\ ]
-"let g:rbpt_max = 8
-"au VimEnter * RainbowParenthesesActivate
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
-""map <Leader>gr :RainbowParenthesesToggle<CR>
+let g:rbpt_colorpairs = [
+    \ ['yellow',   'RoyalBlue3'],
+    \ ['blue',     'green'],
+    \ ['brown', 'DarkOrchid3'],
+    \ ['red',    'firebrick3'],
+    \ ['magenta',   'RoyalBlue3'],
+    \ ['yellow',       'RoyalBlue3'],
+    \ ['darkgreen',    'SeaGreen3'],
+    \ ['cyan',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 8
+au VimEnter * RainbowParenthesesActivate
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+"map <Leader>gr :RainbowParenthesesToggle<CR>
 
 " vimwiki
 map <Leader>wha :VimwikiAll2HTML<CR>
@@ -271,10 +266,13 @@ let lin_wiki.path = '~/seafile/plain/linwiki/'
 let g:vimwiki_list = [wiki_1, lin_wiki]
 
 " taglist
-map <Leader>t :TlistToggle<CR>
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Show_One_File = 0
-let Tlist_Enable_Fold_Column = 1
+"map <Leader>t :TlistToggle<CR>
+"let Tlist_Exit_OnlyWindow = 1
+"let Tlist_Show_One_File = 0
+"let Tlist_Enable_Fold_Column = 1
+
+" tagbar
+map <Leader>t :TagbarToggle<CR>
 
 "" vimnotes
 "let g:notes_directory = '/home/gerry/seafile/plain/vim-notes/'
@@ -289,6 +287,8 @@ let Tlist_Enable_Fold_Column = 1
 set statusline+=%{SyntasticStatuslineFlag()}
 let g:syntastic_check_on_open=1
 
+" DelimitMate
+let delimitMate_quotes = "\" ` " 
 """"""""""""""""""""
 " GnuPG Extensions "
 """"""""""""""""""""
@@ -340,6 +340,3 @@ let g:ycm_server_log_level = 'debug'
 
 " Indent
 imap <C-j> <CR><Esc>O
-
-1
-imap <C-c> <CR><Esc>O
