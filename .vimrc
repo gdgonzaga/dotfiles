@@ -10,10 +10,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 "Plugin 'fholgado/minibufexpl.vim'
 Plugin 'vim-scripts/bufkill.vim'
-"Plugin 'danro/rename.vim'
+Plugin 'danro/rename.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-vinegar.git'
-"Plugin 'scrooloose/nerdtree'
+"Plugin 'tpope/vim-vinegar.git'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'ervandew/supertab'
 
@@ -25,7 +25,7 @@ Plugin 'vim-scripts/tinymode.vim'
 "Plugin 'mattn/calendar-vim'
 Plugin 'jamessan/vim-gnupg'
 "Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 " Editing
 Plugin 'Raimondi/delimitMate'
@@ -52,7 +52,7 @@ Plugin 'Lokaltog/vim-easymotion'
 
 "" Colorschemes
 "Plugin 'tomasr/molokai'
-"Plugin 'vim-scripts/xoria256.vim'
+Plugin 'vim-scripts/xoria256.vim'
 call vundle#end()
 
 " General settings
@@ -106,6 +106,9 @@ set visualbell
 set noerrorbells
 set shortmess=atI
 
+" No Match Paren
+let loaded_matchparen = 1
+
 " Wildmenu
 set wildmenu
 set wildmode=list:longest,full
@@ -113,6 +116,13 @@ set wildmode=list:longest,full
 " Up and down linebreaks
 nnoremap j gj
 nnoremap k gk
+
+" Emacs-like bindings
+inoremap <C-a> <ESC>0i
+inoremap <C-e> <ESC>A
+inoremap <C-d> <DELETE>
+inoremap <C-b> <LEFT>
+inoremap <C-f> <RIGHT>
 
 " Follow file, or open new file if it doesn't exist
 "map gf :e <cfile><cr>
@@ -135,7 +145,7 @@ nnoremap ;cd :lcd %:p:h<CR>:pwd<CR>
 
 " Colorscheme
 set t_Co=256
-colorscheme xoria256.gdg
+colorscheme xoria256
 "colorscheme jellybeans
 
 " Leader bindings
@@ -205,7 +215,12 @@ map <C-W>m :wincmd _<CR>
 "let g:slimv_swank_cmd = '! tmux neww "authbind ecl -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 "let g:slimv_swank_cmd = '! tmux neww "ccl64 -l /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
 "let g:slimv_swank_cmd = '! tmux neww "athbind sbcl --load /usr/share/emacs/site-lisp/slime/start-swank.lisp " '
-let g:slimv_swank_cmd = '! tmux neww "sbcl --load /home/gerry/opt/slime/start-swank.lisp " '
+"let g:slimv_swank_cmd = '! tmux neww "sbcl --load C:/cygwin64/home/gerry/opt/slime/start-swank.lisp " '
+
+let g:slimv_swank_cmd = '! mintty -e sbcl --load C:/cygwin64/home/gerry/opt/slime/start-swank.lisp &'
+
+"let g:slimv_swank_cmd = '! mintty -e "/cygdrive/c/Program Files (x86)/clisp-2.49/clisp.exe" -repl -i "C:/cygwin64/home/Gerry/.clisprc.lisp" C:/cygwin64/home/gerry/opt/slime/start-swank.lisp &'
+"let g:slimv_swank_cmd = '! mintty -e "c:/ccl/wx86cl64.exe" -l C:/cygwin64/home/gerry/opt/slime/start-swank.lisp &'
 
 "let g:slimv_updatetime = 200
 "let g:slimv_lisp = '/usr/bin/sbcl'
@@ -340,3 +355,7 @@ let g:ycm_server_log_level = 'debug'
 
 " Indent
 imap <C-j> <CR><Esc>O
+
+" Easymotion
+map <Leader><Space> <Plug>(easymotion-prefix)
+
