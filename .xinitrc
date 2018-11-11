@@ -1,15 +1,15 @@
 #!/bin/sh # # ~/.xinitrc
 #
 # Executed by startx (run your window manager from here)
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
-    [ -x "$f" ] && . "$f"
-  done
-  unset f
-fi
+#if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  #for f in /etc/X11/xinit/xinitrc.d/*; do
+    #[ -x "$f" ] && . "$f"
+  #done
+  #unset f
+#fi
 
 # https://wiki.archlinux.org/index.php/PRIME
-xrandr --setprovideroffloadsink 0x55 0x7d
+#xrandr --setprovideroffloadsink 0x55 0x7d
 
 # start GNU screen session "gg"
 #if screen -ls gg | grep "gg"
@@ -41,6 +41,9 @@ setxkbmap -option ctrl:nocaps
 xset +fp /usr/share/fonts/local
 xset fp rehash
 export PATH="/home/gerry/bin:$PATH:/usr/local/bin:/usr/bin/vendor_perl"
+export QT_QPA_PLATFORMTHEME='gtk2' in ~/.xinitrc
+
+xcompmgr &
 
 # start backgrounded programs/scripts
 #wicd-gtk &
@@ -48,45 +51,21 @@ export PATH="/home/gerry/bin:$PATH:/usr/local/bin:/usr/bin/vendor_perl"
 unclutter -noevents &
 autocutsel &
 mpd &
+tilda &
 #seafile-applet &
 #parcellite &
 numlockx &
-pactl unload-module module-role-cork
+#pactl unload-module module-role-cork
 
 #urxvt -e tmux attach &
-
-DEFAULT_SESSION="dwm"
-
-case $1 in
-
-kde)
-        xchainkeys -f ~/.g/xck &
-        #conky -c ~/.g/conkyrc-kde &
-        exec startkde
-        ;;
-
-*)
-        #compton &
-        xcompmgr &
-        (wait 5000; tilda) &
-        feh  --bg-fill '/home/gerry/.g/wallpaper'
-        (while true; do pnmixer; done) &
-        follow-mpd.sh &
-        conky -c ~/.g/conkyrc-desktop &
-        conky -c ~/.g/conkyrc-dwm | while read -r; do xsetroot -name "$(echo -e "$REPLY")"; done &
-        (xchainkeys -f ~/.g/xck-dwm | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
-        dunst &
-        exec dwm
-        ;;
-
-cinnamon)
-        #(while true; do pnmixer; done) &
-        follow-mpd.sh &
-        conky -c ~/.g/conkyrc-desktop &
-        #conky -c ~/.g/conkyrc-dwm | while read -r; do xsetroot -name "$(echo -e "$REPLY")"; done &
-        #compton -f -D 2 --inactive-dim 0.3 --focus-exclude 'g:ei:Smplayer' &
-        (xchainkeys -f ~/.g/xck | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
-        dunst &
-        exec cinnamon-session
-        ;;
-esac
+redshift -l 15.133691:120.581854 &
+#compton &
+#(wait 5000; tilda) &
+#feh  --bg-fill '/home/gerry/.g/wallpaper'
+#(while true; do pnmixer; done) &
+#follow-mpd.sh &
+conky -c ~/.g/conkyrc-desktop &
+#conky -c ~/.g/conkyrc-dwm | while read -r; do xsetroot -name "$(echo -e "$REPLY")"; done &
+(xchainkeys -f ~/.g/xck | while read LINE; do notify-send -u low -t 3000 "$LINE"; done) &
+#dunst &
+exec startxfce4

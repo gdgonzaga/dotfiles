@@ -29,10 +29,10 @@ Commands:
     exit 1
 }
 
-PLAYLIST_DIR="$HOME/.mpd/playlists"
+PLAYLIST_DIR="$HOME/.config/mpd/playlists"
 
 # dmenu-specific
-FONT="-*-termsyn-medium-*-*-*-*-*-*-*-*-*-*-*"
+FONT="dina:weight=medium:slant=right:pixelsize=10"
 N_LIST_ITEMS=20
 DMENU_QUERY="dmenu -fn $FONT -i -l $N_LIST_ITEMS"
 

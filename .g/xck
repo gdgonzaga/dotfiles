@@ -28,30 +28,32 @@ C-t C-g :abort
 C-t C-r :reload
 
 ## execute commands
-W-e :exec dmenu_run > /dev/null
+W-e :exec dmenu_run -fn dina:weight=medium:slant=right:pixelsize=10 > /dev/null
 C-t e C-g :abort
-W-r :exec dmenu-launch > /dev/null
+#W-r :exec dmenu-launch > /dev/null
 C-t e m :exec smplayer
-C-t e n :exec urxvt -e vim +VimwikiIndex
+C-t e n :exec urxvt -e vimnotes.sh
+C-t e w :exec urxvt -e vimwiki.sh
+#C-t e f :exec icecat > /dev/null
+#C-t e S-f :exec icecat -private > /dev/null
 C-t e f :exec firefox
-C-t e d :exec dolphin
+C-t e S-f :exec firefox -private
+#C-t e f :exec qutebrowser
+#C-t e S-f :exec qutebrowser --private
 
 ## browser commands
 #C-t b b :exec vp.sh bookmarks
-C-t b o :exec dmenu-dwb.sh
+#C-t b o :exec dmenu-dwb.sh
 
 ## misc
 #C-t semicolon s :exec toggle-speakers.sh > /dev/null
-C-t semicolon t :exec toggle-touchpad.sh > /dev/null
-
-## mpd
-C-t m C-g :abort
+#C-t semicolon t :exec toggle-touchpad.sh > /dev/null
 
 # mpc
 C-t m space :exec mpc toggle | grep '\[' | cut -c1-10
 C-t m o :exec mpc -q stop && echo "[stop]" && mpc current --wait
-C-t m l :exec mpc -q prev
-C-t m m :exec mpc -q next
+C-t m l :exec mpc -q prev && mpc current --wait
+C-t m m :exec mpc -q next && mpc current --wait
 
 C-t m S-x :exec mpc del 0 ; mpc current
 

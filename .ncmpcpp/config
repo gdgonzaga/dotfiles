@@ -22,7 +22,7 @@ mpd_music_dir = "/media/shared/kyso"
 ##### music visualizer #####
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
-visualizer_sync_interval = "3"
+visualizer_sync_interval = "100"
 #visualizer_type = "wave" (spectrum/wave)
 visualizer_type = "spectrum" (spectrum/wave)
 ##
@@ -281,7 +281,7 @@ user_interface = "alternative" (classic/alternative)
 #
 #default_find_mode = "wrapped" (wrapped/normal)
 #
-default_space_mode = "select" (add/select)
+#default_space_mode = "select" (add/select)
 #
 #default_tag_editor_left_col = "albums" (albums/dirs)
 #

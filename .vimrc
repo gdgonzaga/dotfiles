@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-"Plugin 'vim-scripts/vimwiki'
+Plugin 'vimwiki/vimwiki'
 "Plugin 'vim-scripts/taglist.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 "Plugin 'fholgado/minibufexpl.vim'
@@ -16,19 +16,21 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'ervandew/supertab'
+Plugin 'itchyny/lightline.vim'
+
 
 " common lisp
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'kovisoft/slimv'
 
 Plugin 'vim-scripts/tinymode.vim'
-"Plugin 'mattn/calendar-vim'
+Plugin 'mattn/calendar-vim'
 Plugin 'jamessan/vim-gnupg'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 
 " Editing
-Plugin 'Raimondi/delimitMate'
+"Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 
@@ -69,6 +71,9 @@ set pastetoggle=<Leader><f2>
 inoremap kj <ESC>
 set list listchars=tab:▸\ ,trail:-
 "set autochdir
+set laststatus=2
+set noshowmode
+set cc=80
 
 set wrap
 set linebreak
@@ -181,15 +186,15 @@ map <Leader>ob :CtrlPBuffer<CR>
 map <Leader>ot :CtrlPBufTag<CR>
 "map <Leader>oT :CtrlPBufTagAll<CR>
 let g:ctrlp_by_filename = 1
-let g:ctrlp_max_depth = 40
+let g:ctrlp_max_depth = 10
 let g:ctrlp_max_files = 0
 let g:ctrlp_use_caching = 1
 let g:ctrlp_cache_dir = "~/tmp/ctrlp"
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '.gitignore|.git|.cache',
-    \ 'file': '\.swp|\.mp3$|\.png$\|\.jpg$\|\.mkv$\|\.avi$',
+    \ 'file': '\.swp|\.mp3$|\.png$\|\.jpg$\|\.mkv$\|\.avi$|\.pdf$|\.torrent$',
     \ 'link': '',
     \ }
 
@@ -263,22 +268,13 @@ map <Leader>wha :VimwikiAll2HTML<CR>
 map <Leader>wls :VimwikiSplitLink<CR>
 let g:vimwiki_folding = 1
 let g:vimwiki_use_calendar = 1
-let wiki_1 = {}
-let wiki_1.syntax = 'media'
-let wiki_1.ext = '.wiki'
-let wiki_1.path = '~/seafile/plain/vimwiki/'
+let wiki_1 = {'path': '~/Nextcloud/vimwiki/',
+             \'syntax': 'markdown',
+             \'ext': '.md'}
 "let wiki_1.html_template = '~/public_html/template.tpl'
-"let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
-"let wiki_1.index = 'main'
+let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
-let lin_wiki = {}
-let lin_wiki.syntax = 'markdown'
-let lin_wiki.ext = '.md'
-let lin_wiki.path = '~/seafile/plain/linwiki/'
-"let lin_wiki.path_html = '~/mnt/public-vimwiki-html/'
-
-"let g:vimwiki_list = [wiki_1, public_wiki]
-let g:vimwiki_list = [wiki_1, lin_wiki]
+let g:vimwiki_list = [wiki_1]
 
 " taglist
 "map <Leader>t :TlistToggle<CR>
@@ -359,3 +355,20 @@ imap <C-j> <CR><Esc>O
 " Easymotion
 map <Leader><Space> <Plug>(easymotion-prefix)
 
+" paste mode
+set pastetoggle=<F2>
+
+"lightline
+let g:lightline = {
+	  \ 'colorscheme': 'jellybeans',
+	  \ }
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
