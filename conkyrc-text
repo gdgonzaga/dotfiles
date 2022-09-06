@@ -1,0 +1,15 @@
+background no
+extra_newline no
+update_interval 1.0
+uppercase no
+use_spacer right
+short_units no
+out_to_console yes
+out_to_x no
+if_up_strictness address
+
+#BOLD: ${font -*-dina-*-r-*-*-*-*-*-*-*-*-*-*}
+#NORM: ${font -*-dina-medium-r-normal-*-*-*-*-*-*-*-*}
+
+TEXT
+ CPU $cpu% $acpitemp MEM $mem    / ${if_match ${fs_free_perc /} <= 6}$endif${fs_free /}  store ${if_match ${fs_free_perc /} <= 1}$endif${fs_free /media/store}  ${if_up wlan0}   wlan0 ${downspeed wlan0} ${upspeed wlan0} $endif${if_up eth0}   eth0 ${downspeed eth0} ${upspeed eth0}  $endif${if_up ppp0}  ppp0 ${downspeed ppp0} ${upspeed ppp0}$endif${if_existing /home/gerry/tmp/mail-remind}\x07 REM ${exec cat ~/tmp/mail-remind} $endif${if_existing /home/gerry/tmp/mail-ross} Ross ${exec cat ~/tmp/mail-ross} $endif${if_existing /home/gerry/tmp/mail-inbox} Inbox ${exec cat ~/tmp/mail-inbox} $endif${if_existing /home/gerry/tmp/mail-rss} RSS ${exec cat ~/tmp/mail-rss} $endif${if_existing /home/gerry/tmp/mail-bt} BT ${exec cat ~/tmp/mail-bt} $endif  ${if_match $battery_percent < 20} $endif$battery_short $battery_time    ${time %a, %b %d %T}

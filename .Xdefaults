@@ -1,0 +1,26 @@
+urxvt.scrollBar:    false
+!urxvt.font:         -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+!urxvt.font:         -*-inputmono-medium-r-*-*-*-*-*-*-*-*-*-*
+urxvt.font:         xft:ProggySquareTT:size=12
+!URxvt.font: xft:DejaVu Sans Mono:size=9
+!urxvt.font:         -*-dina-medium-r-*-*-10-*-*-*-*-*-*-*
+urxvt.depth:        32
+urxvt.background:   rgba:0000/0000/0200/dddd
+urxvt.foreground:   white
+
+urxvt.color0:       rgb:2e/34/36
+urxvt.color1:       rgb:cc/00/00
+urxvt.color2:       rgb:4e/9a/06
+urxvt.color3:       rgb:c4/a0/00
+urxvt.color4:       rgb:34/65/a4
+urxvt.color5:       rgb:75/50/7b
+urxvt.color6:       rgb:06/98/9a
+urxvt.color7:       rgb:d3/d7/cf
+urxvt.color8:       rgb:55/57/53
+urxvt.color9:       rgb:ef/29/29
+urxvt.color10:      rgb:8a/e2/34
+urxvt.color11:      rgb:fc/e9/4f
+urxvt.color12:      rgb:72/9f/cf
+urxvt.color13:      rgb:ad/7f/a8
+urxvt.color14:      rgb:34/e2/e2
+urxvt.color15:      rgb:ee/ee/ec

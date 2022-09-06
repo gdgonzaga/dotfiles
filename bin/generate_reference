@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /home/gerry/act/gdscript-docs-maker
+./generate_reference $@

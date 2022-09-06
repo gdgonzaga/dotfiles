@@ -1,0 +1,97 @@
+conky.config = {
+    xinerama_head = 2,
+    alignment = 'top_left',
+    background = false,
+    border_margin = '0',
+    border_width = 1,
+    default_color = '#ffffff',
+    double_buffer = true,
+    draw_outline = false,
+    draw_graph_borders = true,
+    draw_borders = false,
+    draw_shades = false,
+    gap_x = 1480,
+    gap_y = 30,
+    minimum_width = 430,
+    minimum_height = 900,
+    no_buffers = true,
+    uppercase = false,
+    override_utf8_locale = true,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_title = 'conky',
+    own_window_color = '2D2D2D',
+    own_window_argb_visual = true,
+    own_window_argb_value = 180,
+    own_window_type = 'desktop',
+    own_window_hints = 'undecorated,below,skip_taskbar,skip_pager',
+    own_window_class = 'conky',
+    text_buffer_size = 8000,
+    total_run_times = 0,
+    update_interval = 1,
+    use_xft = true,
+    xftalpha = 1.0,
+    font = 'FreeMono:pixelsize=14',
+    short_units = true
+}
+
+conky.text = [[
+${offset 000}${color #55aacc}${nodename} $color${uptime_short} ${offset 105}${color #55aacc}PHT: $color${tztime Asia/Manila %a, %b %d %k:%M}
+${color #55aacc}Lon: $color${tztime Europe/London %H:%M} ${color #55aacc}Sto: $color${tztime Europe/Stockholm %H:%M} ${color #55aacc}NY: $color${tztime America/New_York %H:%M} ${color #55aacc}GMT-5: $color${tztime America/New_York %H:%M}
+
+${offset 000}${color #55aacc}CPU: ${color grey}$cpu% ${color 55aacc}${hwmon 1 temp 1}°C $color${freq 0} ${freq 1}  ${freq 2}  ${freq 3}
+${offset 000}${color #55aacc}   ${cpugraph 30,401}
+${offset 000}${color #ddaa00}   ${top name 1} ${top cpu 1}% ${top time 1}
+${offset 000}$color   ${top name 2} ${top cpu 2}% ${top time 2}
+${offset 000}$color   ${top name 3} ${top cpu 3}% ${top time 3}
+${offset 000}$color   ${top name 4} ${top cpu 4}% ${top time 4}
+${offset 000}$color   ${top name 5} ${top cpu 5}% ${top time 5}
+
+${color #55aacc}RAM: $color$mem/$memmax
+${color #55aacc}   ${memgraph 30,401}
+${offset 000}${color #ddaa00}   ${top_mem name 1} ${top_mem mem_res 1}
+${offset 000}$color   ${top_mem name 2} ${top_mem mem_res 2}
+${offset 000}$color   ${top_mem name 3} ${top_mem mem_res 3}
+${offset 000}$color   ${top_mem name 4} ${top_mem mem_res 4}
+${offset 000}$color   ${top_mem name 5} ${top_mem mem_res 5}
+${voffset -78}
+${offset 220}$color   ${top_mem name 6} ${top_mem mem_res 6}
+${offset 220}$color   ${top_mem name 7} ${top_mem mem_res 7}
+${offset 220}$color   ${top_mem name 8} ${top_mem mem_res 8}
+${offset 220}$color   ${top_mem name 9} ${top_mem mem_res 9}
+${offset 220}$color   ${top_mem name 10} ${top_mem mem_res 10}
+
+${color #55aacc}Swap:$color$swap/$swapmax
+${color #55aacc}   ${swapbar 6,401}
+
+${offset 000}${color #55aacc}sda
+${offset 000}${color #55aacc}   R $color${diskio_read /dev/sda}
+${offset 000}${color #55aacc}   ${diskiograph_read /dev/sda 30,401}
+${offset 000}${color #55aacc}   W $color${diskio_write /dev/sda}
+${offset 000}${color #55aacc}   ${diskiograph_write /dev/sda 30,401}
+
+${offset 000}${color #55aacc}/     $color ${color #55aacc}S $color${fs_size /}   ${color #55aacc}U $color${fs_used /}   ${color #55aacc}F $color${fs_free /}
+${offset 000}${color #55aacc}   ${fs_bar 6,401 /}
+
+${offset 000}${color #55aacc}/store     $color ${color #55aacc}S $color${fs_size /store}   ${color #55aacc}U $color${fs_used /store}   ${color #55aacc}F $color${fs_free /store}
+${offset 000}${color #55aacc}   ${fs_bar 6,401 /store}
+
+${offset 000}${color #55aacc}/store2     $color ${color #55aacc}S $color${fs_size /store2}   ${color #55aacc}U $color${fs_used /store2}   ${color #55aacc}F $color${fs_free /store2}
+${offset 000}${color #55aacc}   ${fs_bar 6,401 /store2}
+
+${if_up wlan0}${color #55aacc}wlp8s0f3u2 $color${addrs wlp8s0f3u2} ${color 55aacc}${wireless_essid wlp8s0f3u2} $color${wireless_bitrate wlp8s0f3u2} ${color 55aacc}Quality $color${wireless_link_qual wlp8s0f3u2} ${color 55aacc}Max $color${wireless_link_qual_max wlp8s0f3u2}
+${color #55aacc}   ${wireless_link_bar 6,401 wlp8s0f3u2}
+${color #55aacc}      D $color${downspeed wlp8s0f3u2}
+${color #55aacc}   ${downspeedgraph wlp8s0f3u2 30,401}
+${color #55aacc}      U $color${upspeed wlp8s0f3u2}
+${color #55aacc}   ${upspeedgraph wlp8s0f3u2 30,401}
+$endif
+${if_up eno1}${color #55aacc}eno1 $color${addrs eno1} ${color 55aacc}${wireless_essid eno1} $color${wireless_bitrate eno1} ${color 55aacc}Quality $color${wireless_link_qual eno1} ${color 55aacc}Max $color${wireless_link_qual_max eno1}
+${color #55aacc}   ${wireless_link_bar 6,401 eno1}
+${color #55aacc}      D $color${downspeed eno1}
+${color #55aacc}   ${downspeedgraph eno1 30,401}
+${color #55aacc}      U $color${upspeed eno1}
+${color #55aacc}   ${upspeedgraph eno1 30,401}
+$endif
+${voffset -618}
+]]
