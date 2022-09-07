@@ -37,7 +37,7 @@ conky.config = {
 
 conky.text = [[
 ${offset 000}${color #55aacc}${nodename} $color${uptime_short} ${offset 105}${color #55aacc}PHT: $color${tztime Asia/Manila %a, %b %d %k:%M}
-${color #55aacc}Lon: $color${tztime Europe/London %H:%M} ${color #55aacc}Sto: $color${tztime Europe/Stockholm %H:%M} ${color #55aacc}NY: $color${tztime America/New_York %H:%M} ${color #55aacc}GMT-5: $color${tztime America/New_York %H:%M}
+${color #55aacc}Lon: $color${tztime Europe/London %H:%M} ${color #55aacc}Sto/CEST: $color${tztime Europe/Stockholm %H:%M} ${color #55aacc}NY: $color${tztime America/New_York %H:%M} ${color #55aacc}GMT-5: $color${tztime America/New_York %H:%M}
 
 ${offset 000}${color #55aacc}CPU: ${color grey}$cpu% ${color 55aacc}${hwmon 1 temp 1}°C $color${freq 0} ${freq 1}  ${freq 2}  ${freq 3}
 ${offset 000}${color #55aacc}   ${cpugraph 30,401}

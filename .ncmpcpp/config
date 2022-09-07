@@ -7,11 +7,12 @@
 #
 ## set it in order to make tag editor and renaming files work properly
 #
+#mpd_host = "10.0.0.46"
 mpd_host = "localhost"
 #
 mpd_port = "6600"
 #
-mpd_music_dir = "/media/shared/kyso"
+#mpd_music_dir = "/media/shared/kyso"
 #
 #mpd_connection_timeout = "5"
 #

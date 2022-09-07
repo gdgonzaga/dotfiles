@@ -1,0 +1,71 @@
+Aug 16 21:20 : exception: Failed to open /home/gerry/.mpd/mpdstate: No such file or directory
+Aug 16 21:20 : exception: Failed to access /media/store/kyso: No such file or directory
+Aug 16 21:20 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Aug 16 21:20 : exception: Failed to enable output "gdg-mpd-pulse" [pulse]
+Aug 16 21:20 : exception: nested: pa_context_connect() has failed: Connection refused
+Aug 16 21:20 : client: [0] opened from [::1]:46756
+Aug 16 21:20 : client: [0] closed
+Aug 16 21:20 : client: [1] opened from [::1]:46758
+Aug 16 21:20 : client: [1] closed
+Aug 16 21:20 : client: [2] opened from [::1]:46760
+Aug 16 21:20 : client: [3] opened from [::1]:46762
+Aug 16 21:20 : client: [3] closed
+Aug 16 21:20 : client: [4] opened from [::1]:46764
+Aug 16 21:20 : client: [4] closed
+Aug 16 21:20 : client: [5] opened from [::1]:46766
+Aug 16 21:40 : avahi: Client Disconnected, will reconnect shortly
+Aug 16 21:40 : avahi: Could not reconnect: An unexpected D-Bus error occurred
+Aug 16 21:41 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Aug 16 21:41 : exception: Failed to enable output "gdg-mpd-pulse" [pulse]
+Aug 16 21:41 : exception: nested: pa_context_connect() has failed: Connection refused
+Aug 16 21:44 : client: [0] opened from [::1]:44074
+Aug 16 21:44 : client: [0] closed
+Aug 16 21:52 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Aug 16 21:52 : exception: Failed to enable output "gdg-mpd-pulse" [pulse]
+Aug 16 21:52 : exception: nested: pa_context_connect() has failed: Connection refused
+Aug 16 21:58 : client: [0] opened from [::1]:38054
+Aug 16 21:58 : client: [0] closed
+Aug 16 22:26 : client: [1] opened from [::1]:40172
+Aug 16 22:26 : client: [1] closed
+Aug 16 22:26 : client: [2] opened from [::1]:40176
+Aug 16 22:26 : client: [2] closed
+Aug 16 22:26 : client: [3] opened from [::1]:40178
+Aug 16 22:26 : client: [3] closed
+Aug 16 22:27 : client: [4] opened from [::1]:40180
+Aug 16 22:27 : exception: Failed to access /media/store/kyso: No such file or directory
+Aug 16 22:27 : client: [4] closed
+Aug 16 22:28 : client: [5] opened from [::1]:40186
+Aug 16 22:28 : exception: Failed to access /media/store/kyso: No such file or directory
+Aug 16 22:28 : exception: Failed to access /media/store/kyso: No such file or directory
+Aug 16 22:28 : client: [6] opened from [::1]:40188
+Aug 16 22:28 : client: [6] closed
+Aug 16 22:28 : client: [7] opened from [::1]:40190
+Aug 16 22:28 : client: [7] closed
+Aug 16 22:28 : client: [8] opened from [::1]:40204
+Aug 16 22:28 : client: [8] closed
+Aug 16 22:28 : client: [9] opened from [::1]:40206
+Aug 16 22:28 : client: [9] closed
+Aug 16 22:28 : client: [10] opened from [::1]:40208
+Aug 16 22:28 : client: [10] closed
+Aug 16 22:28 : exception: Failed to access /media/store/kyso: No such file or directory
+Aug 16 22:28 : client: [5] closed
+Aug 16 22:28 : client: [11] opened from [::1]:40212
+Aug 16 22:28 : exception: Failed to access /media/store/kyso: No such file or directory
+Aug 16 22:29 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Aug 16 22:29 : exception: Failed to enable output "gdg-mpd-pulse" [pulse]
+Aug 16 22:29 : exception: nested: pa_context_connect() has failed: Connection refused
+Aug 16 22:29 : client: [0] opened from [::1]:40222
+Aug 16 22:29 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Aug 16 22:29 : exception: Failed to enable output "gdg-mpd-pulse" [pulse]
+Aug 16 22:29 : exception: nested: pa_context_connect() has failed: Connection refused
+Aug 16 22:29 : client: [0] opened from [::1]:40234
+Aug 16 22:29 : client: [0] closed
+Aug 16 22:29 : client: [1] opened from [::1]:40252
+Aug 16 22:30 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Aug 16 22:30 : exception: Failed to enable output "gdg-mpd-pulse" [pulse]
+Aug 16 22:30 : exception: nested: pa_context_connect() has failed: Connection refused
+Aug 16 22:30 : client: [0] opened from [::1]:40254
+Aug 16 22:30 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Aug 16 22:30 : exception: Failed to enable output "gdg-mpd-pulse" [pulse]
+Aug 16 22:30 : exception: nested: pa_context_connect() has failed: Connection refused
+Aug 16 22:30 : client: [0] opened from [::1]:40268

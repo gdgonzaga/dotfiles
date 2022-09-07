@@ -12,3 +12,6 @@ if_up_strictness address
 
 TEXT
 \x04 CPU \x01$cpu% $acpitemp \x04MEM \x01$mem  \x04  / \x01${if_match ${fs_free_perc /} <= 6}\x02$endif${fs_free /}\x04  store \x01${if_match ${fs_free_perc /} <= 1}\x02$endif${fs_free /media/store}  ${if_up wlan0} \x06  wlan0 \x01${downspeed wlan0} \x01${upspeed wlan0} $endif${if_up net} \x06  net \x01${downspeed net} \x01${upspeed net}  $endif${if_up ppp0}\x06  ppp0 \x01${downspeed ppp0} \x01${upspeed ppp0}$endif${if_existing /home/gerry/tmp/mail-remind}\x07 REM ${exec cat ~/tmp/mail-remind} \x05|$endif${if_existing /home/gerry/tmp/mail-ross}\x02 Ross ${exec cat ~/tmp/mail-ross} \x05|$endif${if_existing /home/gerry/tmp/mail-inbox}\x09 Inbox ${exec cat ~/tmp/mail-inbox} \x05|$endif${if_existing /home/gerry/tmp/mail-rss}\x09 RSS ${exec cat ~/tmp/mail-rss} \x05|$endif${if_existing /home/gerry/tmp/mail-bt}\x09 BT ${exec cat ~/tmp/mail-bt} \x05|$endif  \x01 ${time %a, %b %d %T}
+
+
+aaa

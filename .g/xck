@@ -12,7 +12,7 @@ timeout 5000
 # feedback options
 
 feedback on       # enable feedback
-delay 1000        # display current key combination
+delay 10          # display current key combination
 hold 1000         # display error messages for 1 second
 position center   # center feedback window
 
@@ -28,16 +28,25 @@ C-t C-g :abort
 C-t C-r :reload
 
 ## execute commands
-W-e :exec dmenu_run -fn dina:weight=medium:slant=right:pixelsize=10 > /dev/null
+#W-e :exec dmenu_run -fn dina:weight=medium:slant=right:pixelsize=10 > /dev/null
+W-e :exec dmenu_run -fn "ProggyCleanTT:12" > /dev/null
+W-r :exec rofi -show drun > /dev/null
+#W-r :exec rofi -show drun
 C-t e C-g :abort
 #W-r :exec dmenu-launch > /dev/null
-C-t e m :exec smplayer
-C-t e n :exec urxvt -e vimnotes.sh
-C-t e w :exec urxvt -e vimwiki.sh
+#C-t e m :exec smplayer
+C-t e d :exec date-to-clipboard.sh
+#C-t e n :exec rofi -show file-browser-extended -file-browser-dir /home/gerry/mnt/decrypted/Notes/
+#C-t e n :exec urxvt -e vimnotes.sh
+C-t e n :exec quicknotes.py
+#C-t e S-n :exec quicknotes.py mindforger
+#C-t e m :exec mindforger-notes.sh
+#C-t e w :exec urxvt -e vimwiki.sh
 #C-t e f :exec icecat > /dev/null
 #C-t e S-f :exec icecat -private > /dev/null
 C-t e f :exec firefox
-C-t e S-f :exec firefox -private
+C-t e b :exec boostnote
+#C-t e S-f :exec firefox -private
 #C-t e f :exec qutebrowser
 #C-t e S-f :exec qutebrowser --private
 
@@ -56,6 +65,8 @@ C-t m l :exec mpc -q prev && mpc current --wait
 C-t m m :exec mpc -q next && mpc current --wait
 
 C-t m S-x :exec mpc del 0 ; mpc current
+
+Print :exec gscreenshot
 
 # volume controls
 #C-t m S-e ponymix set-volume $(($(ponymix get-volume) + 5)); notify-send -u low $(ponymix get-volume | sed 's/^/[volume: /' | sed 's/$/]/')
