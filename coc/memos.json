@@ -1,0 +1,9 @@
+{
+  "coc-eslint|global": {
+    "noESLintMessageShown": {
+      "workspaces": {
+        "file:///store/backups/act/zuitt/batch-211/s05": true
+      }
+    }
+  }
+}

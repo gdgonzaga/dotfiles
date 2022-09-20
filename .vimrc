@@ -44,6 +44,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 
 " Colorschemes
@@ -446,6 +447,14 @@ set splitbelow
 
 " coc
 
+let g:coc_global_extensions = [
+            \'coc-json',
+            \'coc-tsserver',
+            \'coc-html',
+            \'coc-htmlhint',
+            \'coc-stylelint',
+            \'coc-stylelintplus'
+            \]
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -614,3 +623,12 @@ let g:UltiSnipsEditSplit="vertical"
 
 " transparent
 nnoremap <Leader>r :TransparentToggle<CR>
+
+" Copy full path curent buffer
+nmap <leader>c :let @+ = expand("%:p")<cr>
+
+nnoremap Z <Nop>
+nnoremap ZZ <Nop>
+
+" turn hybrid line numbers on
+set nu rnu
